@@ -9,7 +9,7 @@ player.speed = 200
 player.anim = animation
 player.ismoving = False
 player.dir = 1
-player.grounded = 'False'
+player.grounded = 'Ugga'
 
 function player:update(dt)
     if player.body then
