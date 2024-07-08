@@ -12,6 +12,8 @@ player.dir = 1
 player.grounded = 'Ugggga'
 
 function player:update(dt)
+    xNow,yNow = player:getLinearVelocity()
+	player:setLinearVelocity(0, yNow) 
     if player.body then
         local colliders = world:queryRectangleArea(player:getX() - 10, player:getY() +2, 40, 15, {'Platform'})
         if #colliders > 0 then
