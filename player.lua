@@ -12,8 +12,11 @@ player.dir = 1
 player.grounded = 'Ugggga'
 
 function player:update(dt)
+    -- Reset Horizontal velocity
     xNow,yNow = player:getLinearVelocity()
 	player:setLinearVelocity(0, yNow) 
+
+    -- Check if grounded
     if player.body then
         local colliders = world:queryRectangleArea(player:getX() - 10, player:getY() +2, 40, 15, {'Platform'})
         if #colliders > 0 then
@@ -21,10 +24,11 @@ function player:update(dt)
         else
             player.grounded = 'False'
         end
-    
+        -- Reset Moving
         player.ismoving = False
         
         local px, py = player:getPosition()
+        --Basic Movement
         if love.keyboard.isDown('a') then
             player.ismoving = True
             player:setX(px - player.speed*dt)
@@ -34,11 +38,13 @@ function player:update(dt)
             player:setX(px + player.speed*dt)
             player.dir = 1
         end
+        -- Jumping
         if love.keyboard.isDown('w') and player.grounded == 'True' then
             player:applyLinearImpulse(0,-500)
         end
     end
 
+    --States For Animations (once we have them)
     local Currentrunning = player.ismoving and player.grounded
     local Currentidle = player.grounded and not player.ismoving
     local CurrentAir = not player.grounded
