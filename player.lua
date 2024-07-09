@@ -72,7 +72,7 @@ function player:draw()
         sx = -sx
     end
 
-    player.anim:draw(image, px-(20*player.dir), py-30, nil, sx, sy)
+    player.anim:draw(image, px, py, nil, sx, sy,7, 9)
     -- show grounded detection
     love.graphics.print(player.grounded, 10, 10)
     love.graphics.rectangle('line',px-colliderWidth/2, py+3, colliderWidth, colliderHeight)
