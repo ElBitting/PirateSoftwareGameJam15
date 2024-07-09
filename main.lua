@@ -1,5 +1,6 @@
 anim8 = require 'library/anim8'
 wf = require 'library/windfield'
+camera = require 'library/hump-master/camera'
 
 
 function love.load()
@@ -8,7 +9,7 @@ function love.load()
     Background1 = love.graphics.newImage("Sprites/background/background_layer_1.png")
     Background2 = love.graphics.newImage("Sprites/background/background_layer_2.png")
     Background3 = love.graphics.newImage("Sprites/background/background_layer_3.png")
-
+    cam = camera()
     world = wf.newWorld(0, 800, false)
     world:addCollisionClass('Platform')
     world:addCollisionClass('Player')
@@ -22,11 +23,14 @@ end
 function love.update(dt)
     player:update(dt)
     world:update(dt)
+    cam:lookAt(player:getPosition())
 end
 
 function love.draw()
-    world:draw()
-    player:draw()
+    cam:attach()
+        world:draw()
+        player:draw()
+    cam:detach()
 end
 
 function love.keypressed(key)
