@@ -1,4 +1,4 @@
-player = world:newCircleCollider(400, 100, 18)
+player = world:newCircleCollider(400, 350, 18)
 player:setCollisionClass("Player")
 
 image = love.graphics.newImage('Sprites/character/oldHero.png')
@@ -74,6 +74,5 @@ function player:draw()
 
     player.anim:draw(image, px, py, nil, sx, sy,7, 9)
     -- show grounded detection
-    love.graphics.print(player.grounded, 10, 10)
     love.graphics.rectangle('line',px-colliderWidth/2, py+3, colliderWidth, colliderHeight)
 end

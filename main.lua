@@ -10,6 +10,7 @@ function love.load()
     Background2 = love.graphics.newImage("Sprites/background/background_layer_2.png")
     Background3 = love.graphics.newImage("Sprites/background/background_layer_3.png")
     cam = camera()
+    pause = false
     world = wf.newWorld(0, 800, false)
     world:addCollisionClass('Platform')
     world:addCollisionClass('Player')
@@ -21,9 +22,11 @@ function love.load()
 end
 
 function love.update(dt)
-    player:update(dt)
-    world:update(dt)
-    cam:lookAt(player:getPosition())
+    if pause == false then
+        player:update(dt)
+        world:update(dt)
+        cam:lookAt(player:getPosition())
+    end
 end
 
 function love.draw()
@@ -31,14 +34,14 @@ function love.draw()
         world:draw()
         player:draw()
     cam:detach()
+    if pause == true then
+        love.graphics.print('Paused',500,384)
+    end
+    love.graphics.print(player.grounded, 10, 10)
 end
 
 function love.keypressed(key)
     if key == 'escape' then
-        love.event.quit()
+        pause = not pause
     end
-end
-
-function distance(x1, y1,x2, y2)
-    return math.sqrt((x1 - x2)^2 + (y1-y2)^2) 
 end
