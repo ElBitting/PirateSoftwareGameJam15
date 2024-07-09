@@ -1,14 +1,13 @@
 anim8 = require 'library/anim8'
 wf = require 'library/windfield'
+camera = require 'library/hump-master/camera'
 
 
 function love.load()
     love.window.setMode(1000, 768)
-    gameFont = love.graphics.newFont(40)
-    Background1 = love.graphics.newImage("Sprites/background/background_layer_1.png")
-    Background2 = love.graphics.newImage("Sprites/background/background_layer_2.png")
-    Background3 = love.graphics.newImage("Sprites/background/background_layer_3.png")
-
+    gameFont = love.graphics.newFont(100)
+    cam = camera()
+    pause = false
     world = wf.newWorld(0, 800, false)
     world:addCollisionClass('Platform')
     world:addCollisionClass('Player')
@@ -20,21 +19,26 @@ function love.load()
 end
 
 function love.update(dt)
-    player:update(dt)
-    world:update(dt)
+    if pause == false then
+        player:update(dt)
+        world:update(dt)
+        cam:lookAt(player:getPosition())
+    end
 end
 
 function love.draw()
-    world:draw()
-    player:draw()
+    cam:attach()
+        world:draw()
+        player:draw()
+    cam:detach()
+    if pause == true then
+        love.graphics.print('Paused', gameFont, 325,100)
+    end
+    love.graphics.print(player.grounded, 10, 10)
 end
 
 function love.keypressed(key)
     if key == 'escape' then
-        love.event.quit()
+        pause = not pause
     end
-end
-
-function distance(x1, y1,x2, y2)
-    return math.sqrt((x1 - x2)^2 + (y1-y2)^2) 
 end
