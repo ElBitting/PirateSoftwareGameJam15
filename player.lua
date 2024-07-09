@@ -41,9 +41,12 @@ function player:update(dt)
             player.dir = 1
         end
         -- Jumping
-        if love.keyboard.isDown('w') and player.grounded == 'True' then
+        local jumpKeyDown = love.keyboard.isDown('w') or love.keyboard.isDown('space')
+        if jumpKeyDown and player.grounded == 'True' then
+            --honestly no idea why this line fixes a bug, but it does
             player:setLinearVelocity(0, 0)
-            player:applyLinearImpulse(0,-500)
+            -- jump impulse
+            player:applyLinearImpulse(0,-700)
         end
     end
         
