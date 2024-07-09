@@ -42,6 +42,7 @@ function player:update(dt)
         end
         -- Jumping
         if love.keyboard.isDown('w') and player.grounded == 'True' then
+            player:setLinearVelocity(0, 0)
             player:applyLinearImpulse(0,-500)
         end
     end
