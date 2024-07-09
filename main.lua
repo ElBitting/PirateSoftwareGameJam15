@@ -5,10 +5,7 @@ camera = require 'library/hump-master/camera'
 
 function love.load()
     love.window.setMode(1000, 768)
-    gameFont = love.graphics.newFont(40)
-    Background1 = love.graphics.newImage("Sprites/background/background_layer_1.png")
-    Background2 = love.graphics.newImage("Sprites/background/background_layer_2.png")
-    Background3 = love.graphics.newImage("Sprites/background/background_layer_3.png")
+    gameFont = love.graphics.newFont(100)
     cam = camera()
     pause = false
     world = wf.newWorld(0, 800, false)
@@ -35,7 +32,7 @@ function love.draw()
         player:draw()
     cam:detach()
     if pause == true then
-        love.graphics.print('Paused',500,384)
+        love.graphics.print('Paused', gameFont, 325,100)
     end
     love.graphics.print(player.grounded, 10, 10)
 end
