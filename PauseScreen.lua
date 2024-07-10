@@ -1,5 +1,4 @@
 PauseScreen = {}
-buttons = {}
 
 function newButton(text, fn)
     return { 
@@ -10,11 +9,11 @@ function newButton(text, fn)
     }
 end
 
-table.insert(buttons, newButton("Resume", function() pause = false end))
-table.insert(buttons, newButton("Inventory", function() end))
-table.insert(buttons, newButton("Save", function() pause = false end))
-table.insert(buttons, newButton("Settings", function() end))
-table.insert(buttons, newButton("Exit", function() love.event.quit() end))
+table.insert(PauseScreen, newButton("Resume", function() pause = false end))
+table.insert(PauseScreen, newButton("Inventory", function() end))
+table.insert(PauseScreen, newButton("Save", function() pause = false end))
+table.insert(PauseScreen, newButton("Settings", function() end))
+table.insert(PauseScreen, newButton("Exit", function() love.event.quit() end))
 
 function PauseScreen: draw()
      screenWidth = love.graphics.getWidth()
@@ -23,7 +22,7 @@ function PauseScreen: draw()
     if pause == true then
         love.graphics.print('Paused', gameFont, 325,100)
         love.graphics.rectangle("line", screenWidth-menuWidth-10, screenHeight /9, menuWidth, menuHeight)
-        for i, button in ipairs(buttons) do
+        for i, button in ipairs(PauseScreen) do
             button.last = button.now
             local color = {0.5, 0.7, 0.8, 1}
             local bx, by = screenWidth-menuWidth+20, screenHeight / 9 + 20 + butt * 50 
