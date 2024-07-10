@@ -49,7 +49,18 @@
  <tile id="45"/>
  <tile id="46"/>
  <tile id="47"/>
- <tile id="48"/>
+ <tile id="48">
+  <animation>
+   <frame tileid="48" duration="100"/>
+   <frame tileid="49" duration="100"/>
+   <frame tileid="50" duration="100"/>
+   <frame tileid="51" duration="100"/>
+   <frame tileid="52" duration="100"/>
+   <frame tileid="53" duration="100"/>
+   <frame tileid="54" duration="100"/>
+   <frame tileid="55" duration="100"/>
+  </animation>
+ </tile>
  <tile id="49"/>
  <tile id="50"/>
  <tile id="51"/>
