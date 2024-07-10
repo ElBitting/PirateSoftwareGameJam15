@@ -1,17 +1,8 @@
 PauseScreen = {}
 
-function newButton(text, fn)
-    return { 
-        text = text,
-        fn = fn,
-        now = false,
-        last = false
-    }
-end
-
-table.insert(PauseScreen, newButton("Resume", function() pause = false end))
+table.insert(PauseScreen, newButton("Resume", function() gs.switch(game) end))
 table.insert(PauseScreen, newButton("Inventory", function() end))
-table.insert(PauseScreen, newButton("Save", function() pause = false end))
+table.insert(PauseScreen, newButton("Save", function() gs.switch(game) end))
 table.insert(PauseScreen, newButton("Settings", function() end))
 table.insert(PauseScreen, newButton("Exit", function() love.event.quit() end))
 
@@ -19,7 +10,7 @@ function PauseScreen: draw()
      screenWidth = love.graphics.getWidth()
      screenHeight = love.graphics.getHeight()
      butt = 0 
-    if pause == true then
+    if gs.current() == PauseScreen then
         love.graphics.print('Paused', gameFont, 325,100)
         love.graphics.rectangle("line", screenWidth-menuWidth-10, screenHeight /9, menuWidth, menuHeight)
         for i, button in ipairs(PauseScreen) do
