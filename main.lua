@@ -52,14 +52,13 @@ function love.draw()
             local color = {0.5, 0.7, 0.8, 1}
             local bx, by = screenWidth-menuWidth+20, screenHeight / 9 + 20 + butt * 50 
             local mx, my = love.mouse.getPosition()
-            local hot = (mx > bx and mx < bx + menuWidth) and (my >by and my < by +50)
+            local hot = (mx > bx and mx < bx + menuWidth) and (my >by and my < by +50) 
             if hot then
                 color = {0.7, 0.7, 0.9}
             end
             button.now = love.mouse.isDown(1)
             if button.now and not button.last and hot then
                 button.fn()
-
             end
             love.graphics.setColor(unpack(color))
             love.graphics.print(button.text, textFont,bx,by )
