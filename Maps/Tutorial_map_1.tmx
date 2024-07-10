@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" source="../Tileset/16x16 dungeon tiles.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztzUEJAAAIBLCLIfYPagpBcI+9V0kKAJb08x8A4IoBIm9gBQ==
+  </data>
+ </layer>
+ <layer id="2" name="Tile Layer 2" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztls0OgjAMgCcSzogc5MBB/LnzCOoTqE+gvv87WBKaNHUtIxSCCU2+QMbK1wFjc26JuUQxcZ52nzSgL8XKX7fHlLWHMDQiYA3ErT/Ua1VDBmyB3OPH0JzWfl9o45SudX1Lffx9vkue0/V8LPy8DsyRns0FuAI3Yz/OI5+fOu/AA3gKfv48ebsWkp86X8Ab+AT4C/c7L5pxboSjL8cxJ875hnPrP5G22FMDQnM5Ul7E+uCYJXLFr+VKeRnrUwEHhaPi13KlvIr14bFiaP9a7OMLq/9zVy6v11fTkLXBYl2zXKP/0b9EWPje0RT7rj6usWuh90oIWhu/ZuGew9jH8u/JOd2LUPfOCP6uaifvf9Bdjkji5P0P1jmmv2TOLzq+MHM=
+  </data>
+ </layer>
+</map>
