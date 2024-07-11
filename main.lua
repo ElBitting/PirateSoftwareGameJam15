@@ -2,51 +2,37 @@ anim8 = require 'library/anim8'
 wf = require 'library/windfield'
 camera = require 'library/hump-master/camera'
 gs = require 'library/hump-master/gamestate'
+sti = require 'library/sti'
 
-
-function newButton(text, fn)
-    return { 
-        text = text,
-        fn = fn,
-        now = false,
-        last = false
-    }
-end
+require 'helper'
+require 'global'
 
 function love.load()
     game = {}
-    love.window.setMode(1920, 1080)
-    gameFont = love.graphics.newFont(100)
-    textFont = love.graphics.newFont(32)
-    cam = camera(0,0,2)
-    world = wf.newWorld(0, 800, false)
-    world:addCollisionClass('Platform')
-    world:addCollisionClass('Player')
-    -- ground = world:newRectangleCollider(200, 400, 400, 50)
-    -- ground:setCollisionClass('Platform')
-    -- ground:setType('static') 
+    love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
 
-    sti = require 'library/sti'
+    gameFont = love.graphics.newFont(GAME_FONT_SIZE)
+    textFont = love.graphics.newFont(TEXT_FONT_SIZE)
+
+    cam = camera(0,0,CAMERA_ZOOM)
+
+    world = wf.newWorld(0, 800, false)
+    add_col_classes(world)
+
     gameMap = sti('Maps/Tutorial_map_2.lua')
 
+    --TODO: Find a way to put these at the top with the other imports...
     require 'player'
     require 'PauseScreen'
     require 'TitleScreen'
-    menuHeight = love.graphics.getHeight() *3/5
 
-    menuWidth = love.graphics.getWidth() /5
     walls = {}
-    if gameMap.layers['Walls'] then
-        for i, obj in pairs(gameMap.layers["Walls"].objects) do
-            local wall = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
-            wall:setCollisionClass('Platform')
-            wall:setType('static')
-            table.insert(walls, wall)
-        end
-    end
-    menuWidth = love.graphics.getWidth() /7
-    gs.switch(TitleScreen)
+    hazards = {}
 
+    add_col_class_obj(walls, 'Platform', 'Walls',true)
+    add_col_class_obj(hazards, 'Hazards', 'Hazards',true)
+
+    gs.switch(TitleScreen)
 end
 
 function love.update(dt)
@@ -60,16 +46,19 @@ end
 function love.draw()
     if gs.current() == TitleScreen then 
         TitleScreen:draw()
-    else 
+    else -- initiate game
         cam:attach()
             gameMap:drawLayer(gameMap.layers["BG"])
             gameMap:drawLayer(gameMap.layers["FG"])
-            --world:draw()
+            -- world:draw()
             player:draw()
         cam:detach()
-        PauseScreen:draw()
-    end
-    
+
+        -- Initiate Pause Sequence
+        if gs.current() == PauseScreen then
+            PauseScreen:draw()
+        end
+    end    
 end
 
 function love.keypressed(key)

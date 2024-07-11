@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 4,
-  nextobjectid = 19,
+  nextlayerid = 6,
+  nextobjectid = 23,
   properties = {},
   tilesets = {
     {
@@ -275,6 +275,64 @@ return {
           x = 0,
           y = 512,
           width = 512,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 4,
+      name = "Hazards",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 19,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 64,
+          y = 502.5,
+          width = 381.75,
+          height = 9.5,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 5,
+      name = "TeleDoor1",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 22,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 496,
+          width = 16,
           height = 16,
           rotation = 0,
           visible = true,

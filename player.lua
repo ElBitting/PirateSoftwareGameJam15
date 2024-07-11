@@ -49,6 +49,13 @@ function player:update(dt)
             -- jump impulse
             player:applyLinearImpulse(0,-85)
         end
+
+        --Check if standing on spikes
+        if player:enter('Hazards') then
+            player:setX(20)
+            player:setY(505)
+            -- player = world:newCircleCollider(20, 505, 7)
+        end
     end
 
     --States For Animations (once we have them)
