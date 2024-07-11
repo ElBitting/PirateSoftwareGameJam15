@@ -82,6 +82,6 @@ function love.keypressed(key)
     if key == 'escape' and gs.current() == game then
         gs.switch(PauseScreen)
     elseif key =='escape' and gs.current() == PauseScreen then
-        gs.switch(game)
+        love.event.quit()
     end
 end
