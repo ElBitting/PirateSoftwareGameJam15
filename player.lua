@@ -11,7 +11,7 @@ player.ismoving = False
 player.dir = 1
 player.grounded = 'Ugggga'
 colliderWidth = 20
-colliderHeight = 18
+colliderHeight = 20
 
 function player:update(dt)
     -- Reset Horizontal velocity
