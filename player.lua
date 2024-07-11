@@ -1,4 +1,4 @@
-player = world:newCircleCollider(400, 350, 18)
+player = world:newCircleCollider(20, 505, 7)
 player:setCollisionClass("Player")
 
 image = love.graphics.newImage('Sprites/character/oldHero.png')
@@ -10,8 +10,9 @@ player.anim = animation
 player.ismoving = False
 player.dir = 1
 player.grounded = 'Ugggga'
-colliderWidth = 20
-colliderHeight = 20
+local colliderWidth = 2
+local colliderHeight = 3
+offsetCollionPlayerFeet = 6
 
 function player:update(dt)
     -- Reset Horizontal velocity
@@ -20,7 +21,7 @@ function player:update(dt)
 
     -- Check if grounded
     if player.body then
-        local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+5, colliderWidth, colliderHeight, {'Platform'})
+        local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform'})
         if #colliders > 0 then
             player.grounded = 'True'
         else
@@ -46,7 +47,7 @@ function player:update(dt)
             --honestly no idea why this line fixes a bug, but it does
             player:setLinearVelocity(0, 0)
             -- jump impulse
-            player:applyLinearImpulse(0,-700)
+            player:applyLinearImpulse(0,-85)
         end
     end
 
@@ -64,8 +65,8 @@ function player:draw()
     local py = player:getY()
 
     --scale character by 3
-    sx = 3
-    sy = 3
+    sx = 1
+    sy = 1
     --swap direction for facing left vs right
     if player.dir == -1 then
         sx = -sx
@@ -73,5 +74,5 @@ function player:draw()
 
     player.anim:draw(image, px, py, nil, sx, sy,7, 9)
     -- show grounded detection
-    love.graphics.rectangle('line',px-colliderWidth/2, py+3, colliderWidth, colliderHeight)
+    --love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
 end
