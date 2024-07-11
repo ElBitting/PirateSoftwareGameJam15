@@ -7,9 +7,9 @@ animation = anim8.newAnimation(Playergrid('1-5',1), 0.1)
 
 player.speed = 200
 player.anim = animation
-player.ismoving = False
+player.ismoving = false
 player.dir = 1
-player.grounded = 'Ugggga'
+player.grounded = true
 local colliderWidth = 2
 local colliderHeight = 3
 offsetCollionPlayerFeet = 6
@@ -23,12 +23,12 @@ function player:update(dt)
     if player.body then
         local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform'})
         if #colliders > 0 then
-            player.grounded = 'True'
+            player.grounded = true
         else
-            player.grounded = 'False'
+            player.grounded = false
         end
         -- Reset Moving
-        player.ismoving = False
+        player.ismoving = false
         
         local px, py = player:getPosition()
         --Basic Movement
@@ -43,7 +43,7 @@ function player:update(dt)
         end
         -- Jumping
         local jumpKeyDown = love.keyboard.isDown('w') or love.keyboard.isDown('space')
-        if jumpKeyDown and player.grounded == 'True' then
+        if jumpKeyDown and player.grounded then
             --honestly no idea why this line fixes a bug, but it does
             player:setLinearVelocity(0, 0)
             -- jump impulse

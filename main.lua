@@ -18,7 +18,7 @@ function love.load()
     love.window.setMode(1920, 1080)
     gameFont = love.graphics.newFont(100)
     textFont = love.graphics.newFont(32)
-    cam = camera(0,0,3)
+    cam = camera(0,0,2)
     world = wf.newWorld(0, 800, false)
     world:addCollisionClass('Platform')
     world:addCollisionClass('Player')
@@ -68,10 +68,6 @@ function love.draw()
             player:draw()
         cam:detach()
         PauseScreen:draw()
-        
-        love.graphics.print(player.grounded, textFont, 10, 10)
-        love.graphics.print(player:getX(), textFont, 10, 30)
-        love.graphics.print(player:getY(), textFont, 10, 50)
     end
     
 end
