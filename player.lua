@@ -6,7 +6,7 @@ image = love.graphics.newImage('Sprites/character/oldHero.png')
 Playergrid = anim8.newGrid(16,16, image: getWidth(), image:getHeight())
 animation = anim8.newAnimation(Playergrid('1-5',1), 0.1)
 
-player.speed = 120
+player.speed = 130
 player.anim = animation
 player.ismoving = false
 player.dir = 1

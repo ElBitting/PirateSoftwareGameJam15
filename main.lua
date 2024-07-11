@@ -32,6 +32,9 @@ function love.load()
 end
 
 function love.update(dt)
+    if gs.current() == PauseScreen then 
+        PauseScreen:update(dt)
+    end
     if gs.current() == game then
         player:update(dt)
         world:update(dt)
@@ -54,6 +57,7 @@ function love.draw()
             PauseScreen:draw()
         end
     end    
+        love.graphics.print(SelectedButton, textFont, 10, 10)
 end
 
 function love.keypressed(key)
@@ -71,5 +75,11 @@ function love.keypressed(key)
     if key == 'p' and gs.current() == game then
         player:setX(20)
         player:setY(20)
+    end
+    if key == 's' and gs.current() == PauseScreen then 
+        SelectedButton = SelectedButton + 1
+    end
+    if key == 'w' and gs.current() == PauseScreen then 
+        SelectedButton = SelectedButton - 1
     end
 end
