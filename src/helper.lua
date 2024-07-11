@@ -1,6 +1,6 @@
 function add_col_classes(world)
     world:addCollisionClass('Player')
-
+    
     world:addCollisionClass('Platform')
     world:addCollisionClass('Hazards')
     world:addCollisionClass('TeleDoor1')

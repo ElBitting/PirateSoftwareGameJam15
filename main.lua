@@ -1,14 +1,19 @@
-anim8 = require 'library/anim8'
-wf = require 'library/windfield'
-camera = require 'library/hump-master/camera'
-gs = require 'library/hump-master/gamestate'
-sti = require 'library/sti'
+anim8 = require 'libraries/anim8'
+wf = require 'libraries/windfield'
+camera = require 'libraries/hump-master/camera'
+gs = require 'libraries/hump-master/gamestate'
+sti = require 'libraries/sti'
 
-require 'helper'
-require 'global'
+require 'src/helper'
+require 'src/global'
+
+require 'src/Stages/game'
+
+require 'TitleScreen'
+
 
 function love.load()
-    game = {}
+
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
 
     gameFont = love.graphics.newFont(GAME_FONT_SIZE)
@@ -19,18 +24,9 @@ function love.load()
     world = wf.newWorld(0, 800, false)
     add_col_classes(world)
 
-    gameMap = sti('Maps/Tutorial_map_2.lua')
-
     --TODO: Find a way to put these at the top with the other imports...
     require 'player'
     require 'PauseScreen'
-    require 'TitleScreen'
-
-    walls = {}
-    hazards = {}
-
-    add_col_class_obj(walls, 'Platform', 'Walls',true)
-    add_col_class_obj(hazards, 'Hazards', 'Hazards',true)
 
     gs.switch(TitleScreen)
 end
@@ -46,10 +42,9 @@ end
 function love.draw()
     if gs.current() == TitleScreen then 
         TitleScreen:draw()
-    else -- initiate game
+    else
         cam:attach()
-            gameMap:drawLayer(gameMap.layers["BG"])
-            gameMap:drawLayer(gameMap.layers["FG"])
+            game:draw()
             -- world:draw()
             player:draw()
         cam:detach()
