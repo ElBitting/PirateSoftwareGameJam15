@@ -1,10 +1,13 @@
 PauseScreen = {}
+menuHeight = love.graphics.getHeight() *3/5
+    menuWidth = love.graphics.getWidth() /7
 
 table.insert(PauseScreen, newButton("Resume", function() gs.switch(game) end))
 table.insert(PauseScreen, newButton("Inventory", function() end))
 table.insert(PauseScreen, newButton("Save", function() gs.switch(game) end))
 table.insert(PauseScreen, newButton("Settings", function() end))
-table.insert(PauseScreen, newButton("Exit", function() love.event.quit() end))
+table.insert(PauseScreen, newButton("Title Screen", function() gs.switch(TitleScreen) end))
+table.insert(PauseScreen, newButton("Quit", function() love.event.quit() end))
 
 function PauseScreen: draw()
      screenWidth = love.graphics.getWidth()

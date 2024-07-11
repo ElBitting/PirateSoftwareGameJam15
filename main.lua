@@ -15,9 +15,9 @@ end
 
 function love.load()
     game = {}
-    love.window.setMode(1000, 768)
+    love.window.setMode(1920, 1080)
     gameFont = love.graphics.newFont(100)
-    textFont = love.graphics.newFont(28)
+    textFont = love.graphics.newFont(32)
     cam = camera()
     world = wf.newWorld(0, 800, false)
     world:addCollisionClass('Platform')
@@ -29,7 +29,7 @@ function love.load()
     require 'PauseScreen'
     require 'TitleScreen'
     menuHeight = love.graphics.getHeight() *3/5
-    menuWidth = love.graphics.getWidth() /5
+    menuWidth = love.graphics.getWidth() /7
     gs.switch(TitleScreen)
 end
 
