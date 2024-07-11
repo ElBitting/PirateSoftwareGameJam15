@@ -21,13 +21,15 @@ function player:update(dt)
 	player:setLinearVelocity(0, yNow)
 
     -- Check if grounded
-
     local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform'})
     if #colliders > 0 then
-        player.grounded = true
+        Jump = Timer.after(0.06, function() player.grounded = true end)
     else
+        Timer.cancel(Jump)
         player.grounded = false
     end
+    Timer.update(dt)
+
     -- Reset Moving
     player.ismoving = false
     
@@ -42,6 +44,8 @@ function player:update(dt)
         player:setX(px + player.speed*dt)
         player.dir = 1
     end
+
+
     -- Jumping
     local jumpKeyDown = love.keyboard.isDown('w') or love.keyboard.isDown('space')
     if jumpKeyDown and player.grounded then

@@ -18,13 +18,10 @@ function PauseScreen: draw()
     love.graphics.print('Paused', gameFont, 325,100)
     love.graphics.rectangle("line", GAME_WIDTH-MENU_WIDTH-10, GAME_HEIGHT /9, MENU_WIDTH, MENU_HEIGHT)
     for i, button in ipairs(PauseScreen) do
-        button.last = button.now
         local color = {0.5, 0.7, 0.8, 1}
         local bx, by = GAME_WIDTH-MENU_WIDTH+20, GAME_HEIGHT / 9 + 20 + butt * 50
         local hot = false 
-        
         local mx, my = love.mouse.getPosition()
-        
         if love.mouse.isVisible() then
             if (mx > bx and mx < bx + MENU_WIDTH) and (my >by and my < by +50) then
                 SelectedButton = i
@@ -35,7 +32,6 @@ function PauseScreen: draw()
             color = {0.7, 0.7, 0.9}
             SelectedButton = i
         end
-        button.now = love.mouse.isDown(1)
         selected = love.keyboard.isDown('return') or love.mouse.isDown(1)
         if selected and hot then
             button.fn()

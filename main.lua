@@ -3,6 +3,7 @@ wf = require 'libraries/windfield'
 camera = require 'libraries/hump-master/camera'
 gs = require 'libraries/hump-master/gamestate'
 sti = require 'libraries/sti'
+Timer = require "libraries/hump-master/timer"
 
 require 'src/helper'
 require 'src/global'
