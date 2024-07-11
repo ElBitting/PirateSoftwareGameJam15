@@ -45,7 +45,7 @@ function love.draw()
     else
         cam:attach()
             game:draw()
-            -- world:draw()
+            world:draw()
             player:draw()
         cam:detach()
 
@@ -61,11 +61,15 @@ function love.keypressed(key)
         gs.switch(game)
     end
     if key == 'escape' and gs.current() == TitleScreen then 
-        love.event.quit()
+        safe_quit()
     end
     if key == 'escape' and gs.current() == game then
         gs.switch(PauseScreen)
     elseif key =='escape' and gs.current() == PauseScreen then
-        love.event.quit()
+        safe_quit()
+    end
+    if key == 'p' and gs.current() == game then
+        player:setX(20)
+        player:setY(20)
     end
 end

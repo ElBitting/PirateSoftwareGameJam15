@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 6,
-  nextobjectid = 23,
+  nextlayerid = 8,
+  nextobjectid = 26,
   properties = {},
   tilesets = {
     {
@@ -315,7 +315,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 5,
-      name = "TeleDoor1",
+      name = "TeleDoor",
       class = "",
       visible = true,
       opacity = 1,
@@ -332,6 +332,35 @@ return {
           shape = "rectangle",
           x = 480,
           y = 496,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "FinalDoor",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 24,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 16,
+          y = 192,
           width = 16,
           height = 16,
           rotation = 0,

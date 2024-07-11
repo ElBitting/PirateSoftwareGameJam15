@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="23">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="26">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -35,7 +35,10 @@
  <objectgroup id="4" name="Hazards">
   <object id="19" x="64" y="502.5" width="381.75" height="9.5"/>
  </objectgroup>
- <objectgroup id="5" name="TeleDoor1">
+ <objectgroup id="5" name="TeleDoor">
   <object id="22" x="480" y="496" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup id="7" name="FinalDoor">
+  <object id="24" x="16" y="192" width="16" height="16"/>
  </objectgroup>
 </map>

@@ -1,3 +1,4 @@
+
 player = world:newCircleCollider(20, 505, 7)
 player:setCollisionClass("Player")
 
@@ -50,11 +51,22 @@ function player:update(dt)
             player:applyLinearImpulse(0,-85)
         end
 
+        
+        --------------------- Collision Logic
         --Check if standing on spikes
         if player:enter('Hazards') then
             player:setX(20)
             player:setY(505)
             -- player = world:newCircleCollider(20, 505, 7)
+        end
+        if player:enter('TeleDoor') then
+            player:setX(487)
+            player:setY(200)
+        end
+        if player:enter('FinalDoor') then
+            player:setX(20)
+            player:setY(505)
+            gs.switch(TitleScreen)
         end
     end
 

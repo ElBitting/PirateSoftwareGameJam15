@@ -3,7 +3,8 @@ function add_col_classes(world)
     
     world:addCollisionClass('Platform')
     world:addCollisionClass('Hazards')
-    world:addCollisionClass('TeleDoor1')
+    world:addCollisionClass('TeleDoor')
+    world:addCollisionClass('FinalDoor')
 end
 
 function newButton(text, fn)
@@ -26,4 +27,9 @@ function add_col_class_obj(list, collision_class, layer_name, static_flag)
             table.insert(list, col)
         end
     end
+end
+
+function safe_quit()
+    world:destroy()
+    love.event.quit()
 end

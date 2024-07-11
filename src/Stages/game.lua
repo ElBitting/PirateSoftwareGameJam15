@@ -6,9 +6,14 @@ function game:enter()
 
     walls = {}
     hazards = {}
+    door = {}
+    exit = {}
 
     add_col_class_obj(walls, 'Platform', 'Walls',true)
     add_col_class_obj(hazards, 'Hazards', 'Hazards',true)
+    add_col_class_obj(door, 'TeleDoor','TeleDoor', true)
+    add_col_class_obj(exit, 'FinalDoor','FinalDoor', true)
+
 end
 
 function game:draw()
