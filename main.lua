@@ -11,13 +11,26 @@ function love.load()
     world = wf.newWorld(0, 800, false)
     world:addCollisionClass('Platform')
     world:addCollisionClass('Player')
-    ground = world:newRectangleCollider(200, 400, 400, 50)
-    ground:setCollisionClass('Platform')
-    ground:setType('static') 
+    -- ground = world:newRectangleCollider(200, 400, 400, 50)
+    -- ground:setCollisionClass('Platform')
+    -- ground:setType('static') 
+
+    sti = require 'library/sti'
+    gameMap = sti('Maps/Tutorial_map_2.lua')
+
     require 'player'
     require 'PauseScreen'
     menuHeight = love.graphics.getHeight() *3/5
     menuWidth = love.graphics.getWidth() /5
+
+    walls = {}
+    if gameMap.layers['Walls'] then
+        for i, obj in pairs(gameMap.layers["Walls"].objects) do
+            local wall = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
+            wall:setType('static')
+            table.insert(walls, wall)
+        end
+    end
 end
 
 function love.update(dt)
@@ -29,9 +42,13 @@ function love.update(dt)
 end
 
 function love.draw()
+    
     cam:attach()
+        gameMap:drawLayer(gameMap.layers["BG"])
+        gameMap:drawLayer(gameMap.layers["FG"])
+        gameMap:resize(1000,1000)
         world:draw()
-        player:draw()
+        player:draw()    
     cam:detach()
     PauseScreen:draw()
     

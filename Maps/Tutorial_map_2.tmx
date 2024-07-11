@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="19">
+ <editorsettings>
+  <export target="Tutorial_map_2.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="16x16 dungeon tiles" tilewidth="16" tileheight="16" tilecount="208" columns="16">
+  <image source="../Tileset/16x16 dungeon tiles.png" width="256" height="208"/>
+ </tileset>
+ <layer id="1" name="BG" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKGL8f2TrsdQcNVUVVXV1w/9AGAB
+  </data>
+ </layer>
+ <layer id="2" name="FG" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlkEKwjAQRQctuBXtIiButLrv9dQTqCdQD+sEDB1CJs1IxhTMh7fqn3ltoSUANVPMsoCzL+yfIXOkKeRfIWukDfh/cT8afsncP/pPyBm5KPgNM0edV+SG3DP7TcRPnQ/kibwYP91jRpzu/2EgPOeuU6f75i3Hj/8Aw3/AeNA+R+pcQ545RBvYE+tL52xvh+wZusCeWF8610Fa6B5JN6Wf6pf2c/q/SUl3TU2OLDzGOjX53sPU9miFnoVcNO+5B/78pe12+7nzl722VWbjOd8TXCSL
+  </data>
+ </layer>
+ <objectgroup id="3" name="Walls">
+  <object id="3" x="192" y="208" width="160" height="48"/>
+  <object id="4" x="0" y="208" width="128" height="48"/>
+  <object id="5" x="48" y="80" width="48" height="128"/>
+  <object id="6" x="416" y="208" width="96" height="48"/>
+  <object id="8" x="64" y="480" width="16" height="16"/>
+  <object id="10" x="80" y="464" width="16" height="16"/>
+  <object id="11" x="96" y="432" width="16" height="16"/>
+  <object id="12" x="112" y="384" width="64" height="16"/>
+  <object id="13" x="256" y="384" width="48" height="16"/>
+  <object id="14" x="320" y="416" width="16" height="16"/>
+  <object id="15" x="384" y="432" width="16" height="16"/>
+  <object id="16" x="448" y="480" width="16" height="16"/>
+  <object id="17" x="48" y="496" width="16" height="16"/>
+  <object id="18" x="0" y="512" width="512" height="16"/>
+ </objectgroup>
+</map>
