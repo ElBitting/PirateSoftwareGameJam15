@@ -11,7 +11,7 @@ player.ismoving = False
 player.dir = 1
 player.grounded = 'Ugggga'
 colliderWidth = 20
-colliderHeight = 18
+colliderHeight = 20
 
 function player:update(dt)
     -- Reset Horizontal velocity
@@ -20,7 +20,7 @@ function player:update(dt)
 
     -- Check if grounded
     if player.body then
-        local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+3, colliderWidth, colliderHeight, {'Platform'})
+        local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+5, colliderWidth, colliderHeight, {'Platform'})
         if #colliders > 0 then
             player.grounded = 'True'
         else
@@ -49,7 +49,6 @@ function player:update(dt)
             player:applyLinearImpulse(0,-700)
         end
     end
-        
 
     --States For Animations (once we have them)
     local Currentrunning = player.ismoving and player.grounded
