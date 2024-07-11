@@ -9,11 +9,10 @@ require 'src/global'
 
 require 'src/Stages/game'
 
-require 'src/TitleScreen'
+require 'src/Menus/TitleScreen'
 
 
 function love.load()
-
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
 
     gameFont = love.graphics.newFont(GAME_FONT_SIZE)
@@ -26,9 +25,10 @@ function love.load()
 
     --TODO: Find a way to put these at the top with the other imports...
     require 'src/player'
-    require 'src/PauseScreen'
+    require 'src/Menus/PauseScreen'
 
     gs.switch(TitleScreen)
+    love.mouse.setVisible(false)
 end
 
 function love.update(dt)
@@ -36,6 +36,7 @@ function love.update(dt)
         PauseScreen:update(dt)
     end
     if gs.current() == game then
+        love.mouse.setVisible(false)
         player:update(dt)
         world:update(dt)
         cam:lookAt(player:getPosition())
@@ -44,7 +45,7 @@ end
 
 function love.draw()
     if gs.current() == TitleScreen then 
-        TitleScreen:draw()
+        TitleScreen:draw() 
     else
         cam:attach()
             game:draw()
@@ -57,7 +58,6 @@ function love.draw()
             PauseScreen:draw()
         end
     end    
-        love.graphics.print(SelectedButton, textFont, 10, 10)
 end
 
 function love.keypressed(key)
@@ -78,8 +78,14 @@ function love.keypressed(key)
     end
     if key == 's' and gs.current() == PauseScreen then 
         SelectedButton = SelectedButton + 1
+        love.mouse.setVisible(false)
     end
     if key == 'w' and gs.current() == PauseScreen then 
         SelectedButton = SelectedButton - 1
+        love.mouse.setVisible(false)
     end
+end
+
+function love.mousemoved(x,y,dx,dy, istouch)
+    love.mouse.setVisible(true)
 end

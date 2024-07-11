@@ -27,11 +27,12 @@ function PauseScreen: draw()
         
         local mx, my = love.mouse.getPosition()
         
-        if mx > bx and mx < bx + MENU_WIDTH then
-            hot = (mx > bx and mx < bx + MENU_WIDTH) and (my >by and my < by +50)
-        else 
-            hot = SelectedButton == i
+        if love.mouse.isVisible() then
+            if (mx > bx and mx < bx + MENU_WIDTH) and (my >by and my < by +50) then
+                SelectedButton = i
+            end 
         end
+        hot = SelectedButton == i
         if hot then
             color = {0.7, 0.7, 0.9}
             SelectedButton = i
@@ -46,7 +47,6 @@ function PauseScreen: draw()
         butt = butt +1
     end
     love.graphics.setColor(1,1,1)
-    love.graphics.print(mx, textFont, 10, 70)
 end
 
 function PauseScreen: update(dt)

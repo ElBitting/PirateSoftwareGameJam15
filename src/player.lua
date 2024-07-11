@@ -13,7 +13,7 @@ player.dir = 1
 player.grounded = true
 local colliderWidth = 2
 local colliderHeight = 3
-offsetCollionPlayerFeet = 6
+local offsetCollionPlayerFeet = 6
 
 function player:update(dt)
     -- Reset Horizontal velocity
@@ -21,53 +21,52 @@ function player:update(dt)
 	player:setLinearVelocity(0, yNow)
 
     -- Check if grounded
-    if player.body then
-        local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform'})
-        if #colliders > 0 then
-            player.grounded = true
-        else
-            player.grounded = false
-        end
-        -- Reset Moving
-        player.ismoving = false
-        
-        local px, py = player:getPosition()
-        --Basic Movement
-        if love.keyboard.isDown('a') then
-            player.ismoving = True
-            player:setX(px - player.speed*dt)
-            player.dir = -1
-        elseif love.keyboard.isDown('d') then
-            player.ismoving = True
-            player:setX(px + player.speed*dt)
-            player.dir = 1
-        end
-        -- Jumping
-        local jumpKeyDown = love.keyboard.isDown('w') or love.keyboard.isDown('space')
-        if jumpKeyDown and player.grounded then
-            --honestly no idea why this line fixes a bug, but it does
-            player:setLinearVelocity(0, 0)
-            -- jump impulse
-            player:applyLinearImpulse(0,-85)
-        end
 
-        
-        --------------------- Collision Logic
-        --Check if standing on spikes
-        if player:enter('Hazards') then
-            player:setX(20)
-            player:setY(505)
-            -- player = world:newCircleCollider(20, 505, 7)
-        end
-        if player:enter('TeleDoor') then
-            player:setX(487)
-            player:setY(200)
-        end
-        if player:enter('FinalDoor') then
-            player:setX(20)
-            player:setY(505)
-            gs.switch(TitleScreen)
-        end
+    local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform'})
+    if #colliders > 0 then
+        player.grounded = true
+    else
+        player.grounded = false
+    end
+    -- Reset Moving
+    player.ismoving = false
+    
+    local px, py = player:getPosition()
+    --Basic Movement
+    if love.keyboard.isDown('a') then
+        player.ismoving = True
+        player:setX(px - player.speed*dt)
+        player.dir = -1
+    elseif love.keyboard.isDown('d') then
+        player.ismoving = True
+        player:setX(px + player.speed*dt)
+        player.dir = 1
+    end
+    -- Jumping
+    local jumpKeyDown = love.keyboard.isDown('w') or love.keyboard.isDown('space')
+    if jumpKeyDown and player.grounded then
+        --honestly no idea why this line fixes a bug, but it does
+        player:setLinearVelocity(0, 0)
+        -- jump impulse
+        player:applyLinearImpulse(0,-85)
+    end
+
+    
+    --------------------- Collision Logic
+    --Check if standing on spikes
+    if player:enter('Hazards') then
+        player:setX(20)
+        player:setY(505)
+        -- player = world:newCircleCollider(20, 505, 7)
+    end
+    if player:enter('TeleDoor') then
+        player:setX(487)
+        player:setY(200)
+    end
+    if player:enter('FinalDoor') then
+        player:setX(20)
+        player:setY(505)
+        gs.switch(TitleScreen)
     end
 
     --States For Animations (once we have them)
