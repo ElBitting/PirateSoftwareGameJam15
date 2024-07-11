@@ -9,7 +9,7 @@ require 'src/global'
 
 require 'src/Stages/game'
 
-require 'TitleScreen'
+require 'src/TitleScreen'
 
 
 function love.load()
@@ -25,8 +25,8 @@ function love.load()
     add_col_classes(world)
 
     --TODO: Find a way to put these at the top with the other imports...
-    require 'player'
-    require 'PauseScreen'
+    require 'src/player'
+    require 'src/PauseScreen'
 
     gs.switch(TitleScreen)
 end
