@@ -17,6 +17,7 @@ function love.load()
 
     gameFont = love.graphics.newFont(GAME_FONT_SIZE)
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)
+    SelectedButton = 1
 
     cam = camera(0,0,CAMERA_ZOOM)
 
@@ -34,8 +35,7 @@ end
 function love.update(dt)
     if gs.current() == PauseScreen then 
         PauseScreen:update(dt)
-    end
-    if gs.current() == game then
+    elseif gs.current() == game then
         love.mouse.setVisible(false)
         player:update(dt)
         world:update(dt)
@@ -61,30 +61,15 @@ function love.draw()
 end
 
 function love.keypressed(key)
-    if key == 'return' and gs.current() == TitleScreen then
-        gs.switch(game)
-    end
-    if key == 'escape' and gs.current() == TitleScreen then 
-        safe_quit()
-    end
-    if key == 'escape' and gs.current() == game then
-        gs.switch(PauseScreen)
-    elseif key =='escape' and gs.current() == PauseScreen then
-        safe_quit()
-    end
-    if key == 'p' and gs.current() == game then
-        player:setX(20)
-        player:setY(20)
-    end
-    if key == 's' and gs.current() == PauseScreen then 
-        SelectedButton = SelectedButton + 1
-        love.mouse.setVisible(false)
-    end
-    if key == 'w' and gs.current() == PauseScreen then 
-        SelectedButton = SelectedButton - 1
-        love.mouse.setVisible(false)
+    if gs.current() == TitleScreen then 
+        TitleScreen:keypressed(key)
+    elseif gs.current() == PauseScreen then 
+        PauseScreen:keypressed(key)
+    else 
+        game:keypressed(key)
     end
 end
+
 
 function love.mousemoved(x,y,dx,dy, istouch)
     love.mouse.setVisible(true)

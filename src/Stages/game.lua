@@ -21,3 +21,13 @@ function game:draw()
     gameMap:drawLayer(gameMap.layers['BG'])
     gameMap:drawLayer(gameMap.layers['FG'])
 end
+
+function game:keypressed(key)
+    if key == 'escape' then
+        gs.switch(PauseScreen)
+    end
+    if key == 'p' then
+        player:setX(20)
+        player:setY(20)
+    end
+end

@@ -2,20 +2,18 @@ PauseScreen = {}
 
 table.insert(PauseScreen, newButton("Resume", function() 
     gs.switch(game) 
-    SelectedButton = 1
 end))
 table.insert(PauseScreen, newButton("Inventory", function() end))
 table.insert(PauseScreen, newButton("Save", function() gs.switch(game) end))
 table.insert(PauseScreen, newButton("Settings", function() end))
 table.insert(PauseScreen, newButton("Title Screen", function() 
     gs.switch(TitleScreen)
-    SelectedButton = 1 
+
 end))
 table.insert(PauseScreen, newButton("Quit", function() safe_quit() end))
-SelectedButton = 1
+
 
 function PauseScreen: draw()
-
     butt = 0
     love.graphics.print('Paused', gameFont, 325,100)
     love.graphics.rectangle("line", GAME_WIDTH-MENU_WIDTH-10, GAME_HEIGHT /9, MENU_WIDTH, MENU_HEIGHT)
@@ -51,9 +49,27 @@ end
 
 function PauseScreen: update(dt)
     if SelectedButton > #PauseScreen then
-        SelectedButton = #PauseScreen
+        SelectedButton = 1
     end
     if SelectedButton < 1 then 
-        SelectedButton = 1
+        SelectedButton = #PauseScreen
+    end
+end
+
+function PauseScreen:enter(previous)
+    SelectedButton = 1 
+end
+
+function PauseScreen: keypressed(key)
+    if key == 's' then 
+        SelectedButton = SelectedButton + 1
+        love.mouse.setVisible(false)
+    end
+    if key == 'w' then 
+        SelectedButton = SelectedButton - 1
+        love.mouse.setVisible(false)
+    end
+    if key =='escape' then
+        safe_quit()
     end
 end
