@@ -66,7 +66,7 @@ function player:update(dt)
     if player:enter('FinalDoor') then
         player:setX(20)
         player:setY(505)
-        gs.switch(TitleScreen)
+        gs.switch(Credits)
     end
 
     --States For Animations (once we have them)

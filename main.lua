@@ -10,6 +10,7 @@ require 'src/global'
 require 'src/Stages/game'
 
 require 'src/Menus/TitleScreen'
+require 'src/Menus/Credits'
 
 
 function love.load()
@@ -45,7 +46,9 @@ end
 
 function love.draw()
     if gs.current() == TitleScreen then 
-        TitleScreen:draw() 
+        TitleScreen:draw()
+    elseif gs.current() == Credits then
+        Credits:draw()
     else
         cam:attach()
             game:draw()
@@ -65,6 +68,8 @@ function love.keypressed(key)
         TitleScreen:keypressed(key)
     elseif gs.current() == PauseScreen then 
         PauseScreen:keypressed(key)
+    elseif gs.current() == Credits then
+        Credits:keypressed(key)
     else 
         game:keypressed(key)
     end
