@@ -1,25 +1,26 @@
 game = {}
 
 function game:enter()
+    gs.switch(tutorial)
+end
 
-    gameMap = sti('Art/Graphics/Maps/Tutorial_map_2.lua')
-
-    walls = {}
-    hazards = {}
-    door = {}
-    exit = {}
-
-    add_col_class_obj(walls, 'Platform', 'Walls',true)
-    add_col_class_obj(hazards, 'Hazards', 'Hazards',true)
-    add_col_class_obj(door, 'TeleDoor','TeleDoor', true)
-    add_col_class_obj(exit, 'FinalDoor','FinalDoor', true)
-
+function game:update(dt)
+    player:update(dt)
+    world:update(dt)
+    cam:lookAt(player:getPosition())
 end
 
 function game:draw()
-    -- Logic for level select may go here... maybe not tho
-    gameMap:drawLayer(gameMap.layers['BG'])
-    gameMap:drawLayer(gameMap.layers['FG'])
+    cam:attach()
+        tutorial:draw()
+        -- world:draw()
+        player:draw()
+    cam:detach()
+
+    -- Initiate Pause Sequence
+    if gs.current() == PauseScreen then
+        PauseScreen:draw()
+    end
 end
 
 function game:keypressed(key)

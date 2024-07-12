@@ -9,6 +9,7 @@ require 'src/helper'
 require 'src/global'
 
 require 'src/Stages/game'
+require 'src/Stages/tutorial'
 
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
@@ -37,11 +38,9 @@ end
 function love.update(dt)
     if gs.current() == PauseScreen then 
         PauseScreen:update(dt)
-    elseif gs.current() == game then
+    elseif gs.current() ~= TitleScreen and gs.current() ~= Credits then
         love.mouse.setVisible(false)
-        player:update(dt)
-        world:update(dt)
-        cam:lookAt(player:getPosition())
+        game:update(dt)
     end
 end
 
@@ -51,16 +50,7 @@ function love.draw()
     elseif gs.current() == Credits then
         Credits:draw()
     else
-        cam:attach()
-            game:draw()
-            world:draw()
-            player:draw()
-        cam:detach()
-
-        -- Initiate Pause Sequence
-        if gs.current() == PauseScreen then
-            PauseScreen:draw()
-        end
+        game:draw()
     end    
 end
 
