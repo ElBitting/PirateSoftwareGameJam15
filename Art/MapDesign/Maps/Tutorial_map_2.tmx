@@ -6,14 +6,17 @@
  <tileset firstgid="1" name="16x16 dungeon tiles" tilewidth="16" tileheight="16" tilecount="208" columns="16">
   <image source="../Tileset/16x16 dungeon tiles.png" width="256" height="208"/>
  </tileset>
+ <tileset firstgid="209" name="Wall_Base" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="../../Sprites/Wall_Base.png" width="16" height="16"/>
+ </tileset>
  <layer id="1" name="BG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMBKGL8f2TrsdQcNVUVVXV1w/9AGAB
+   eJztwwEJAAAMBKHr3+4brcdQcNVUVVXV1w8gWEQu
   </data>
  </layer>
  <layer id="2" name="FG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlkEKwjAQRQctuBXtIiButLrv9dQTqCdQD+sEDB1CJs1IxhTMh7fqn3ltoSUANVPMsoCzL+yfIXOkKeRfIWukDfh/cT8afsncP/pPyBm5KPgNM0edV+SG3DP7TcRPnQ/kibwYP91jRpzu/2EgPOeuU6f75i3Hj/8Aw3/AeNA+R+pcQ545RBvYE+tL52xvh+wZusCeWF8610Fa6B5JN6Wf6pf2c/q/SUl3TU2OLDzGOjX53sPU9miFnoVcNO+5B/78pe12+7nzl722VWbjOd8TXCSL
+   eJztlsEKwjAMhoMOvIruJh6q0/teT30C9QnUhzWFlYWQdg20dmB/+E5N8nVjKwWomWPWBZx9Yf8CWSJNIf8G2SKt4P/FfnL4NX3/6L8gV+SW2G8GpD7qvCMP5OnxG+I3EB/q533U+ULeyCfg983hceeHAbnPrVOn++ct58F/gvEcMAxa7yO2ryHPLNEKc0L12j5bd0COHjphTqhe29fBdPgcbb3mm42ZqfWXSGl/TU2KrBhTNTXp3sPc5uQKvQu55NxzD/77V263m++7f9m1fWZ2zPkF+IcnlA==
   </data>
  </layer>
  <objectgroup id="3" name="Walls">

@@ -41,6 +41,35 @@ return {
       wangsets = {},
       tilecount = 208,
       tiles = {}
+    },
+    {
+      name = "Wall_Base",
+      firstgid = 209,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 1,
+      image = "../../Sprites/Wall_Base.png",
+      imagewidth = 16,
+      imageheight = 16,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 1,
+      tiles = {}
     }
   },
   layers = {
@@ -62,7 +91,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztwwEJAAAMBKGL8f2TrsdQcNVUVVXV1w/9AGAB"
+      data = "eJztwwEJAAAMBKHr3+4brcdQcNVUVVXV1w8gWEQu"
     },
     {
       type = "tilelayer",
@@ -82,7 +111,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztlkEKwjAQRQctuBXtIiButLrv9dQTqCdQD+sEDB1CJs1IxhTMh7fqn3ltoSUANVPMsoCzL+yfIXOkKeRfIWukDfh/cT8afsncP/pPyBm5KPgNM0edV+SG3DP7TcRPnQ/kibwYP91jRpzu/2EgPOeuU6f75i3Hj/8Aw3/AeNA+R+pcQ545RBvYE+tL52xvh+wZusCeWF8610Fa6B5JN6Wf6pf2c/q/SUl3TU2OLDzGOjX53sPU9miFnoVcNO+5B/78pe12+7nzl722VWbjOd8TXCSL"
+      data = "eJztlsEKwjAMhoMOvIruJh6q0/teT30C9QnUhzWFlYWQdg20dmB/+E5N8nVjKwWomWPWBZx9Yf8CWSJNIf8G2SKt4P/FfnL4NX3/6L8gV+SW2G8GpD7qvCMP5OnxG+I3EB/q533U+ULeyCfg983hceeHAbnPrVOn++ct58F/gvEcMAxa7yO2ryHPLNEKc0L12j5bd0COHjphTqhe29fBdPgcbb3mm42ZqfWXSGl/TU2KrBhTNTXp3sPc5uQKvQu55NxzD/77V263m++7f9m1fWZ2zPkF+IcnlA=="
     },
     {
       type = "objectgroup",
