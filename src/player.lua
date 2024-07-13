@@ -1,6 +1,7 @@
 
-player = world:newCircleCollider(20, 505, 4)
+player = world:newBSGRectangleCollider(20, 505, 8,13, 2)
 player:setCollisionClass("Player")
+player:setFixedRotation(true)
 
 image = love.graphics.newImage('Sprites/character/oldHero.png')
 Playergrid = anim8.newGrid(16,16, image: getWidth(), image:getHeight())
@@ -13,7 +14,7 @@ player.dir = 1
 player.grounded = true
 local colliderWidth = 2
 local colliderHeight = 3
-local offsetCollionPlayerFeet = 2
+local offsetCollionPlayerFeet = 5
 
 function player:update(dt)
     -- Reset Horizontal velocity
@@ -54,7 +55,7 @@ function player:update(dt)
         --honestly no idea why this line fixes a bug, but it does
         player:setLinearVelocity(0, 0)
         -- jump impulse
-        player:applyLinearImpulse(0,-30)
+        player:applyLinearImpulse(0,-55)
     end
 
     
@@ -96,7 +97,7 @@ function player:draw()
         sx = -sx
     end
 
-    player.anim:draw(image, px, py-3, nil, sx, sy,7, 9)
+    player.anim:draw(image, px, py, nil, sx, sy,7, 10)
     -- show grounded detection
-    love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
+    -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
 end
