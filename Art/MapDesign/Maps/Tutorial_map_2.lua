@@ -213,7 +213,7 @@ return {
           x = 96,
           y = 432,
           width = 16,
-          height = 16,
+          height = 9.5,
           rotation = 0,
           visible = true,
           properties = {}
@@ -226,7 +226,7 @@ return {
           x = 112,
           y = 384,
           width = 64,
-          height = 16,
+          height = 8.54545,
           rotation = 0,
           visible = true,
           properties = {}
@@ -239,7 +239,7 @@ return {
           x = 256,
           y = 384,
           width = 48,
-          height = 16,
+          height = 8.72727,
           rotation = 0,
           visible = true,
           properties = {}
@@ -252,7 +252,7 @@ return {
           x = 320,
           y = 416,
           width = 16,
-          height = 16,
+          height = 8.72727,
           rotation = 0,
           visible = true,
           properties = {}
@@ -265,7 +265,7 @@ return {
           x = 384,
           y = 432,
           width = 16,
-          height = 16,
+          height = 9.09091,
           rotation = 0,
           visible = true,
           properties = {}
@@ -278,7 +278,7 @@ return {
           x = 448,
           y = 480,
           width = 16,
-          height = 16,
+          height = 8.90909,
           rotation = 0,
           visible = true,
           properties = {}
@@ -360,9 +360,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 480,
-          y = 496,
+          y = 507.636,
           width = 16,
-          height = 16,
+          height = 4.36364,
           rotation = 0,
           visible = true,
           properties = {}
@@ -389,9 +389,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 16,
-          y = 192,
+          y = 201.5,
           width = 16,
-          height = 16,
+          height = 6.5,
           rotation = 0,
           visible = true,
           properties = {}

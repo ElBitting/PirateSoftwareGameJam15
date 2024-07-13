@@ -26,12 +26,12 @@
   <object id="6" x="416" y="208" width="96" height="48"/>
   <object id="8" x="64" y="480" width="16" height="16"/>
   <object id="10" x="80" y="464" width="16" height="16"/>
-  <object id="11" x="96" y="432" width="16" height="16"/>
-  <object id="12" x="112" y="384" width="64" height="16"/>
-  <object id="13" x="256" y="384" width="48" height="16"/>
-  <object id="14" x="320" y="416" width="16" height="16"/>
-  <object id="15" x="384" y="432" width="16" height="16"/>
-  <object id="16" x="448" y="480" width="16" height="16"/>
+  <object id="11" x="96" y="432" width="16" height="9.5"/>
+  <object id="12" x="112" y="384" width="64" height="8.54545"/>
+  <object id="13" x="256" y="384" width="48" height="8.72727"/>
+  <object id="14" x="320" y="416" width="16" height="8.72727"/>
+  <object id="15" x="384" y="432" width="16" height="9.09091"/>
+  <object id="16" x="448" y="480" width="16" height="8.90909"/>
   <object id="17" x="48" y="496" width="16" height="16"/>
   <object id="18" x="0" y="512" width="512" height="16"/>
  </objectgroup>
@@ -39,9 +39,9 @@
   <object id="19" x="64" y="502.5" width="381.75" height="9.5"/>
  </objectgroup>
  <objectgroup id="5" name="TeleDoor">
-  <object id="22" x="480" y="496" width="16" height="16"/>
+  <object id="22" x="480" y="507.636" width="16" height="4.36364"/>
  </objectgroup>
  <objectgroup id="7" name="FinalDoor">
-  <object id="24" x="16" y="192" width="16" height="16"/>
+  <object id="24" x="16" y="201.5" width="16" height="6.5"/>
  </objectgroup>
 </map>
