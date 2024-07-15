@@ -33,6 +33,8 @@ function player:update(dt)
     end
     Timer.update(dt)
 
+
+
     -- Reset Moving
     player.ismoving = false
     
@@ -48,9 +50,23 @@ function player:update(dt)
         player.dir = 1
     end
 
+    -- local ladder = world:queryRectangleArea(player:getX()-6, player:getY(), 12,5, {'Ladders'})
+    -- if #ladder > 0 and love.keyboard.isDown('w') then 
+    --     player:setY(py - player.speed*dt)
+    -- end
+    if player:enter('Ladders') then 
+        if love.keyboard.isDown('w') then
+            player:setY(py-2*player.speed*dt)
+        end
+        player:setType('static')
+    else 
+        player:setType('dynamic')
+    end
+    
+
 
     -- Jumping
-    local jumpKeyDown = love.keyboard.isDown('w') or love.keyboard.isDown('space')
+    local jumpKeyDown = love.keyboard.isDown('space')
     if jumpKeyDown and player.grounded then
         --honestly no idea why this line fixes a bug, but it does
         player:setLinearVelocity(0, 0)
@@ -100,4 +116,5 @@ function player:draw()
     player.anim:draw(image, px, py, nil, sx, sy,7, 10)
     -- show grounded detection
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
+    love.graphics.rectangle('line', px-(6), py,12, 2)
 end
