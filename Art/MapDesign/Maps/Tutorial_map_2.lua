@@ -43,17 +43,17 @@ return {
       tiles = {}
     },
     {
-      name = "Wall_Base",
+      name = "Tileset",
       firstgid = 209,
       class = "",
       tilewidth = 16,
       tileheight = 16,
       spacing = 0,
       margin = 0,
-      columns = 1,
-      image = "../../Sprites/Wall_Base.png",
-      imagewidth = 16,
-      imageheight = 16,
+      columns = 6,
+      image = "../../Sprites/Tileset.png",
+      imagewidth = 100,
+      imageheight = 100,
       objectalignment = "unspecified",
       tilerendersize = "tile",
       fillmode = "stretch",
@@ -68,65 +68,7 @@ return {
       },
       properties = {},
       wangsets = {},
-      tilecount = 1,
-      tiles = {}
-    },
-    {
-      name = "Bg_1",
-      firstgid = 210,
-      class = "",
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 0,
-      margin = 0,
-      columns = 3,
-      image = "../../Sprites/Testing/Bg_1.png",
-      imagewidth = 48,
-      imageheight = 48,
-      objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 9,
-      tiles = {}
-    },
-    {
-      name = "Bg_moss",
-      firstgid = 219,
-      class = "",
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 0,
-      margin = 0,
-      columns = 3,
-      image = "../../Sprites/Testing/Bg_moss.png",
-      imagewidth = 48,
-      imageheight = 48,
-      objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      wangsets = {},
-      tilecount = 9,
+      tilecount = 36,
       tiles = {}
     }
   },
@@ -149,7 +91,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0cEJACAMBMHrv7sIguXYhQk4j3nvYytJAcBjq7m/m/tnwAMA4C8XiVhEOg=="
+      data = "eJztwwEJAAAMBKHr3+4brcdQcNVUVVXV1w8gWEQu"
     },
     {
       type = "tilelayer",
@@ -169,7 +111,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztlksKwjAQhtOVW12Li+y76fXUE6gnUC8l4rO1VryIU8jAECaPhqat0B8+usjMfGkpIUKMGWKSDl0zRdaTH/eQAwXwIv60Q38JvIFK+VPin3bkv7bs9+3j/CFzQv3C4MdnLP8SWAFriz8J8EsF10edG2AL7Dz8MtCv91HnHjgAR4PfNkcPnh9S8H24Tp0F4UzAc0Bq5FoPh29fXXdR78xxY+aUlnqk8ujDc+YOPAw8mTkfSz3y9ex7Cnf0OU3rm/yzPjN9a08OYqZvvxj9vftd+/qHTDRcNWPa+w5DmxMr9C6EibnnTJjvX7HdON90/6rXFpGZa84fakyUhA=="
+      data = "eJztlsEKgkAQhtdT1zpHB+9efL3qCaonqJ7Ku3ooKZXeoRF2YBh2dtVcNfCHD8F15hsXkVVqyRwTjOjaaOKJ/DhDCmRATvzRiP4H8AQK7Y+If/2n/rZ1Jn+fPn39SvDj1Zd/DxyAo8Uf9PCHGlMddZ6AM3Bp4Q97+nkddV6BG3AX/LY+PPj/CJW5DtepM7OQs14NqaOma13zvi+Bt6EP7pGNomOdzZ+wPiVQaT4Eeq82+EtWQ5+vBGrtpzO4wr1dvllTEgGX/9dIXpcfZ/Dtb8uYmdK9ZPisGK5nlgy3D3Pr4yv0LITxOXOs5POXbzf2l85fzdrOM1vm/ALpApxh"
     },
     {
       type = "objectgroup",
@@ -394,7 +336,7 @@ return {
           x = 0,
           y = 208,
           width = 128,
-          height = 48,
+          height = 64,
           rotation = 0,
           visible = true,
           properties = {}

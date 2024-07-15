@@ -6,23 +6,17 @@
  <tileset firstgid="1" name="16x16 dungeon tiles" tilewidth="16" tileheight="16" tilecount="208" columns="16">
   <image source="../Tileset/16x16 dungeon tiles.png" width="256" height="208"/>
  </tileset>
- <tileset firstgid="209" name="Wall_Base" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="../../Sprites/Wall_Base.png" width="16" height="16"/>
- </tileset>
- <tileset firstgid="210" name="Bg_1" tilewidth="16" tileheight="16" tilecount="9" columns="3">
-  <image source="../../Sprites/Testing/Bg_1.png" width="48" height="48"/>
- </tileset>
- <tileset firstgid="219" name="Bg_moss" tilewidth="16" tileheight="16" tilecount="9" columns="3">
-  <image source="../../Sprites/Testing/Bg_moss.png" width="48" height="48"/>
+ <tileset firstgid="209" name="Tileset" tilewidth="16" tileheight="16" tilecount="36" columns="6">
+  <image source="../../Sprites/Tileset.png" width="100" height="100"/>
  </tileset>
  <layer id="1" name="BG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJzt0cEJACAMBMHrv7sIguXYhQk4j3nvYytJAcBjq7m/m/tnwAMA4C8XiVhEOg==
+   eJztwwEJAAAMBKHr3+4brcdQcNVUVVXV1w8gWEQu
   </data>
  </layer>
  <layer id="2" name="FG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlksKwjAQhtOVW12Li+y76fXUE6gnUC8l4rO1VryIU8jAECaPhqat0B8+usjMfGkpIUKMGWKSDl0zRdaTH/eQAwXwIv60Q38JvIFK+VPin3bkv7bs9+3j/CFzQv3C4MdnLP8SWAFriz8J8EsF10edG2AL7Dz8MtCv91HnHjgAR4PfNkcPnh9S8H24Tp0F4UzAc0Bq5FoPh29fXXdR78xxY+aUlnqk8ujDc+YOPAw8mTkfSz3y9ex7Cnf0OU3rm/yzPjN9a08OYqZvvxj9vftd+/qHTDRcNWPa+w5DmxMr9C6EibnnTJjvX7HdON90/6rXFpGZa84fakyUhA==
+   eJztlsEKgkAQhtdT1zpHB+9efL3qCaonqJ7Ku3ooKZXeoRF2YBh2dtVcNfCHD8F15hsXkVVqyRwTjOjaaOKJ/DhDCmRATvzRiP4H8AQK7Y+If/2n/rZ1Jn+fPn39SvDj1Zd/DxyAo8Uf9PCHGlMddZ6AM3Bp4Q97+nkddV6BG3AX/LY+PPj/CJW5DtepM7OQs14NqaOma13zvi+Bt6EP7pGNomOdzZ+wPiVQaT4Eeq82+EtWQ5+vBGrtpzO4wr1dvllTEgGX/9dIXpcfZ/Dtb8uYmdK9ZPisGK5nlgy3D3Pr4yv0LITxOXOs5POXbzf2l85fzdrOM1vm/ALpApxh
   </data>
  </layer>
  <objectgroup id="8" name="Ladders">
@@ -43,7 +37,7 @@
  </objectgroup>
  <objectgroup id="9" name="ThickWalls">
   <object id="29" x="48" y="80" width="48" height="128"/>
-  <object id="30" x="0" y="208" width="128" height="48"/>
+  <object id="30" x="0" y="208" width="128" height="64"/>
   <object id="31" x="192" y="208" width="160" height="48"/>
   <object id="32" x="416" y="208" width="96" height="48"/>
  </objectgroup>
