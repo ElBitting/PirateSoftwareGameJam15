@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 8,
-  nextobjectid = 26,
+  nextlayerid = 9,
+  nextobjectid = 28,
   properties = {},
   tilesets = {
     {
@@ -70,6 +70,64 @@ return {
       wangsets = {},
       tilecount = 1,
       tiles = {}
+    },
+    {
+      name = "Bg_1",
+      firstgid = 210,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "../../Sprites/Testing/Bg_1.png",
+      imagewidth = 48,
+      imageheight = 48,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 9,
+      tiles = {}
+    },
+    {
+      name = "Bg_moss",
+      firstgid = 219,
+      class = "",
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 3,
+      image = "../../Sprites/Testing/Bg_moss.png",
+      imagewidth = 48,
+      imageheight = 48,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 9,
+      tiles = {}
     }
   },
   layers = {
@@ -91,7 +149,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztwwEJAAAMBKHr3+4brcdQcNVUVVXV1w8gWEQu"
+      data = "eJzt0cEJACAMBMHrv7sIguXYhQk4j3nvYytJAcBjq7m/m/tnwAMA4C8XiVhEOg=="
     },
     {
       type = "tilelayer",
@@ -111,7 +169,36 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztlsEKwjAMhoMOvIruJh6q0/teT30C9QnUhzWFlYWQdg20dmB/+E5N8nVjKwWomWPWBZx9Yf8CWSJNIf8G2SKt4P/FfnL4NX3/6L8gV+SW2G8GpD7qvCMP5OnxG+I3EB/q533U+ULeyCfg983hceeHAbnPrVOn++ct58F/gvEcMAxa7yO2ryHPLNEKc0L12j5bd0COHjphTqhe29fBdPgcbb3mm42ZqfWXSGl/TU2KrBhTNTXp3sPc5uQKvQu55NxzD/77V263m++7f9m1fWZ2zPkF+IcnlA=="
+      data = "eJztlksKwjAQhtOVW12Li+y76fXUE6gnUC8l4rO1VryIU8jAECaPhqat0B8+usjMfGkpIUKMGWKSDl0zRdaTH/eQAwXwIv60Q38JvIFK+VPin3bkv7bs9+3j/CFzQv3C4MdnLP8SWAFriz8J8EsF10edG2AL7Dz8MtCv91HnHjgAR4PfNkcPnh9S8H24Tp0F4UzAc0Bq5FoPh29fXXdR78xxY+aUlnqk8ujDc+YOPAw8mTkfSz3y9ex7Cnf0OU3rm/yzPjN9a08OYqZvvxj9vftd+/qHTDRcNWPa+w5DmxMr9C6EibnnTJjvX7HdON90/6rXFpGZa84fakyUhA=="
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "Ladders",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 26,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 96,
+          y = 79.9688,
+          width = 2.75,
+          height = 128.063,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",

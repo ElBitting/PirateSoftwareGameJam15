@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="26">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="28">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -9,16 +9,25 @@
  <tileset firstgid="209" name="Wall_Base" tilewidth="16" tileheight="16" tilecount="1" columns="1">
   <image source="../../Sprites/Wall_Base.png" width="16" height="16"/>
  </tileset>
+ <tileset firstgid="210" name="Bg_1" tilewidth="16" tileheight="16" tilecount="9" columns="3">
+  <image source="../../Sprites/Testing/Bg_1.png" width="48" height="48"/>
+ </tileset>
+ <tileset firstgid="219" name="Bg_moss" tilewidth="16" tileheight="16" tilecount="9" columns="3">
+  <image source="../../Sprites/Testing/Bg_moss.png" width="48" height="48"/>
+ </tileset>
  <layer id="1" name="BG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMBKHr3+4brcdQcNVUVVXV1w8gWEQu
+   eJzt0cEJACAMBMHrv7sIguXYhQk4j3nvYytJAcBjq7m/m/tnwAMA4C8XiVhEOg==
   </data>
  </layer>
  <layer id="2" name="FG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlsEKwjAMhoMOvIruJh6q0/teT30C9QnUhzWFlYWQdg20dmB/+E5N8nVjKwWomWPWBZx9Yf8CWSJNIf8G2SKt4P/FfnL4NX3/6L8gV+SW2G8GpD7qvCMP5OnxG+I3EB/q533U+ULeyCfg983hceeHAbnPrVOn++ct58F/gvEcMAxa7yO2ryHPLNEKc0L12j5bd0COHjphTqhe29fBdPgcbb3mm42ZqfWXSGl/TU2KrBhTNTXp3sPc5uQKvQu55NxzD/77V263m++7f9m1fWZ2zPkF+IcnlA==
+   eJztlksKwjAQhtOVW12Li+y76fXUE6gnUC8l4rO1VryIU8jAECaPhqat0B8+usjMfGkpIUKMGWKSDl0zRdaTH/eQAwXwIv60Q38JvIFK+VPin3bkv7bs9+3j/CFzQv3C4MdnLP8SWAFriz8J8EsF10edG2AL7Dz8MtCv91HnHjgAR4PfNkcPnh9S8H24Tp0F4UzAc0Bq5FoPh29fXXdR78xxY+aUlnqk8ujDc+YOPAw8mTkfSz3y9ex7Cnf0OU3rm/yzPjN9a08OYqZvvxj9vftd+/qHTDRcNWPa+w5DmxMr9C6EibnnTJjvX7HdON90/6rXFpGZa84fakyUhA==
   </data>
  </layer>
+ <objectgroup id="8" name="Ladders">
+  <object id="26" x="96" y="79.9688" width="2.75" height="128.063"/>
+ </objectgroup>
  <objectgroup id="3" name="Walls">
   <object id="3" x="192" y="208" width="160" height="48"/>
   <object id="4" x="0" y="208" width="128" height="48"/>
