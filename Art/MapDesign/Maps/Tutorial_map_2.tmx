@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="33">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="33">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -16,7 +16,12 @@
  </layer>
  <layer id="2" name="FG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlsEKgkAQhtdT1zpHB+9efL3qCaonqJ7Ku3ooKZXeoRF2YBh2dtVcNfCHD8F15hsXkVVqyRwTjOjaaOKJ/DhDCmRATvzRiP4H8AQK7Y+If/2n/rZ1Jn+fPn39SvDj1Zd/DxyAo8Uf9PCHGlMddZ6AM3Bp4Q97+nkddV6BG3AX/LY+PPj/CJW5DtepM7OQs14NqaOma13zvi+Bt6EP7pGNomOdzZ+wPiVQaT4Eeq82+EtWQ5+vBGrtpzO4wr1dvllTEgGX/9dIXpcfZ/Dtb8uYmdK9ZPisGK5nlgy3D3Pr4yv0LITxOXOs5POXbzf2l85fzdrOM1vm/ALpApxh
+   eJztlkEOgjAQRcvKra6NC/ZsuJ56AvUE6r3EBbBQokC8g0PSxknTTmm1BY0/eYG0zDxomlDG/hljooCuGScdyC/eIQcKoET+JKD/AlyBivsT5J9+qb9vncrv0sfVzzR+cfXlXwIrYE34Iwd/zFHVYecG2AK7Hv7Y0S/XYeceOABHyZ8RfU58PuP3YixF43JdhuaxsyAoUR9Bbqixreu+96bhrugj1oiisqyj/JHUpwYazgOBx1qFv5Zq8PONhpa99p/oY4rstdmzqkQElP/dUF7TvzGE34YQGdL9qzlr7kNlImF65p/PrcPY+vgKPguJ+HznlOnPX77dor/u/NXNLTwzl5xP62GGiw==
+  </data>
+ </layer>
+ <layer id="10" name="fg2" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzt1rENADAIAzD+v7B806FLxQMgZEtRxqyJgOd8AfbL0ls3AQCm6P5fF1EbCVE=
   </data>
  </layer>
  <objectgroup id="8" name="Ladders">

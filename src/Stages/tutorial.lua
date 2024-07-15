@@ -24,5 +24,6 @@ end
 function tutorial:draw()
     gameMap:drawLayer(gameMap.layers['BG'])
     gameMap:drawLayer(gameMap.layers['FG'])
+    gameMap:drawLayer(gameMap.layers['fg2'])
 end
 

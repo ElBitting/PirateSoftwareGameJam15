@@ -9,7 +9,7 @@ return {
   height = 32,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 10,
+  nextlayerid = 11,
   nextobjectid = 33,
   properties = {},
   tilesets = {
@@ -111,7 +111,27 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztlsEKgkAQhtdT1zpHB+9efL3qCaonqJ7Ku3ooKZXeoRF2YBh2dtVcNfCHD8F15hsXkVVqyRwTjOjaaOKJ/DhDCmRATvzRiP4H8AQK7Y+If/2n/rZ1Jn+fPn39SvDj1Zd/DxyAo8Uf9PCHGlMddZ6AM3Bp4Q97+nkddV6BG3AX/LY+PPj/CJW5DtepM7OQs14NqaOma13zvi+Bt6EP7pGNomOdzZ+wPiVQaT4Eeq82+EtWQ5+vBGrtpzO4wr1dvllTEgGX/9dIXpcfZ/Dtb8uYmdK9ZPisGK5nlgy3D3Pr4yv0LITxOXOs5POXbzf2l85fzdrOM1vm/ALpApxh"
+      data = "eJztlkEOgjAQRcvKra6NC/ZsuJ56AvUE6r3EBbBQokC8g0PSxknTTmm1BY0/eYG0zDxomlDG/hljooCuGScdyC/eIQcKoET+JKD/AlyBivsT5J9+qb9vncrv0sfVzzR+cfXlXwIrYE34Iwd/zFHVYecG2AK7Hv7Y0S/XYeceOABHyZ8RfU58PuP3YixF43JdhuaxsyAoUR9Bbqixreu+96bhrugj1oiisqyj/JHUpwYazgOBx1qFv5Zq8PONhpa99p/oY4rstdmzqkQElP/dUF7TvzGE34YQGdL9qzlr7kNlImF65p/PrcPY+vgKPguJ+HznlOnPX77dor/u/NXNLTwzl5xP62GGiw=="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 32,
+      height = 32,
+      id = 10,
+      name = "fg2",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJzt1rENADAIAzD+v7B806FLxQMgZEtRxqyJgOd8AfbL0ls3AQCm6P5fF1EbCVE="
     },
     {
       type = "objectgroup",
