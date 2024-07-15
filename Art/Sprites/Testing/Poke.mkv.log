@@ -1,0 +1,20 @@
+C:/Program Files/Krita (x64)/bin/ffmpeg.exe -hide_banner -y -y -r 30 -start_number 0 -start_number_range 1 -i C:/Users/huzai/Documents/GitHub/PirateSoftwareGameJam15/Art/Sprites/Testing/frame%04d.png -c:v libopenh264 -b:v 5000k C:/Users/huzai/Documents/GitHub/PirateSoftwareGameJam15/Art/Sprites/Testing/Poke.mkv
+=====================================================
+Input #0, image2, from 'C:/Users/huzai/Documents/GitHub/PirateSoftwareGameJam15/Art/Sprites/Testing/frame%04d.png':
+  Duration: 00:00:04.84, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc), 32x32 [SAR 11811:11811 DAR 1:1], 25 fps, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libopenh264))
+Press [q] to stop, [?] for help
+[libopenh264 @ 000001391f5a4540] Slice count will be set automatically
+[libopenh264 @ 000001391f5a4540] [OpenH264] this = 0x000001391F64A180, Warning:bEnableFrameSkip = 0,bitrate can't be controlled for RC_QUALITY_MODE,RC_BITRATE_MODE and RC_TIMESTAMP_MODE without enabling skip frame.
+Output #0, matroska, to 'C:/Users/huzai/Documents/GitHub/PirateSoftwareGameJam15/Art/Sprites/Testing/Poke.mkv':
+  Metadata:
+    encoder         : Lavf58.76.100
+  Stream #0:0: Video: h264 (H264 / 0x34363248), yuv420p(tv, progressive), 32x32 [SAR 1:1 DAR 1:1], q=2-31, 5000 kb/s, 30 fps, 1k tbn
+    Metadata:
+      encoder         : Lavc58.134.100 libopenh264
+    Side data:
+      cpb: bitrate max/min/avg: 5000000/0/5000000 buffer size: 0 vbv_delay: N/A
+frame=    1 fps=0.0 q=-0.0 size=       1kB time=00:00:00.00 bitrate=4744.0kbits/s speed=1.43x    frame=  121 fps=0.0 q=-0.0 Lsize=       6kB time=00:00:04.00 bitrate=  12.4kbits/s speed= 686x    
+video:5kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 28.338156%
