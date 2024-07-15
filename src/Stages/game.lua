@@ -31,4 +31,8 @@ function game:keypressed(key)
         player:setX(20)
         player:setY(20)
     end
+    if key == 'r' then
+        player:setX(20)
+        player:setY(505)
+    end
 end

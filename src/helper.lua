@@ -21,7 +21,7 @@ end
 function add_col_class_obj(list, collision_class, layer_name, static_flag)
     if gameMap.layers[layer_name] then
         for i, obj in pairs(gameMap.layers[layer_name].objects) do
-            local col = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
+            local col = world:newBSGRectangleCollider(obj.x, obj.y, obj.width, obj.height,1)
             col:setCollisionClass(collision_class)
             if static_flag then
                 col:setType('static')

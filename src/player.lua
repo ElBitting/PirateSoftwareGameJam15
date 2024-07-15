@@ -1,5 +1,5 @@
 
-player = world:newBSGRectangleCollider(20, 505, 8,13, 2)
+player = world:newBSGRectangleCollider(20, 505, 8,13, 3)
 player:setCollisionClass("Player")
 player:setFixedRotation(true)
 
@@ -12,6 +12,7 @@ player.anim = animation
 player.ismoving = false
 player.dir = 1
 player.grounded = true
+player.x = 0
 local colliderWidth = 2
 local colliderHeight = 3
 local offsetCollionPlayerFeet = 5
@@ -19,59 +20,58 @@ local offsetCollionPlayerFeet = 5
 function player:update(dt)
     -- Reset Horizontal velocity
     xNow,yNow = player:getLinearVelocity()
-	player:setLinearVelocity(0, yNow)
+    player:setLinearVelocity(player.x * player.speed, yNow)
+    -- player:setLinearVelocity(0, yNow)
+
+    player.x = 0
 
     -- Check if grounded
-    Jump = Timer.after(0.06, function() player.grounded = true end)
+    Jump = Timer.after(0.08, function() player.grounded = true end)
 
     local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform', 'ThickWalls'})
     if #colliders > 0 then
-        Jump = Timer.after(0.06, function() player.grounded = true end)
+        Jump = Timer.after(0.08, function() player.grounded = true end)
     else
         Timer.cancel(Jump)
         player.grounded = false
     end
     Timer.update(dt)
 
-
-
-    -- Reset Moving
-    player.ismoving = false
-    
-    local px, py = player:getPosition()
     --Basic Movement
     if love.keyboard.isDown('a') then
-        player.ismoving = True
-        player:setX(px - player.speed*dt)
+        player.ismoving = true
+        player.x = -1
         player.dir = -1
     elseif love.keyboard.isDown('d') then
-        player.ismoving = True
-        player:setX(px + player.speed*dt)
+        player.ismoving = true
+        player.x = 1
         player.dir = 1
     end
 
-    -- local ladder = world:queryRectangleArea(player:getX()-6, player:getY(), 12,5, {'Ladders'})
-    -- if #ladder > 0 and love.keyboard.isDown('w') then 
-    --     player:setY(py - player.speed*dt)
-    -- end
-    if player:enter('Ladders') then 
-        if love.keyboard.isDown('w') then
-            player:setY(py-2*player.speed*dt)
-        end
-        player:setType('static')
-    else 
-        player:setType('dynamic')
+    local wall = world:queryRectangleArea(player:getX()+4*player.dir, player:getY()+3, 2*player.dir, 2, {'ThickWalls'})
+    if #wall > 0 then
+        player.x = 0
     end
-    
+
+    --Ladder Climbing
+    local ladder = world:queryRectangleArea(player:getX()-6, player:getY(), 12, 2, {'Ladders'})
+    if #ladder > 0  then
+        player:setLinearVelocity(player.x * player.speed, -5.5)
+        if love.keyboard.isDown('w') or love.keyboard.isDown('space') then
+            player:applyLinearImpulse(0,-14)
+        elseif love.keyboard.isDown('s') then
+            player:applyLinearImpulse(0,28)
+        end
+        Jump = Timer.after(0.08, function() player.grounded = true end)
+    end
 
 
     -- Jumping
     local jumpKeyDown = love.keyboard.isDown('space')
     if jumpKeyDown and player.grounded then
-        --honestly no idea why this line fixes a bug, but it does
-        player:setLinearVelocity(0, 0)
         -- jump impulse
-        player:applyLinearImpulse(0,-55)
+        player:setLinearVelocity(0, 0)
+        player:applyLinearImpulse(0,-45)
     end
 
     
@@ -109,16 +109,15 @@ function player:update(dt)
     local CurrentAir = not player.grounded
 
     player.anim:update(dt)
-
 end
 
 function player:draw()
     local px = player:getX()
     local py = player:getY()
 
-    --scale character by 3
-    sx = 1
-    sy = 1
+    --scale character by 1.1
+    sx = 1.1
+    sy = 1.1
     --swap direction for facing left vs right
     if player.dir == -1 then
         sx = -sx
@@ -127,5 +126,5 @@ function player:draw()
     player.anim:draw(image, px, py, nil, sx, sy,7, 10)
     -- show grounded detection
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
-    love.graphics.rectangle('line', px-(6), py,12, 2)
+    -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
 end
