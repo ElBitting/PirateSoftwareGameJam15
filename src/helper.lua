@@ -6,6 +6,7 @@ function add_col_classes(world)
     world:addCollisionClass('TeleDoor')
     world:addCollisionClass('FinalDoor')
     world:addCollisionClass('Ladders')
+    world:addCollisionClass('ThickWalls')
 end
 
 function newButton(text, fn)

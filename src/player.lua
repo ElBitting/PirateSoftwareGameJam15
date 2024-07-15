@@ -24,7 +24,7 @@ function player:update(dt)
     -- Check if grounded
     Jump = Timer.after(0.06, function() player.grounded = true end)
 
-    local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform'})
+    local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform', 'ThickWalls'})
     if #colliders > 0 then
         Jump = Timer.after(0.06, function() player.grounded = true end)
     else
@@ -75,6 +75,17 @@ function player:update(dt)
         player:setY(505)
         gs.switch(Credits)
     end
+
+    player:setPreSolve(function(col1, col2, contact)
+        if col1.collision_class == 'Player' and col2.collision_class == 'Platform' then
+            local px, py = col1:getPosition()
+            local pw, ph = 2, 2
+            local tx, ty = col2:getPosition()
+            local tw, th = 5, 5
+            -- contact:setEnabled(false)
+            if (py + ph)/2 > (ty - th)/2 then contact:setEnabled(false) end
+        end
+    end)
 
     --States For Animations (once we have them)
     local Currentrunning = player.ismoving and player.grounded

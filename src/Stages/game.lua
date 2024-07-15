@@ -13,7 +13,7 @@ end
 function game:draw()
     cam:attach()
         tutorial:draw()
-        world:draw()
+        -- world:draw()
         player:draw()
     cam:detach()
 
@@ -26,7 +26,7 @@ end
 function game:keypressed(key)
     if key == 'escape' then
         gs.switch(PauseScreen)
-    end
+    end 
     if key == 'p' then
         player:setX(20)
         player:setY(20)
