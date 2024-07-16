@@ -13,7 +13,7 @@ end
 function game:draw()
     cam:attach()
         tutorial:draw()
-        -- world:draw()
+        world:draw()
         player:draw()
     cam:detach()
 
