@@ -10,6 +10,7 @@ function tutorial:enter()
     exit = {}
     ladders = {}
     twals = {}
+    vines = {}
 
 
     add_col_class_obj(walls, 'Platform', 'Walls',true)
@@ -18,6 +19,8 @@ function tutorial:enter()
     add_col_class_obj(exit, 'FinalDoor','FinalDoor', true)
     add_col_class_obj(ladders, 'Ladders','Ladders', true)
     add_col_class_obj(twals, 'ThickWalls','ThickWalls', true)
+    add_col_class_obj(vines, 'Vines','Vines', true)
+
 
 end
 
