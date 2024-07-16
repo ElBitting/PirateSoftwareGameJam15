@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="Tileset_32x32" tilewidth="32" tileheight="32" tilecount="36" columns="6">
+  <image source="../../Sprites/Tileset_32x32.png" width="200" height="200"/>
+  <wangsets>
+   <wangset name="Unnamed Set" type="mixed" tile="-1">
+    <wangcolor name="" color="#ff0000" tile="-1" probability="1"/>
+    <wangtile tileid="4" wangid="0,0,0,1,0,0,0,0"/>
+    <wangtile tileid="5" wangid="0,0,0,0,0,1,0,0"/>
+    <wangtile tileid="10" wangid="0,1,0,0,0,0,0,0"/>
+    <wangtile tileid="11" wangid="0,0,0,0,0,0,0,1"/>
+    <wangtile tileid="12" wangid="0,0,0,1,0,0,0,0"/>
+    <wangtile tileid="13" wangid="0,0,0,1,1,1,0,0"/>
+    <wangtile tileid="14" wangid="0,0,0,0,0,1,0,0"/>
+    <wangtile tileid="18" wangid="0,1,1,1,0,0,0,0"/>
+    <wangtile tileid="19" wangid="1,1,1,1,1,1,1,1"/>
+    <wangtile tileid="20" wangid="0,0,0,0,0,1,1,1"/>
+    <wangtile tileid="24" wangid="0,1,0,0,0,0,0,0"/>
+    <wangtile tileid="25" wangid="1,1,0,0,0,0,0,1"/>
+    <wangtile tileid="26" wangid="0,0,0,0,0,0,0,1"/>
+   </wangset>
+  </wangsets>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="64" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlssKhDAMReNCN+NjUV1o//8/p8UEQmhHnAHbDrdw8NEIOUlb7IioAwAAAAAAAAAAAHiALbAGFqZ0Pk8zB6aA5/vS+TyNo3MNCJ9ir8acYajAM8fKOR6B/cJ5Ml6Ovxc2de8aqsFVvyfO3/qm/J2ac2autM9dejrPRNkjKX/r+KJzLbXuT8Y7Xnd2E8TRrnPi2H/xl55qeuVoPfW6adlf99uzl/Q4zo2ZPus5+b41f93zkeshntLjmftsPfUYOK41f+u6mHepWogncbw8xzhfgdO3/vYc0GvbU3r/b+r5qMDnLtY1esr/j5zxMvRe0fWS+pR2+QU9dM9zQ58ZpXMH9fIGN3UW1A==
+  </data>
+ </layer>
+</map>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="33">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="39">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -54,5 +54,13 @@
  </objectgroup>
  <objectgroup id="7" name="FinalDoor">
   <object id="24" x="16" y="201.5" width="16" height="6.5"/>
+ </objectgroup>
+ <objectgroup id="12" name="Vines">
+  <object id="33" x="384" y="112" width="16" height="16"/>
+  <object id="34" x="384" y="128" width="16" height="16"/>
+  <object id="35" x="384" y="144" width="16" height="16"/>
+  <object id="36" x="384" y="160" width="16" height="16"/>
+  <object id="37" x="384" y="176" width="16" height="16"/>
+  <object id="38" x="384" y="192" width="16" height="16"/>
  </objectgroup>
 </map>
