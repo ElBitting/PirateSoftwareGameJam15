@@ -131,7 +131,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt1rEJACAMAEH3n8KxdBsFmyBYagrvIKT8lCkFlhYm27yh6uvr39W3/aJ/agIA/CDjF4rNAUAiFRE="
+      data = "eJzt1sEJACAIQFFHb8iCrGUq7CANYFD/gaSnf00EMNVNtCKS8py1Z7tD9dluu9/spk//+b5e6OvxAgAA/OTGX8g3B4IAK7A="
     },
     {
       type = "objectgroup",
@@ -152,9 +152,9 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 46.5,
+          x = 45.75,
           y = 79.9688,
-          width = 1.25,
+          width = 2,
           height = 128.063,
           rotation = 0,
           visible = true,
@@ -167,7 +167,7 @@ return {
           shape = "rectangle",
           x = 96.025,
           y = 80.0241,
-          width = 10.25,
+          width = 2.75,
           height = 128.063,
           rotation = 0,
           visible = true,

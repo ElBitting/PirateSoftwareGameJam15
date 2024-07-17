@@ -21,12 +21,12 @@
  </layer>
  <layer id="10" name="fg2" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJzt1rEJACAMAEH3n8KxdBsFmyBYagrvIKT8lCkFlhYm27yh6uvr39W3/aJ/agIA/CDjF4rNAUAiFRE=
+   eJzt1sEJACAIQFFHb8iCrGUq7CANYFD/gaSnf00EMNVNtCKS8py1Z7tD9dluu9/spk//+b5e6OvxAgAA/OTGX8g3B4IAK7A=
   </data>
  </layer>
  <objectgroup id="8" name="Ladders">
-  <object id="26" x="46.5" y="79.9688" width="1.25" height="128.063"/>
-  <object id="28" x="96.025" y="80.0241" width="10.25" height="128.063"/>
+  <object id="26" x="45.75" y="79.9688" width="2" height="128.063"/>
+  <object id="28" x="96.025" y="80.0241" width="2.75" height="128.063"/>
  </objectgroup>
  <objectgroup id="3" name="Walls">
   <object id="8" x="64" y="480" width="16" height="16"/>
