@@ -13,7 +13,7 @@ end
 function game:draw()
     cam:attach()
         tutorial:draw()
-        -- world:draw()
+        world:draw()
         player:draw()
     cam:detach()
 
@@ -35,4 +35,5 @@ function game:keypressed(key)
         player:setX(20)
         player:setY(505)
     end
+    player:keypressed(key)
 end
