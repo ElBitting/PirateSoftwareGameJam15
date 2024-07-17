@@ -25,9 +25,13 @@ end
 function tutorial:draw()
     gameMap:drawLayer(gameMap.layers['BG'])
     gameMap:drawLayer(gameMap.layers['FG'])
-    gameMap:drawLayer(gameMap.layers['fg2'])for i, vine in ipairs(vines) do
+    gameMap:drawLayer(gameMap.layers['fg2'])
+    
+    for i, vine in ipairs(vines) do
         local px = vine:getX()
         local py = vine:getY()
-        player.anim:draw(image, px, py, nil, sx, sy,7, 10)
+        local r = vine:getAngle()
+        
+        love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, sx, sy,7, 10)
     end
 end

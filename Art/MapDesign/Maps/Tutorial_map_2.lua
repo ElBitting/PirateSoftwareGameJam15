@@ -111,7 +111,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztlkEOgjAQRcvKra6NC/ZsuJ56AvUE6r3EBbBQokC8g0PSxknTTmm1BY0/eYG0zDxomlDG/hljooCuGScdyC/eIQcKoET+JKD/AlyBivsT5J9+qb9vncrv0sfVzzR+cfXlXwIrYE34Iwd/zFHVYecG2AK7Hv7Y0S/XYeceOABHyZ8RfU58PuP3YixF43JdhuaxsyAoUR9Bbqixreu+96bhrugj1oiisqyj/JHUpwYazgOBx1qFv5Zq8PONhpa99p/oY4rstdmzqkQElP/dUF7TvzGE34YQGdL9qzlr7kNlImF65p/PrcPY+vgKPguJ+HznlOnPX77dor/u/NXNLTwzl5xP62GGiw=="
+      data = "eJztlkEOgjAQRduVa9fGhXs2XE89gXoC9V7iAlgoUSDcwSFp42TSTkVtIcpPXkJaZl5LGlIhxgwxMqBrqoh78us1pEAG5MgfBfRfgCtQKH/05/7QMfl9r2MJrIA1439nDQuFy7kBtsDuBb+tn8tP67BzDxyAI/EnzD5Oaj5Rz3osRuPUn6B57MwYctRHkzpqaJ1w1LX7vVm4G/z6G3EUHes4vyR9SqBSNAg8Vhv8JanB71cWavE8f9x5xqHeLmfWFMnA+T8N53X9D0L4uxAifbp/NWfLc6hMCK53xnzvOwytj6/gu5COzzXHwn7/8u3W/W33r3Zu7pkZcT4AbsiFeQ=="
     },
     {
       type = "tilelayer",
@@ -167,7 +167,7 @@ return {
           shape = "rectangle",
           x = 96.025,
           y = 80.0241,
-          width = 2.75,
+          width = 4.75,
           height = 128.063,
           rotation = 0,
           visible = true,
