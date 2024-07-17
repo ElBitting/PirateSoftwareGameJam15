@@ -20,8 +20,6 @@ function tutorial:enter()
     add_col_class_obj(ladders, 'Ladders','Ladders', true, false)
     add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false)
     add_col_class_obj(vines, 'Vines','Vines', false, true)
-
-
 end
 
 function tutorial:draw()

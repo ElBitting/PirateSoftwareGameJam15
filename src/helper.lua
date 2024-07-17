@@ -49,21 +49,6 @@ function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_
 end
 
 
-function add_vines(list, collision_class, layer_name)
-    if gameMap.layers[layer_name] then
-        for i, obj in pairs(gameMap.layers[layer_name].objects) do
-            local col = world:newBSGRectangleCollider(obj.x, obj.y, obj.width, obj.height,1)
-            col:setCollisionClass(collision_class)
-            if i == 1 then
-                col:setType('static')
-            else
-                joint = world:addJoint('RevoluteJoint', list[i-1], col, obj.x +obj.width/2, obj.y, true)
-            end
-            table.insert(list, col)
-        end
-    end
-end
-
 function safe_quit()
     world:destroy()
     love.event.quit()

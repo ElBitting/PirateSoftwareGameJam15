@@ -97,6 +97,9 @@ function player:update(dt)
             local tw, th = 5, 5
             -- contact:setEnabled(false)
             if (py + ph)/2 > (ty - th)/2 then contact:setEnabled(false) end
+        else if col1.collision_class == 'Player' and col2.collision_class == 'Vines' then
+            contact:setEnabled(false)
+            if love.keyboard.isDown('x') then contact:setEnabled(true) end
         end
     end)
 
