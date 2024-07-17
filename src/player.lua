@@ -38,20 +38,17 @@ function player:update(dt)
     Timer.update(dt)
 
     --Basic Movement
+    local wall = world:queryRectangleArea(player:getX()+4*player.dir, player:getY()+3, 2*player.dir, 2, {'ThickWalls'})
     if love.keyboard.isDown('a') then
         player.ismoving = true
-        player.x = -1
         player.dir = -1
-    elseif love.keyboard.isDown('d') then
+        if #wall == 0 then player.x = -1 end
+    elseif love.keyboard.isDown('d')  then
         player.ismoving = true
-        player.x = 1
         player.dir = 1
+        if #wall == 0 then player.x = 1 end
     end
 
-    local wall = world:queryRectangleArea(player:getX()+4*player.dir, player:getY()+3, 2*player.dir, 2, {'ThickWalls'})
-    if #wall > 0 then
-        player.x = 0
-    end
 
     --Ladder Climbing
     local ladder = world:queryRectangleArea(player:getX()-6, player:getY(), 12, 2, {'Ladders'})
