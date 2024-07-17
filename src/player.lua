@@ -12,7 +12,9 @@ player.anim = animation
 player.ismoving = false
 player.dir = 1
 player.grounded = true
+player.laddered = false
 player.x = 0
+player.y = 0
 local colliderWidth = 2
 local colliderHeight = 3
 local offsetCollionPlayerFeet = 5
@@ -43,26 +45,33 @@ function player:update(dt)
     --Ladder and Jumping
     -- Check if grounded
     Jump1 = Timer.after(0.1, function() player.grounded = true end)
-    Jump2 = Timer.after(0.1, function() player.grounded = true end)
+    Jump2 = Timer.after(0.1, function() player.laddered = true end)
 
     local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform', 'ThickWalls'})
     if #colliders > 0 then
         Jump1 = Timer.after(0.1, function() player.grounded = true end)
+    else
+        Timer.cancel(Jump1)
+        player.grounded = false
     end
     local ladder = world:queryRectangleArea(player:getX()-6, player:getY()+3, 12, 4, {'Ladders'})
     if #ladder > 0  then
-        player:setLinearVelocity(player.x * player.speed, -5.5)
-        if love.keyboard.isDown('w') or love.keyboard.isDown('space') then
-            player:applyLinearImpulse(0,-14)
-        elseif love.keyboard.isDown('s') then
-            player:applyLinearImpulse(0,28)
+        if yNow < 0 then
+            player:setGravityScale(1)
+        else 
+            player:setLinearVelocity(player.x * player.speed, 0)
+            player:setGravityScale(0)
         end
-        Jump2 = Timer.after(0.1, function() player.grounded = true end)
-    end
-    if #ladder ==0 and #colliders == 0 then
-        Timer.cancel(Jump1)
+        if love.keyboard.isDown('w') then
+            player:setY(player:getY() - player.speed*dt)
+        elseif love.keyboard.isDown('s') then
+            player:setY(player:getY() + player.speed*dt)
+        end
+        Jump2 = Timer.after(0.1, function() player.laddered = true end)
+    else
+        player:setGravityScale(1)
         Timer.cancel(Jump2)
-        player.grounded = false
+        player.laddered = false
     end
     Timer.update(dt)
 
@@ -125,14 +134,20 @@ function player:draw()
         sx = -sx
     end
 
-    player.anim:draw(image, px, py, nil, sx, sy,7, 10)
+    
     -- show grounded detection
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
     -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
+
+    player.anim:draw(image, px, py, nil, sx, sy,7, 10)
+
 end
 
 function player:keypressed(key)
-    if key == 'space' and player.grounded then
+    if key == 'space' and player.laddered then
+        player:setLinearVelocity(0, 0)
+        player:applyLinearImpulse(0,-52)
+    elseif key == 'space' and player.grounded then
         -- jump impulse
         player:setLinearVelocity(0, 0)
         player:applyLinearImpulse(0,-50)
