@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="39">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="41">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -56,10 +56,12 @@
   <object id="24" x="16" y="201.5" width="16" height="6.5"/>
  </objectgroup>
  <objectgroup id="12" name="Vines">
-  <object id="33" x="388.913" y="112" width="6" height="16"/>
-  <object id="34" x="388.913" y="132.957" width="6.08696" height="16"/>
-  <object id="35" x="388.957" y="154" width="6" height="16"/>
-  <object id="37" x="388.957" y="176" width="6.08696" height="16"/>
-  <object id="38" x="388.957" y="197.826" width="6.04348" height="16"/>
+  <object id="33" x="388.913" y="113" width="6" height="15"/>
+  <object id="34" x="388.935" y="128.993" width="6.08696" height="15.0444"/>
+  <object id="35" x="389.001" y="145" width="6" height="15.0222"/>
+  <object id="37" x="389.001" y="161.022" width="5.99807" height="14.9778"/>
+  <object id="38" x="388.957" y="177.076" width="6.04348" height="14.875"/>
+  <object id="39" x="390.75" y="109.75" width="2.625" height="2"/>
+  <object id="40" x="388.978" y="192.875" width="6.04348" height="15.0625"/>
  </objectgroup>
 </map>
