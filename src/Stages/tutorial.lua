@@ -1,6 +1,6 @@
 tutorial = {}
 
-function tutorial:enter()
+function tutorial:init()
 
     gameMap = sti('Art/MapDesign/Maps/Tutorial_map_2.lua')
 
