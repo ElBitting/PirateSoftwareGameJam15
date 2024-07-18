@@ -16,6 +16,7 @@ require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
 
 
+
 function love.load()
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
 
@@ -31,7 +32,6 @@ function love.load()
 
     --TODO: Find a way to put these at the top with the other imports...
     require 'src/player'
-    require 'src/apple'
     require 'src/Menus/PauseScreen'
 
     gs.switch(TitleScreen)
@@ -85,7 +85,8 @@ end
 
 -- Callback functions for object detection.
 function beginContact(a, b, collision)
-    print(apple.beginContact(a, b, collision))
+    apple.beginContact(a, b, collision)
+    -- player.beginContact(a, b, collision)
 end
 
 function endContact(a,b, collision)

@@ -33,11 +33,12 @@ function tutorial:draw()
     gameMap:drawLayer(gameMap.layers['fg2'])
     
     for i, vine in ipairs(vines) do
+        if i == 1 then goto continue end
         local px = vine:getX()
         local py = vine:getY()
         local r = vine:getAngle()
-        
         love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, sx, sy,7, 10)
+        ::continue::
     end
     
     apple.drawAll()

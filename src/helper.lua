@@ -22,29 +22,21 @@ function newButton(text, fn)
 end
 
 function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_flag)
-    if vine_flag then 
-        if gameMap.layers[layer_name] then
-            for i, obj in pairs(gameMap.layers[layer_name].objects) do
-                local col = world:newBSGRectangleCollider(obj.x, obj.y, obj.width, obj.height,1)
-                col:setCollisionClass(collision_class)
+    if gameMap.layers[layer_name] then
+        for i, obj in pairs(gameMap.layers[layer_name].objects) do
+            local col = world:newBSGRectangleCollider(obj.x, obj.y, obj.width, obj.height,1)
+            col:setCollisionClass(collision_class)
+            if static_flag then
+                col:setType('static')
+            end
+            if vine_flag then
                 if i == 1 then
                     col:setType('static')
                 else
                     joint = world:addJoint('RevoluteJoint', list[i-1], col, obj.x +obj.width/2, obj.y-obj.height/5, true)
                 end
-                table.insert(list, col)
             end
-        end
-    else
-        if gameMap.layers[layer_name] then
-            for i, obj in pairs(gameMap.layers[layer_name].objects) do
-                local col = world:newBSGRectangleCollider(obj.x, obj.y, obj.width, obj.height,1)
-                col:setCollisionClass(collision_class)
-                if static_flag then
-                    col:setType('static')
-                end
-                table.insert(list, col)
-            end
+            table.insert(list, col)
         end
     end
 end

@@ -4,9 +4,9 @@ player:setCollisionClass("Player")
 player:setFixedRotation(true)
 
 
-image = love.graphics.newImage('Sprites/character/oldHero.png')
-Playergrid = anim8.newGrid(16,16, image: getWidth(), image:getHeight())
-animation = anim8.newAnimation(Playergrid('1-5',1), 0.1)
+image = love.graphics.newImage('Art/Sprites/cat2.png')
+Playergrid = anim8.newGrid(14,24, image: getWidth(), image:getHeight())
+animation = anim8.newAnimation(Playergrid('1-8',1), 0.15)
 
 player.speed = 130
 player.anim = animation
@@ -142,8 +142,8 @@ function player:draw()
     local py = player:getY()
 
     --scale character by 1.1
-    sx = 1.1
-    sy = 1.1
+    sx = 1
+    sy = 1
     --swap direction for facing left vs right
     if player.dir == -1 then
         sx = -sx
@@ -151,10 +151,10 @@ function player:draw()
 
     
     -- show grounded detection
-    -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
+    -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, collid2erWidth, colliderHeight)
     -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
 
-    love.graphics.draw(love.graphics.newImage('Art/Sprites/cat1.png'), px-14, py-8.5, nil, .5, .5,7, 10)
+    player.anim:draw(image, px, py, nil, sx, sy,7, 14)
 
 end
 
