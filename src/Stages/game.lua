@@ -8,13 +8,13 @@ function game:update(dt)
     player:update(dt)
     world:update(dt)
     cam:lookAt(player:getPosition())
+    apple:updateAll(dt)
 end
 
 function game:draw()
     cam:attach()
         tutorial:draw()
-        world:draw()
-        apple:draw()
+        -- world:draw()
         player:draw()
     cam:detach()
 
@@ -38,3 +38,4 @@ function game:keypressed(key)
     end
     player:keypressed(key)
 end
+
