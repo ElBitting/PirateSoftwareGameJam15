@@ -37,7 +37,7 @@ function tutorial:draw()
         local px = vine:getX()
         local py = vine:getY()
         local r = vine:getAngle()
-        love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, sx, sy,7, 10)
+        love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, 1, 1,7, 10)
         ::continue::
     end
     

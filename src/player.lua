@@ -24,7 +24,7 @@ local offsetCollionPlayerFeet = 5
 
 function player:update(dt)
     -- Reset Horizontal velocity
-    xNow,yNow = player:getLinearVelocity()
+    local xNow,yNow = player:getLinearVelocity()
     player:setLinearVelocity(player.x * player.speed, yNow)
     -- player:setLinearVelocity(0, yNow)
 
@@ -47,8 +47,8 @@ function player:update(dt)
 
     --Ladder and Jumping
     -- Check if grounded
-    Jump1 = Timer.after(0.1, function() player.grounded = true end)
-    Jump2 = Timer.after(0.1, function() player.laddered = true end)
+    local Jump1 = Timer.after(0.1, function() player.grounded = true end)
+    local Jump2 = Timer.after(0.1, function() player.laddered = true end)
 
     local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform', 'ThickWalls'})
     if #colliders > 0 then
@@ -142,8 +142,8 @@ function player:draw()
     local py = player:getY()
 
     --scale character by 1.1
-    sx = .5
-    sy = .5
+    local sx = 1
+    local sy = 1
     --swap direction for facing left vs right
     if player.dir == -1 then
         sx = -sx
@@ -161,7 +161,7 @@ end
 function player:keypressed(key)
     if key == 'space' and player.laddered then
         player:setLinearVelocity(0, 0)
-        player:applyLinearImpulse(0,-52)
+        player:applyLinearImpulse(0,-152)
     elseif key == 'space' and player.grounded then
         -- jump impulse
         player:setLinearVelocity(0, 0)
