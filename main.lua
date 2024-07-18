@@ -86,9 +86,12 @@ end
 -- Callback functions for object detection.
 function beginContact(a, b, collision)
     apple.beginContact(a, b, collision)
-    -- player.beginContact(a, b, collision)
+    player.beginContact(a, b, collision)
+
+
 end
 
 function endContact(a,b, collision)
+    player.endContact(a, b, collision)
 end
 
