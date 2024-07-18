@@ -177,3 +177,9 @@ function player:keyrealeased(key)
         end
     end
 end
+
+function player:beginContact(a, b, collision)
+end
+
+function player:endContact(a, b, collision)
+end

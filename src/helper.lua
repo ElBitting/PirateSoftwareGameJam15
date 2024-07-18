@@ -36,6 +36,7 @@ function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_
                     joint = world:addJoint('RevoluteJoint', list[i-1], col, obj.x +obj.width/2, obj.y-obj.height/5, true)
                 end
                 previousName = obj.name
+                if i == 6 then break end
             end
             table.insert(list, col)
         end
