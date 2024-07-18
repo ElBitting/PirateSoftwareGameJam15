@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="41">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="52">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -16,7 +16,7 @@
  </layer>
  <layer id="2" name="FG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlkEOgjAQRduVa9fGhXs2XE89gXoC9V7iAlgoUSDcwSFp42TSTkVtIcpPXkJaZl5LGlIhxgwxMqBrqoh78us1pEAG5MgfBfRfgCtQKH/05/7QMfl9r2MJrIA1439nDQuFy7kBtsDuBb+tn8tP67BzDxyAI/EnzD5Oaj5Rz3osRuPUn6B57MwYctRHkzpqaJ1w1LX7vVm4G/z6G3EUHes4vyR9SqBSNAg8Vhv8JanB71cWavE8f9x5xqHeLmfWFMnA+T8N53X9D0L4uxAifbp/NWfLc6hMCK53xnzvOwytj6/gu5COzzXHwn7/8u3W/W33r3Zu7pkZcT4AbsiFeQ==
+   eJztlkEOgjAQRcvKtWvjwj0brqeeQD2Bei9xASzUKBDv4JBM42TSTkVtIcpPXmgKM6+QhlSpIX1MFNA1RpKO/HoNGZADBfHHAf0n4Axc0B//uT90TH7f65gDC2Ap+N9ZwwxxOVfAGti84Lf1c/l5HXVugR2wZ/5UeI8D3k9xzOdSg7+ZS/BKnblAQfpoMkcNr1OOuuZ9rxZuBr/+RhKXlnWSP2J9SqBC7gQ6Vxv8Jauhz1cWavXcf9J+puHeNnvWlEhA8n8ayev6H4TwtyFEunT/ao6WcaiMGK5nhnzvO/Stj6/Qs5COzzUnyn7+8u3W/W3nr+be1DMT5nwAw46GIA==
   </data>
  </layer>
  <layer id="10" name="fg2" width="32" height="32">
@@ -63,5 +63,22 @@
   <object id="38" x="388.957" y="177.076" width="6.04348" height="14.875"/>
   <object id="39" x="390.75" y="109.75" width="2.625" height="2"/>
   <object id="40" x="388.978" y="192.875" width="6.04348" height="15.0625"/>
+ </objectgroup>
+ <objectgroup color="#ff0004" id="14" name="entity">
+  <object id="45" name="Apple" type="apple" x="228.239" y="196.335" width="8.18182" height="8.54545">
+   <ellipse/>
+  </object>
+  <object id="48" name="Apple" type="apple" x="307.784" y="196.063" width="8.18182" height="8.54545">
+   <ellipse/>
+  </object>
+  <object id="49" name="Apple" type="apple" x="20.5758" y="135.394" width="8.18182" height="8.54545">
+   <ellipse/>
+  </object>
+  <object id="50" name="Apple" type="apple" x="142.242" y="314.727" width="8.18182" height="8.54545">
+   <ellipse/>
+  </object>
+  <object id="51" name="Apple" type="apple" x="452.576" y="499.394" width="8.18182" height="8.54545">
+   <ellipse/>
+  </object>
  </objectgroup>
 </map>

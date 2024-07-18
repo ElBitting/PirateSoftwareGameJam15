@@ -11,6 +11,7 @@ function tutorial:init()
     ladders = {}
     twals = {}  
     vines = {}
+    -- apples = {}
     
 
 
@@ -21,6 +22,9 @@ function tutorial:init()
     add_col_class_obj(ladders, 'Ladders','Ladders', true, false)
     add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false)
     add_col_class_obj(vines, 'Vines','Vines', false, true)
+    add_col_class_obj(vines, 'Apples','Apples', false, true)
+
+    spawnEntities()
 end
 
 function tutorial:draw()
@@ -34,5 +38,15 @@ function tutorial:draw()
         local r = vine:getAngle()
         
         love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, sx, sy,7, 10)
+    end
+    
+    apple.drawAll()
+end
+
+function spawnEntities()
+    for i, v in ipairs(gameMap.layers.entity.objects) do
+        if v.name == 'Apple' then
+            apple.new(v.x + v.width/2 , v.y)
+        end
     end
 end

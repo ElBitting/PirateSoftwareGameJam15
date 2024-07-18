@@ -9,6 +9,7 @@ require 'src/helper'
 require 'src/global'
 
 require 'src/Stages/game'
+require 'src/apple'
 require 'src/Stages/tutorial'
 
 require 'src/Menus/TitleScreen'
@@ -25,6 +26,7 @@ function love.load()
     cam = camera(0,0,CAMERA_ZOOM)
 
     world = wf.newWorld(0, 800, false)
+    world:setCallbacks(beginContact, endContact)
     add_col_classes(world)
 
     --TODO: Find a way to put these at the top with the other imports...
@@ -81,3 +83,11 @@ function love.mousemoved(x,y,dx,dy, istouch)
     love.mouse.setVisible(true)
 end
 
+-- Callback functions for object detection.
+function beginContact(a, b, collision)
+    print(apple.beginContact(a, b, collision))
+end
+
+function endContact(a,b, collision)
+end
+>>>>>>> 43f58edeeaf1d489ccacb13a2031e45a271093bc

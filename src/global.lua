@@ -10,6 +10,6 @@ CAMERA_ZOOM = 3
 GAME_FONT_SIZE = 100
 TEXT_FONT_SIZE = 32
 
-TITLE = "Project Sloth"
+TITLE = "Project Cat"
 
 -- Non-final globals here

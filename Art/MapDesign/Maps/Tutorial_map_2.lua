@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 13,
-  nextobjectid = 41,
+  nextlayerid = 15,
+  nextobjectid = 52,
   properties = {},
   tilesets = {
     {
@@ -111,7 +111,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztlkEOgjAQRduVa9fGhXs2XE89gXoC9V7iAlgoUSDcwSFp42TSTkVtIcpPXkJaZl5LGlIhxgwxMqBrqoh78us1pEAG5MgfBfRfgCtQKH/05/7QMfl9r2MJrIA1439nDQuFy7kBtsDuBb+tn8tP67BzDxyAI/EnzD5Oaj5Rz3osRuPUn6B57MwYctRHkzpqaJ1w1LX7vVm4G/z6G3EUHes4vyR9SqBSNAg8Vhv8JanB71cWavE8f9x5xqHeLmfWFMnA+T8N53X9D0L4uxAifbp/NWfLc6hMCK53xnzvOwytj6/gu5COzzXHwn7/8u3W/W33r3Zu7pkZcT4AbsiFeQ=="
+      data = "eJztlkEOgjAQRcvKtWvjwj0brqeeQD2Bei9xASzUKBDv4JBM42TSTkVtIcpPXmgKM6+QhlSpIX1MFNA1RpKO/HoNGZADBfHHAf0n4Axc0B//uT90TH7f65gDC2Ap+N9ZwwxxOVfAGti84Lf1c/l5HXVugR2wZ/5UeI8D3k9xzOdSg7+ZS/BKnblAQfpoMkcNr1OOuuZ9rxZuBr/+RhKXlnWSP2J9SqBC7gQ6Vxv8Jauhz1cWavXcf9J+puHeNnvWlEhA8n8ayev6H4TwtyFEunT/ao6WcaiMGK5nhnzvO/Stj6/Qs5COzzUnyn7+8u3W/W3nr+be1DMT5nwAw46GIA=="
     },
     {
       type = "tilelayer",
@@ -577,6 +577,87 @@ return {
           y = 192.875,
           width = 6.04348,
           height = 15.0625,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "entity",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 45,
+          name = "Apple",
+          type = "apple",
+          shape = "ellipse",
+          x = 228.239,
+          y = 196.335,
+          width = 8.18182,
+          height = 8.54545,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 48,
+          name = "Apple",
+          type = "apple",
+          shape = "ellipse",
+          x = 307.784,
+          y = 196.063,
+          width = 8.18182,
+          height = 8.54545,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 49,
+          name = "Apple",
+          type = "apple",
+          shape = "ellipse",
+          x = 20.5758,
+          y = 135.394,
+          width = 8.18182,
+          height = 8.54545,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 50,
+          name = "Apple",
+          type = "apple",
+          shape = "ellipse",
+          x = 142.242,
+          y = 314.727,
+          width = 8.18182,
+          height = 8.54545,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 51,
+          name = "Apple",
+          type = "apple",
+          shape = "ellipse",
+          x = 452.576,
+          y = 499.394,
+          width = 8.18182,
+          height = 8.54545,
           rotation = 0,
           visible = true,
           properties = {}
