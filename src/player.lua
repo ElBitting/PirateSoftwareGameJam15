@@ -149,7 +149,7 @@ function player:draw()
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
     -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
 
-    player.anim:draw(image, px, py, nil, sx, sy,7, 10)
+    love.graphics.draw(love.graphics.newImage('Art/Sprites/cat1.png'), px-14, py-8.5, nil, .5, .5,7, 10)
 
 end
 
