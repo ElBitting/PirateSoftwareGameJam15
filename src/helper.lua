@@ -32,9 +32,10 @@ function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_
             if vine_flag then
                 if i == 1 then
                     col:setType('static')
-                else
-                    -- joint = world:addJoint('RevoluteJoint', list[i-1], col, obj.x +obj.width/2, obj.y-obj.height/5, true)
+                elseif obj.name == previousName then 
+                    joint = world:addJoint('RevoluteJoint', list[i-1], col, obj.x +obj.width/2, obj.y-obj.height/5, true)
                 end
+                previousName = obj.name
             end
             table.insert(list, col)
         end
