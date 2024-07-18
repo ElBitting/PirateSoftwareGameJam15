@@ -1,5 +1,5 @@
 
-player = world:newBSGRectangleCollider(20, 505, 18,13, 3)
+player = world:newBSGRectangleCollider(20, 505, 12,13, 3)
 player:setCollisionClass("Player")
 player:setFixedRotation(true)
 
@@ -165,7 +165,7 @@ function player:keypressed(key)
     elseif key == 'space' and player.grounded then
         -- jump impulse
         player:setLinearVelocity(0, 0)
-        player:applyLinearImpulse(0,-150)
+        player:applyLinearImpulse(0,-85)
     end
 end
 

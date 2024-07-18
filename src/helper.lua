@@ -23,7 +23,7 @@ end
 
 function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_flag)
     if gameMap.layers[layer_name] then
-        PrevofName = {}
+        local PrevofName = {}
         for i, obj in pairs(gameMap.layers[layer_name].objects) do
             local col = world:newBSGRectangleCollider(obj.x, obj.y, obj.width, obj.height,1)
             col:setCollisionClass(collision_class)
