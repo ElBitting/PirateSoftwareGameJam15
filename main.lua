@@ -77,6 +77,11 @@ function love.mousemoved(x,y,dx,dy, istouch)
     love.mouse.setVisible(true)
 end
 
+function love.keyreleased(key)
+    if gs.current == Game then
+        game:keyrealeased(key)
+end
+
 -- Callback functions for object detection.
 function beginContact(a, b, collision)
     print(apple.beginContact(a, b, collision))

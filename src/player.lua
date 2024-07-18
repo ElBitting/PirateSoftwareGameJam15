@@ -168,3 +168,10 @@ function player:keypressed(key)
         player:applyLinearImpulse(0,-50)
     end
 end
+
+function player:keyrealeased(key)
+    if key == 'space' then
+        local px, py = player:getLinearVelocity()
+        player:setLinearVelocity(px,0)
+    end
+end

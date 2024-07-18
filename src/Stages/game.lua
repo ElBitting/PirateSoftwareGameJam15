@@ -39,3 +39,6 @@ function game:keypressed(key)
     player:keypressed(key)
 end
 
+function game:keyrealeased(key)
+    player:keyrealeased(key)
+end
