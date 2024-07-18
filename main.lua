@@ -58,6 +58,12 @@ function love.draw()
     end    
 end
 
+function love.keyreleased(key)
+    if gs.current() == tutorial then 
+        game:keyrealeased(key)
+    end
+end
+
 function love.keypressed(key)
     if gs.current() == TitleScreen then 
         TitleScreen:keypressed(key)
@@ -75,8 +81,3 @@ function love.mousemoved(x,y,dx,dy, istouch)
     love.mouse.setVisible(true)
 end
 
-function love.keyreleased(key)
-    if gs.current == Game then
-        game:keyrealeased(key)
-    end
-end

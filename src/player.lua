@@ -166,7 +166,9 @@ end
 
 function player:keyrealeased(key)
     if key == 'space' then
-        local px, py = player:getLinearVelocity()
-        player:setLinearVelocity(px,0)
+        local X, Y = player:getLinearVelocity()
+        if Y < 0 then
+            player:setLinearVelocity(X,0)
+        end
     end
 end
