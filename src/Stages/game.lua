@@ -35,4 +35,5 @@ function game:keypressed(key)
         player:setX(20)
         player:setY(505)
     end
+    player:keypressed(key)
 end
