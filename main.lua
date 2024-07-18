@@ -74,3 +74,9 @@ end
 function love.mousemoved(x,y,dx,dy, istouch)
     love.mouse.setVisible(true)
 end
+
+function love.keyreleased(key)
+    if gs.current == Game then
+        game:keyrealeased(key)
+    end
+end
