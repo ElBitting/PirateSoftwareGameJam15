@@ -27,7 +27,7 @@ function love.load()
     cam = camera(0,0,CAMERA_ZOOM)
 
     world = wf.newWorld(0, 800, false)
-    --world:setCallbacks(beginContact, endContact)
+    world:setCallbacks(beginContact, endContact)
     add_col_classes(world)
 
     --TODO: Find a way to put these at the top with the other imports...
