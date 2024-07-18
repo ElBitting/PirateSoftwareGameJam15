@@ -27,7 +27,7 @@ function love.load()
     cam = camera(0,0,CAMERA_ZOOM)
 
     world = wf.newWorld(0, 800, false)
-    world:setCallbacks(beginContact, endContact)
+    --world:setCallbacks(beginContact, endContact)
     add_col_classes(world)
 
     --TODO: Find a way to put these at the top with the other imports...
@@ -60,6 +60,12 @@ function love.draw()
     end    
 end
 
+function love.keyreleased(key)
+    if gs.current() == tutorial then 
+        game:keyrealeased(key)
+    end
+end
+
 function love.keypressed(key)
     if gs.current() == TitleScreen then 
         TitleScreen:keypressed(key)
@@ -77,12 +83,6 @@ function love.mousemoved(x,y,dx,dy, istouch)
     love.mouse.setVisible(true)
 end
 
-function love.keyreleased(key)
-    if gs.current == Game then
-        game:keyrealeased(key)
-    end
-end
-
 -- Callback functions for object detection.
 function beginContact(a, b, collision)
     apple.beginContact(a, b, collision)
@@ -91,3 +91,4 @@ end
 
 function endContact(a,b, collision)
 end
+
