@@ -29,6 +29,7 @@ function love.load()
 
     --TODO: Find a way to put these at the top with the other imports...
     require 'src/player'
+    require 'src/apple'
     require 'src/Menus/PauseScreen'
 
     gs.switch(TitleScreen)
@@ -51,6 +52,9 @@ function love.draw()
         Credits:draw()
     else
         game:draw()
+    end
+    if player.hasapple then 
+        love.graphics.print(player.inventory['apple'], textFont, 10, 10)
     end    
 end
 

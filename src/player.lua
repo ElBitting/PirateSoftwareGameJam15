@@ -3,6 +3,7 @@ player = world:newBSGRectangleCollider(20, 505, 8,13, 3)
 player:setCollisionClass("Player")
 player:setFixedRotation(true)
 
+
 image = love.graphics.newImage('Sprites/character/oldHero.png')
 Playergrid = anim8.newGrid(16,16, image: getWidth(), image:getHeight())
 animation = anim8.newAnimation(Playergrid('1-5',1), 0.1)
@@ -15,6 +16,8 @@ player.grounded = true
 player.laddered = false
 player.x = 0
 player.y = 0
+player.inventory = {}
+player.hasapple = false
 local colliderWidth = 2
 local colliderHeight = 3
 local offsetCollionPlayerFeet = 5
@@ -96,6 +99,13 @@ function player:update(dt)
         player:setX(20)
         player:setY(505)
         gs.switch(Credits)
+    end
+    if player:enter('Apples') then
+        local collided = player:getEnterCollisionData('Apples')
+        collided.collider:destroy()
+        if player.inventory['apple'] == nil then player.inventory['apple'] = 1 
+        else player.inventory['apple'] = player.inventory['apple'] + 1 end
+        player.hasapple = true
     end
 
     player:setPreSolve(function(col1, col2, contact)

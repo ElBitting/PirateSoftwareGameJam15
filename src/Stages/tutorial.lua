@@ -9,8 +9,9 @@ function tutorial:enter()
     door = {}
     exit = {}
     ladders = {}
-    twals = {}
+    twals = {}  
     vines = {}
+    
 
 
     add_col_class_obj(walls, 'Platform', 'Walls',true, false)

@@ -8,6 +8,7 @@ function add_col_classes(world)
     world:addCollisionClass('Ladders')
     world:addCollisionClass('ThickWalls')
     world:addCollisionClass('Vines')
+    world:addCollisionClass('Apples')
     
 end
 
@@ -47,6 +48,7 @@ function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_
         end
     end
 end
+
 
 
 function safe_quit()
