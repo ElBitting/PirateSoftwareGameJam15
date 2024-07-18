@@ -1,5 +1,5 @@
 
-player = world:newBSGRectangleCollider(20, 505, 8,13, 3)
+player = world:newBSGRectangleCollider(20, 505, 18,13, 3)
 player:setCollisionClass("Player")
 player:setFixedRotation(true)
 
@@ -142,8 +142,8 @@ function player:draw()
     local py = player:getY()
 
     --scale character by 1.1
-    sx = 1.1
-    sy = 1.1
+    sx = .5
+    sy = .5
     --swap direction for facing left vs right
     if player.dir == -1 then
         sx = -sx
@@ -154,7 +154,7 @@ function player:draw()
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
     -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
 
-    love.graphics.draw(love.graphics.newImage('Art/Sprites/cat1.png'), px-14, py-8.5, nil, .5, .5,7, 10)
+    love.graphics.draw(love.graphics.newImage('Art/Sprites/cat1.png'), px, py, nil, sx, sy,30, 20)
 
 end
 
@@ -165,7 +165,7 @@ function player:keypressed(key)
     elseif key == 'space' and player.grounded then
         -- jump impulse
         player:setLinearVelocity(0, 0)
-        player:applyLinearImpulse(0,-50)
+        player:applyLinearImpulse(0,-150)
     end
 end
 
