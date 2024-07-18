@@ -23,6 +23,7 @@ end
 
 function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_flag)
     if gameMap.layers[layer_name] then
+        PrevofName = {}
         for i, obj in pairs(gameMap.layers[layer_name].objects) do
             local col = world:newBSGRectangleCollider(obj.x, obj.y, obj.width, obj.height,1)
             col:setCollisionClass(collision_class)
@@ -30,13 +31,13 @@ function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_
                 col:setType('static')
             end
             if vine_flag then
-                if i == 1 then
+                if PrevofName[obj.name]~= nil then
+                    joint = world:addJoint('RevoluteJoint', PrevofName[obj.name], col, obj.x +obj.width/2, obj.y-obj.height/5, true)
+                else
                     col:setType('static')
-                elseif obj.name == previousName then 
-                    joint = world:addJoint('RevoluteJoint', list[i-1], col, obj.x +obj.width/2, obj.y-obj.height/5, true)
                 end
-                previousName = obj.name
             end
+            PrevofName[obj.name] = col
             table.insert(list, col)
         end
     end
