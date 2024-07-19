@@ -24,7 +24,7 @@ function love.load()
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)
     SelectedButton = 1
 
-    cam = camera(0,0,CAMERA_ZOOM)
+    cam = camera(10,490,CAMERA_ZOOM)
 
     world = wf.newWorld(0, 800, false)
     world:setCallbacks(beginContact, endContact)
@@ -55,9 +55,6 @@ function love.draw()
     else
         game:draw()
     end
-    if player.hasapple then 
-        love.graphics.print(player.inventory['apple'], textFont, 10, 10)
-    end    
 end
 
 function love.keyreleased(key)

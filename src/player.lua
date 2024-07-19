@@ -17,7 +17,6 @@ player.laddered = false
 player.x = 0
 player.y = 0
 player.inventory = {}
-player.hasapple = false
 local colliderWidth = 2
 local colliderHeight = 3
 local offsetCollionPlayerFeet = 5
@@ -133,7 +132,6 @@ function player:add_to_inventory(item)
         else 
             player.inventory['apple'] = player.inventory['apple'] + 1 
         end
-    player.hasapple = true
     end
 end
 

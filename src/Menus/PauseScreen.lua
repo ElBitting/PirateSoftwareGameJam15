@@ -98,7 +98,7 @@ function InventoryMenu()
     love.graphics.rectangle("line", 0, GAME_HEIGHT *2/3+2, GAME_WIDTH, GAME_HEIGHT/3)
     love.graphics.setColor(1,1,1)
     love.graphics.draw(appleimg, 100, 850, nil, 6, 6)
-    if player.hasapple then
+    if player.inventory['apple'] ~= nil then
         love.graphics.print(player.inventory['apple'], textFont, 95, 920)
     else
         love.graphics.print(0, textFont, 95, 920)
