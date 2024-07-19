@@ -21,11 +21,11 @@ function newButton(text, fn)
     }
 end
 
-function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_flag)
+function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_flag, sensor_flag)
     if gameMap.layers[layer_name] then
         local PrevofName = {}
         for i, obj in pairs(gameMap.layers[layer_name].objects) do
-            local col = world:newBSGRectangleCollider(obj.x, obj.y, obj.width, obj.height,1)
+            local col = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
             col:setCollisionClass(collision_class)
             if static_flag then
                 col:setType('static')
@@ -37,6 +37,7 @@ function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_
                     col:setType('static')
                 end
             end
+            col:setSensor(sensor_flag)
             PrevofName[obj.name] = col
             table.insert(list, col)
         end

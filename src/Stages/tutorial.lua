@@ -11,18 +11,19 @@ function tutorial:init()
     ladders = {}
     twals = {}  
     vines = {}
-    -- apples = {}
+    apples_list = {}
+    
     
 
 
-    add_col_class_obj(walls, 'Platform', 'Walls',true, false)
-    add_col_class_obj(hazards, 'Hazards', 'Hazards',true, false)
-    add_col_class_obj(door, 'TeleDoor','TeleDoor', true, false)
-    add_col_class_obj(exit, 'FinalDoor','FinalDoor', true, false)
-    add_col_class_obj(ladders, 'Ladders','Ladders', true, false)
-    add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false)
-    add_col_class_obj(vines, 'Vines','Vines', false, true)
-    add_col_class_obj(vines, 'Apples','Apples', false, true)
+    add_col_class_obj(walls, 'Platform', 'Walls',true, false, false)
+    add_col_class_obj(hazards, 'Hazards', 'Hazards',true, false, true)
+    add_col_class_obj(door, 'TeleDoor','TeleDoor', true, false, true)
+    add_col_class_obj(exit, 'FinalDoor','FinalDoor', true, false, true)
+    add_col_class_obj(ladders, 'Ladders','Ladders', true, false, true)
+    add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false, false)
+    add_col_class_obj(vines, 'Vines','Vines', false, true, true)
+    -- add_col_class_obj(apples_list, 'Apples','Apples', false, true)
 
     spawnEntities()
 end
@@ -41,7 +42,6 @@ function tutorial:draw()
         vine:setAngularDamping(450)
         ::continue::
     end
-    
     apple.drawAll()
 end
 

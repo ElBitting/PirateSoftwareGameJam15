@@ -30,7 +30,6 @@ end
 
 function apple:hover(dt)
     self.height = self.height + math.sin(self.randomTimeOffset + love.timer.getTime() * 4) * 0.1
-    -- print(self.height)
 end
 
 function apple:drawAll()
@@ -44,7 +43,6 @@ function apple:draw()
 end
 
 function apple:remove()
-    print('destroyed')
     for i, v in ipairs(active_apples) do
         if v == self then
             v.bod.body:destroy()
@@ -59,7 +57,7 @@ function apple:checkRemove()
     end 
 end
 
-function apple.beginContact(a, b, collision)
+function apple:beginContact(a, b, collision)
     for i, instance in ipairs(active_apples) do
         if a == instance.bod.fixture or b == instance.bod.fixture then
             if a == player.fixture or b == player.fixture then
