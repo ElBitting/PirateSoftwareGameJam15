@@ -54,7 +54,7 @@ end
 
 function RightMenu()
     local butt = 0
-    love.graphics.setColor(0.2,0.2,0.2)
+    love.graphics.setColor(0.2,0.2,0.2, 0.5)
     love.graphics.rectangle("fill", GAME_WIDTH-MENU_WIDTH-10, GAME_HEIGHT /9, MENU_WIDTH, MENU_HEIGHT)
     love.graphics.setColor(0,0,0.1)
     love.graphics.rectangle("line", GAME_WIDTH-MENU_WIDTH-10, GAME_HEIGHT /9, MENU_WIDTH, MENU_HEIGHT)
@@ -89,7 +89,7 @@ function RightMenu()
 end
 
 function InventoryMenu()
-    love.graphics.setColor(0.2,0.2,0.2)
+    love.graphics.setColor(0.2,0.2,0.2, 0.5)
     love.graphics.rectangle("fill", 0, GAME_HEIGHT *2/3, GAME_WIDTH, GAME_HEIGHT/3)
     love.graphics.setColor(0.2,0,0)
     love.graphics.rectangle("line", 0, GAME_HEIGHT *2/3-1, GAME_WIDTH, GAME_HEIGHT/3)

@@ -7,7 +7,19 @@ end
 function game:update(dt)
     player:update(dt)
     world:update(dt)
-    cam:lookAt(player:getPosition())
+    local px, py  = player:getPosition()
+    local cx,cy = cam:position()
+    if love.keyboard.isDown('w') then
+        if cy - py > -30 then 
+            cam:move(0,-300*dt)
+        end
+    elseif love.keyboard.isDown('s') then
+        if cy - py < 30 then 
+            cam:move(0,300*dt)
+        end
+    else
+        cam:lockPosition(px,py, cam.smooth.damped(8))
+    end
     apple:updateAll(dt)
 end
 
