@@ -33,6 +33,8 @@ function love.load()
     --TODO: Find a way to put these at the top with the other imports...
     require 'src/player'
     require 'src/Menus/PauseScreen'
+    require 'src/Menus/alchemy'
+
 
     gs.switch(TitleScreen)
     love.mouse.setVisible(false)
@@ -41,6 +43,8 @@ end
 function love.update(dt)
     if gs.current() == PauseScreen then 
         PauseScreen:update(dt)
+    elseif gs.current() == alchemy then 
+        alchemy:update(dt)
     elseif gs.current() ~= TitleScreen and gs.current() ~= Credits then
         love.mouse.setVisible(false)
         game:update(dt)
@@ -70,6 +74,8 @@ function love.keypressed(key)
         PauseScreen:keypressed(key)
     elseif gs.current() == Credits then
         Credits:keypressed(key)
+    elseif gs.current() == alchemy then 
+        alchemy:keypressed(key)
     else 
         game:keypressed(key)
     end

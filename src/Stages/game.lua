@@ -1,7 +1,7 @@
 game = {}
 
 function game:enter()
-    gs.switch(tutorial)
+    gs.push(tutorial)
 end
 
 function game:update(dt)
@@ -10,12 +10,14 @@ function game:update(dt)
     local px, py  = player:getPosition()
     local cx,cy = cam:position()
     if love.keyboard.isDown('w') then
-        if cy - py > -GAME_HEIGHT/12 then 
+        if cy - py > -GAME_HEIGHT/14 then 
             cam:move(0,-300*dt)
+        else cam:lockPosition(px,  py - GAME_HEIGHT/14, cam.smooth.damped(8))
         end
     elseif love.keyboard.isDown('s') then
-        if cy - py < GAME_HEIGHT/12 then 
+        if cy - py < GAME_HEIGHT/14 then 
             cam:move(0,300*dt)
+        else cam:lockPosition(px, py + GAME_HEIGHT/14, cam.smooth.damped(8))
         end
     else
         cam:lockPosition(px,py, cam.smooth.damped(8))
@@ -33,13 +35,18 @@ function game:draw()
     -- Initiate Pause Sequence
     if gs.current() == PauseScreen then
         PauseScreen:draw()
+    elseif gs.current() == alchemy then 
+        alchemy:draw()
     end
 end
 
 function game:keypressed(key)
     if key == 'escape' then
-        gs.switch(PauseScreen)
+        gs.push(PauseScreen)
     end 
+    if key == '.' then 
+        gs.push(alchemy)
+    end
     if key == 'p' then
         player:setX(20)
         player:setY(20)
