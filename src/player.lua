@@ -30,21 +30,19 @@ function player:syncPhysics()
     else
         player.x, player.y = player:getPosition()
     end
-    player:setLinearVelocity(player.xVel, player.yVel)
 end
 
 function player:applyGravity(dt)
-    -- print(player.laddered)
     if not player.grounded and not player.laddered and player.yVel < player.terminal_Velocity then 
         player.yVel = player.yVel + player.gravity * dt
     end
 end
 
 function player:jump(key)
-    if (key == "q" or key == "up") and (player.grounded or player.laddered) then
+    if (key == "space" or key == "up") and (player.grounded or player.laddered) then
         player.laddered = false
         player.grounded = false
-        player.yVel = player.jumpAmount
+        player:applyLinearImpulse(0,-150)
     end
 end
 
@@ -112,11 +110,11 @@ function player:applyFriction(dt)
 end
 
 function player:update(dt)
-    player:setGravityScale(0)
+    -- player:setGravityScale(0)
     player:syncPhysics()
     player:move(dt)
     player:climb(dt)
-    player:applyGravity(dt)
+    -- player:applyGravity(dt)
     -- player.anim:update(dt)
 end
 
