@@ -7,9 +7,11 @@ player.y = 0
 
 player.xVel = 0
 player.yVel = 0
+player.dir = 1
+player.movement = 0
 player.maxSpeed = 200
 player.terminal_Velocity = 300
-player.acceleration = 4000
+player.acceleration = 70000
 player.friction = 3500
 player.gravity = 600
 player.jumpAmount = -300
@@ -23,100 +25,12 @@ player.teleported = fals
 player.inventory = {}
 player.hasapple = false
 
-function player:syncPhysics()
-    if player.teleported then
-        player:setPosition(player.x, player.y)
-        player.teleported = false
-    else
-        player.x, player.y = player:getPosition()
-    end
-    player:setLinearVelocity(player.xVel, player.yVel)
-end
-
-function player:applyGravity(dt)
-    -- print(player.laddered)
-    if not player.grounded and not player.laddered and player.yVel < player.terminal_Velocity then 
-        player.yVel = player.yVel + player.gravity * dt
-    end
-end
-
-function player:jump(key)
-    if (key == "q" or key == "up") and (player.grounded or player.laddered) then
-        player.laddered = false
-        player.grounded = false
-        player.yVel = player.jumpAmount
-    end
-end
-
-function player:climb(dt)
-    if not player.laddered then return end
-    if love.keyboard.isDown("f") then
-        if player.yVel > -player.climbing_top_speed then
-            if player.yVel - player.acceleration * dt > -player.climbing_top_speed then
-                player.yVel = player.yVel - player.acceleration * dt
-            else 
-                player.yVel = -player.climbing_top_speed
-            end
-        end
-    else
-        player.yVel = 0
-    end
-    if love.keyboard.isDown("s") then
-        if player.yVel < player.climbing_top_speed then
-            if player.yVel + player.acceleration * dt < player.climbing_top_speed then
-                player.yVel = player.yVel + player.acceleration * dt
-            else 
-                player.yVel = player.climbing_top_speed
-            end
-        end
-    end
-end
-
-function player:move(dt)
-    if love.keyboard.isDown("d", "right") then
-        if player.xVel < player.maxSpeed then
-            if player.xVel + player.acceleration * dt < player.maxSpeed then
-                player.xVel = player.xVel + player.acceleration * dt
-            else 
-                player.xVel = player.maxSpeed
-            end
-        end
-    end
-    if love.keyboard.isDown("a", "left") then
-        if player.xVel > -player.maxSpeed then
-            if player.xVel - player.acceleration * dt > -player.maxSpeed then
-                player.xVel = player.xVel - player.acceleration * dt
-            else 
-                player.xVel = -player.maxSpeed
-            end
-        end
-    else
-        player:applyFriction(dt)
-    end
-end
-
-function player:applyFriction(dt)
-    if player.xVel > 0 then
-        if player.xVel - player.friction * dt > 0 then
-            player.xVel = player.xVel - player.friction * dt
-        else
-            player.xVel = 0
-        end
-    elseif player.xVel < 0 then
-        if player.xVel + player.friction * dt < 0 then
-            player.xVel = player.xVel + player.friction * dt
-        else
-            player.xVel = 0
-        end
-    end
-end
 
 function player:update(dt)
-    player:setGravityScale(0)
     player:syncPhysics()
     player:move(dt)
     player:climb(dt)
-    player:applyGravity(dt)
+    player:applyGravity()
     -- player.anim:update(dt)
 end
 
@@ -147,9 +61,10 @@ function player:draw()
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, collid2erWidth, colliderHeight)
     -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
 
-    -- player.anim:draw(image, px, py, nil, sx, sy,7, 14)
+    --player.anim:draw(image, player.x, player.y, nil, sx, sy,7, 14)
 
 end
+
 function player:beginContact(a, b, collision)
     if player.grounded == true then return end
     local nx, ny = collision:getNormal()
@@ -168,7 +83,7 @@ function player:beginContact(a, b, collision)
                     player.x = 20
                     player.y = 505
                     player.teleported = true
-                    -- -- player:setPosition(20,505)
+                    -- player:setPosition(20,505)
                     -- player:setX(20)
                     -- player:setY(505)
                 end
@@ -219,3 +134,126 @@ function player:endContact(a, b, collision)
         end
     end
 end
+
+function player:syncPhysics()
+    if player.teleported then
+        player:setPosition(player.x, player.y)
+        player.teleported = false
+    else
+        player.x, player.y = player:getPosition()
+    end
+    player:setLinearVelocity(player.xVel, player.yVel)
+end
+
+function player:applyGravity(dt)
+    -- print(player.laddered)
+    if not player.grounded and not player.laddered then 
+        player:setGravityScale(1)
+    else
+        player:setGravityScale(0)
+    end
+end
+
+function player:keypressed(key)
+    player:jump(key)
+    player:addDirection(key)
+end
+
+function player:keyreleased(key)
+    player:releaseJump(key)
+    player:releaseDirection(key)
+end
+
+function player:jump(key)
+    if (key == "space" or key == "up") and (player.grounded or player.laddered) then
+        player.laddered = false
+        player.grounded = false
+        player.yVel = player.jumpAmount
+    end
+end
+
+function player:releaseJump(key)
+    if key == 'space' and player.yVel < 0 then 
+        player.yVel =0
+    end
+end
+
+function player:addDirection(key)
+    if key == 'd' or key =='right' then
+    player.dir = 1
+        if player.movement <1 then 
+            player.movement = player.movement +1
+        end
+    elseif key == 'a' or key =='left' then
+    player.dir = -1
+        if player.movement >-1 then 
+            player.movement = player.movement -1
+        end
+    end
+end
+
+function player:releaseDirection(key)
+    if key == 'd' or key =='right' and player.movement >-1 then 
+        player.movement = player.movement -1
+    elseif key == 'a' or key =='left' and player.movement <1 then 
+        player.movement = player.movement +1
+    end
+end
+
+function player:climb(dt)
+    if not player.laddered then return end
+    if love.keyboard.isDown("f") then
+        if player.yVel > -player.climbing_top_speed then
+            if player.yVel - player.acceleration * dt > -player.climbing_top_speed then
+                player.yVel = player.yVel - player.acceleration * dt
+            else 
+                player.yVel = -player.climbing_top_speed
+            end
+        end
+    else
+        player.yVel = 0
+    end
+    if love.keyboard.isDown("s") then
+        if player.yVel < player.climbing_top_speed then
+            if player.yVel + player.acceleration * dt < player.climbing_top_speed then
+                player.yVel = player.yVel + player.acceleration * dt
+            else 
+                player.yVel = player.climbing_top_speed
+            end
+        end
+    end
+end
+
+function player:move(dt)
+    if player.movement == 1 then
+        if player.xVel < player.maxSpeed then
+            if player.xVel + player.acceleration * dt < player.maxSpeed then
+                player.xVel = player.xVel + player.acceleration * dt
+            else 
+                player.xVel = player.maxSpeed
+            end
+        end
+        
+    end
+    if player.movement == -1 then
+        player.dir = -1 
+        if player.xVel > -player.maxSpeed then
+            if player.xVel - player.acceleration * dt > -player.maxSpeed then
+                player.xVel = player.xVel - player.acceleration * dt
+            else 
+                player.xVel = -player.maxSpeed
+            end
+        end
+    else
+        player:applyFriction(dt)
+    end
+end
+
+function player:applyFriction(dt)
+    if math.abs(player.xVel) - player.friction * dt > 0 then
+        player.xVel = player.dir*(math.abs(player.xVel) - player.friction * dt)
+    else
+        player.xVel = 0
+    end
+end
+

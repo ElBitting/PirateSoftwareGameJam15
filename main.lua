@@ -62,9 +62,8 @@ function love.draw()
 end
 
 function love.keyreleased(key)
-    player:jump(key)
     if gs.current() == tutorial then 
-        -- game:keyrealeased(key)
+        game:keyreleased(key)
     end
 end
 
@@ -78,7 +77,7 @@ function love.keypressed(key)
     elseif gs.current() == alchemy then 
         alchemy:keypressed(key)
     else 
-        -- game:keypressed(key)
+        game:keypressed(key)
     end
 end
 
