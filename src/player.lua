@@ -1,20 +1,25 @@
-player = world:newBSGRectangleCollider(20, 505 - 100, 18,13, 3)
+player = world:newBSGRectangleCollider(20, 505 - 100, 12,12, 3)
 player:setCollisionClass("Player")
 player:setFixedRotation(true)
+
+image = love.graphics.newImage('Art/Sprites/cat2.png')
+Playergrid = anim8.newGrid(14,24, image: getWidth(), image:getHeight())
+animation = anim8.newAnimation(Playergrid('1-8',1), 0.15)
 
 player.x = 0
 player.y = 0
 
 player.xVel = 0
 player.yVel = 0
-player.dir = 1
+player.dir = 0
+player.anim = animation
 player.movement = 0
 player.maxSpeed = 200
 player.terminal_Velocity = 300
-player.acceleration = 70000
+player.acceleration = 9000
 player.friction = 3500
 player.gravity = 600
-player.jumpAmount = -300
+player.jumpAmount = -80
 player.height = 13
 player.width = 18
 player.grounded = false
@@ -27,23 +32,13 @@ player.hasapple = false
 
 
 function player:update(dt)
-    player:syncPhysics()
+    player:syncPhysics(dt)
     player:move(dt)
     player:climb(dt)
-    player:applyGravity()
-    -- player.anim:update(dt)
+    -- player:applyGravity()
+    player.anim:update(dt)
 end
 
--- Inventory Management 
-function player:add_to_inventory(item)
-    if item == 'apple' then
-        if player.inventory['apple'] == nil then 
-            player.inventory['apple'] = 1 
-        else 
-            player.inventory['apple'] = player.inventory['apple'] + 1 
-        end
-    end
-end
 
 function player:draw()
     -- local px = player:getX()
@@ -61,7 +56,7 @@ function player:draw()
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, collid2erWidth, colliderHeight)
     -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
 
-    --player.anim:draw(image, player.x, player.y, nil, sx, sy,7, 14)
+    player.anim:draw(image, player.x, player.y, nil, sx, sy,7, 14)
 
 end
 
@@ -135,24 +130,29 @@ function player:endContact(a, b, collision)
     end
 end
 
-function player:syncPhysics()
+function player:syncPhysics(dt)
+    if player.laddered then 
+        player:setLinearVelocity(player.xVel, player.yVel)
+    else
+        _, player.yVel = player:getLinearVelocity()
+        player:setLinearVelocity(player.xVel, player.yVel)
+    end
     if player.teleported then
         player:setPosition(player.x, player.y)
         player.teleported = false
     else
         player.x, player.y = player:getPosition()
     end
-    player:setLinearVelocity(player.xVel, player.yVel)
 end
 
-function player:applyGravity(dt)
-    -- print(player.laddered)
-    if not player.grounded and not player.laddered then 
-        player:setGravityScale(1)
-    else
-        player:setGravityScale(0)
-    end
-end
+-- function player:applyGravity(dt)
+--     -- print(player.laddered)
+--     if not player.grounded and not player.laddered then 
+--         player:setGravityScale(1)
+--     else
+--         player:setGravityScale(0)
+--     end
+-- end
 
 function player:keypressed(key)
     player:jump(key)
@@ -168,13 +168,13 @@ function player:jump(key)
     if (key == "space" or key == "up") and (player.grounded or player.laddered) then
         player.laddered = false
         player.grounded = false
-        player.yVel = player.jumpAmount
+        player:applyLinearImpulse(0,player.jumpAmount)
     end
 end
 
 function player:releaseJump(key)
     if key == 'space' and player.yVel < 0 then 
-        player.yVel =0
+        player:setLinearVelocity(player.xVel, 0)
     end
 end
 
@@ -201,7 +201,8 @@ function player:releaseDirection(key)
 end
 
 function player:climb(dt)
-    if not player.laddered then return end
+    if not player.laddered then player: setGravityScale(1)return end
+    player:setGravityScale(0)
     if love.keyboard.isDown("f") then
         if player.yVel > -player.climbing_top_speed then
             if player.yVel - player.acceleration * dt > -player.climbing_top_speed then
@@ -257,3 +258,13 @@ function player:applyFriction(dt)
     end
 end
 
+-- Inventory Management 
+function player:add_to_inventory(item)
+    if item == 'apple' then
+        if player.inventory['apple'] == nil then 
+            player.inventory['apple'] = 1 
+        else 
+            player.inventory['apple'] = player.inventory['apple'] + 1 
+        end
+    end
+end
