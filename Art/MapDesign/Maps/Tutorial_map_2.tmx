@@ -26,7 +26,7 @@
  </layer>
  <objectgroup id="8" name="Ladders">
   <object id="26" x="45.5" y="81.2188" width="2.25" height="126.813"/>
-  <object id="28" x="96.025" y="81.2741" width="2.75" height="126.813"/>
+  <object id="28" x="96.025" y="81.2741" width="16.5" height="126.813"/>
  </objectgroup>
  <objectgroup id="3" name="Walls">
   <object id="8" x="64" y="480" width="16" height="16"/>

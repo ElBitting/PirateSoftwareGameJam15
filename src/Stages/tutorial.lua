@@ -23,7 +23,7 @@ function tutorial:init()
     add_col_class_obj(ladders, 'Ladders','Ladders', true, false, true)
     add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false, false)
     add_col_class_obj(vines, 'Vines','Vines', false, true, true)
-    add_col_class_obj(apples_list, 'Apples','Apples', false, true)
+    -- add_col_class_obj(apples_list, 'Apples','Apples', false, true)
 
     spawnEntities()
 end
@@ -41,7 +41,6 @@ function tutorial:draw()
         love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, 1, 1,7, 10)
         ::continue::
     end
-    
     apple.drawAll()
 end
 

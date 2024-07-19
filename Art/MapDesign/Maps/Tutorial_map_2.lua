@@ -167,7 +167,7 @@ return {
           shape = "rectangle",
           x = 96.025,
           y = 81.2741,
-          width = 2.75,
+          width = 16.5,
           height = 126.813,
           rotation = 0,
           visible = true,

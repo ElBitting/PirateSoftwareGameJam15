@@ -11,44 +11,80 @@ player.maxSpeed = 200
 player.terminal_Velocity = 300
 player.acceleration = 4000
 player.friction = 3500
-player.gravity = 500
-player.jumpAmount = -500
+player.gravity = 600
+player.jumpAmount = -300
 player.height = 13
 player.width = 18
-
-
-player.speed = 130
-player.anim = animation
-player.ismoving = false
-player.dir = 1
 player.grounded = false
 player.laddered = false
+player.climbing_top_speed = 120
+player.teleported = false
+
+
+
+-- player.speed = 130
+-- player.anim = animation
+-- player.ismoving = false
+-- player.dir = 1
+-- player.grounded = false
+-- player.laddered = false
 
 player.inventory = {}
 player.hasapple = false
-local colliderWidth = 2
-local colliderHeight = 3
-local offsetCollionPlayerFeet = 5
+-- local colliderWidth = 2
+-- local colliderHeight = 3
+-- local offsetCollionPlayerFeet = 5
 
-image = love.graphics.newImage('Art/Sprites/cat2.png')
-Playergrid = anim8.newGrid(14,24, image: getWidth(), image:getHeight())
-animation = anim8.newAnimation(Playergrid('1-8',1), 0.15)
+-- image = love.graphics.newImage('Art/Sprites/cat2.png')
+-- Playergrid = anim8.newGrid(14,24, image: getWidth(), image:getHeight())
+-- animation = anim8.newAnimation(Playergrid('1-8',1), 0.15)
 
-function player:syncPhysics() 
-    player.x, player.y = player:getPosition()
+function player:syncPhysics()
+    if player.teleported then
+        player:setPosition(player.x, player.y)
+        player.teleported = false
+    else
+        player.x, player.y = player:getPosition()
+    end
     player:setLinearVelocity(player.xVel, player.yVel)
 end
+
 function player:applyGravity(dt)
-    print(player.yVel)
-    if not player.grounded and player.yVel < player.terminal_Velocity then 
+    -- print(player.laddered)
+    if not player.grounded and not player.laddered and player.yVel < player.terminal_Velocity then 
         player.yVel = player.yVel + player.gravity * dt
     end
 end
 
 function player:jump(key)
-    if (key == "w" or key == "up") and player.grounded then
+    if (key == "q" or key == "up") and (player.grounded or player.laddered) then
+        player.laddered = false
         player.grounded = false
         player.yVel = player.jumpAmount
+    end
+end
+
+function player:climb(dt)
+    if not player.laddered then return end
+    if love.keyboard.isDown("f") then
+        if player.yVel > -player.climbing_top_speed then
+            if player.yVel - player.acceleration * dt > -player.climbing_top_speed then
+                player.yVel = player.yVel - player.acceleration * dt
+            else 
+                player.yVel = -player.climbing_top_speed
+            end
+        end
+    else
+        player.yVel = 0
+    end
+    if love.keyboard.isDown("s") then
+        if player.yVel < player.climbing_top_speed then
+            if player.yVel + player.acceleration * dt < player.climbing_top_speed then
+                player.yVel = player.yVel + player.acceleration * dt
+            else 
+                player.yVel = player.climbing_top_speed
+            end
+        end
     end
 end
 
@@ -58,7 +94,7 @@ function player:move(dt)
             if player.xVel + player.acceleration * dt < player.maxSpeed then
                 player.xVel = player.xVel + player.acceleration * dt
             else 
-                self.xVel = self.maxSpeed
+                player.xVel = player.maxSpeed
             end
         end
     end
@@ -67,11 +103,11 @@ function player:move(dt)
             if player.xVel - player.acceleration * dt > -player.maxSpeed then
                 player.xVel = player.xVel - player.acceleration * dt
             else 
-                self.xVel = -self.maxSpeed
+                player.xVel = -player.maxSpeed
             end
         end
     else
-        self:applyFriction(dt)
+        player:applyFriction(dt)
     end
 end
 
@@ -80,20 +116,23 @@ function player:applyFriction(dt)
         if player.xVel - player.friction * dt > 0 then
             player.xVel = player.xVel - player.friction * dt
         else
-            self.xVel = 0
+            player.xVel = 0
         end
     elseif player.xVel < 0 then
         if player.xVel + player.friction * dt < 0 then
             player.xVel = player.xVel + player.friction * dt
         else
-            self.xVel = 0
+            player.xVel = 0
         end
     end
 end
 
 function player:update(dt)
+    player:setGravityScale(0)
     player:syncPhysics()
     player:move(dt)
+    player:climb(dt)
+    -- print(player:getLinearVelocity())
     player:applyGravity(dt)
     -- -- Reset Horizontal velocity
     -- local xNow,yNow = player:getLinearVelocity()
@@ -173,21 +212,21 @@ function player:update(dt)
     --     gs.switch(Credits)
     -- end
 
-    player:setPreSolve(function(col1, col2, contact)
-        if col1.collision_class == 'Player' and col2.collision_class == 'Platform' then
-            local px, py = col1:getPosition()
-            local pw, ph = 2, 2
-            local tx, ty = col2:getPosition()
-            local tw, th = 5, 5
-            -- contact:setEnabled(false)
-            if (py + ph)/2 > (ty - th)/2 then contact:setEnabled(false) end
-        elseif col1.collision_class == 'Player' and col2.collision_class == 'Vines' then
-            contact:setEnabled(false)
-            if love.keyboard.isDown('x') then contact:setEnabled(true) end
-        elseif col1.collision_class == 'Player' and col2.collision_class == 'Ladders' then
-            contact:setEnabled(false)
-        end
-    end)
+    -- player:setPreSolve(function(col1, col2, contact)
+    --     if col1.collision_class == 'Player' and col2.collision_class == 'Platform' then
+    --         local px, py = col1:getPosition()
+    --         local pw, ph = 2, 2
+    --         local tx, ty = col2:getPosition()
+    --         local tw, th = 5, 5
+    --         -- contact:setEnabled(false)
+    --         if (py + ph)/2 > (ty - th)/2 then contact:setEnabled(false) end
+    --     elseif col1.collision_class == 'Player' and col2.collision_class == 'Vines' then
+    --         contact:setEnabled(false)
+    --         if love.keyboard.isDown('x') then contact:setEnabled(true) end
+    --     elseif col1.collision_class == 'Player' and col2.collision_class == 'Ladders' then
+    --         contact:setEnabled(false)
+    --     end
+    -- end)
 
     -- --States For Animations (once we have them)
     -- local Currentrunning = player.ismoving and player.grounded
@@ -210,15 +249,15 @@ function player:add_to_inventory(item)
 end
 
 function player:draw()
-    local px = player:getX()
-    local py = player:getY()
-    -- Local Scale variables for the player sprite
-    local sx = 1
-    local sy = 1
+    -- local px = player:getX()
+    -- local py = player:getY()
+    -- -- Local Scale variables for the player sprite
+    -- local sx = 1
+    -- local sy = 1
     --swap direction for facing left vs right
-    if player.dir == -1 then
-        sx = -sx
-    end
+    -- if player.dir == -1 then
+    --     sx = -sx
+    -- end
 
     
     -- show grounded detection
@@ -249,12 +288,35 @@ end
 --     end
 -- end
 
+function player:setLaddered(boolean)
+    player.laddered = boolean
+end
+
 function player:beginContact(a, b, collision)
     if player.grounded == true then return end
     local nx, ny = collision:getNormal()
 
     if a == player.fixture then
-        if b:isSensor() then return end
+        if b:isSensor() then
+            -- check for ladders and check for hazzards...
+            for i, instance in ipairs(ladders) do
+                print(instance.fixture, b)
+                if b == instance.fixture then
+                    player.laddered = true
+                end
+            end
+            for i, instance in ipairs(hazards) do
+                if b == instance.fixture then
+                    player.x = 20
+                    player.y = 505
+                    player.teleported = true
+                    -- -- player:setPosition(20,505)
+                    -- player:setX(20)
+                    -- player:setY(505)
+                end
+            end
+            return
+        end
         _, by, _, _ = b:getBoundingBox()
         if ny > 0 and by > (player.y + player.height / 2.5)  then
             player:land(b, collision)
@@ -262,7 +324,9 @@ function player:beginContact(a, b, collision)
             player.yVel = 0
         end
     elseif b == player.fixture then
-        if a:isSensor() then return end
+        if a:isSensor() then 
+            return
+        end
         _, ay, _, _ = a:getBoundingBox()
         if ny < 0 and (player.y + player.height / 2.5) < ay then
             player:land(a, collision)
@@ -281,6 +345,17 @@ end
 
 function player:endContact(a, b, collision)
     if a == player.fixture or b == player.fixture then
+        if a == player.fixture then
+            if b:isSensor() then
+                -- check for ladders and check for hazzards...
+                for i, instance in ipairs(ladders) do
+                    -- print(instance.fixture, b)
+                    if b == instance.fixture then
+                        player.laddered = false
+                    end
+                end
+            end
+        end
         if player.currentGroundCollision == collision then
             player.grounded = false
         end
