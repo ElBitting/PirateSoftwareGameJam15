@@ -61,8 +61,9 @@ function love.draw()
 end
 
 function love.keyreleased(key)
+    player:jump(key)
     if gs.current() == tutorial then 
-        game:keyrealeased(key)
+        -- game:keyrealeased(key)
     end
 end
 
@@ -74,7 +75,7 @@ function love.keypressed(key)
     elseif gs.current() == Credits then
         Credits:keypressed(key)
     else 
-        game:keypressed(key)
+        -- game:keypressed(key)
     end
 end
 
@@ -85,13 +86,13 @@ end
 
 -- Callback functions for object detection.
 function beginContact(a, b, collision)
-    apple.beginContact(a, b, collision)
-    player.beginContact(a, b, collision)
+    apple:beginContact(a, b, collision)
+    player:beginContact(a, b, collision)
 
 
 end
 
 function endContact(a,b, collision)
-    player.endContact(a, b, collision)
+    player:endContact(a, b, collision)
 end
 

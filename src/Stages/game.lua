@@ -24,21 +24,21 @@ function game:draw()
     end
 end
 
-function game:keypressed(key)
-    if key == 'escape' then
-        gs.switch(PauseScreen)
-    end 
-    if key == 'p' then
-        player:setX(20)
-        player:setY(20)
-    end
-    if key == 'r' then
-        player:setX(20)
-        player:setY(505)
-    end
-    player:keypressed(key)
-end
+-- function game:keypressed(key)
+--     if key == 'escape' then
+--         gs.switch(PauseScreen)
+--     end 
+--     if key == 'p' then
+--         player:setX(20)
+--         player:setY(20)
+--     end
+--     if key == 'r' then
+--         player:setX(20)
+--         player:setY(505)
+--     end
+--     player:keypressed(key)
+-- end
 
-function game:keyrealeased(key)
-    player:keyrealeased(key)
-end
+-- function game:keyrealeased(key)
+--     player:keyrealeased(key)
+-- end

@@ -59,7 +59,7 @@ function apple:checkRemove()
     end 
 end
 
-function apple.beginContact(a, b, collision)
+function apple:beginContact(a, b, collision)
     for i, instance in ipairs(active_apples) do
         if a == instance.bod.fixture or b == instance.bod.fixture then
             if a == player.fixture or b == player.fixture then
