@@ -38,6 +38,7 @@ function tutorial:draw()
         local py = vine:getY()
         local r = vine:getAngle()
         love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, 1, 1,7, 10)
+        vine:setAngularDamping(450)
         ::continue::
     end
     
