@@ -24,7 +24,7 @@ function love.load()
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)
     SelectedButton = 1
 
-    cam = camera(0,0,CAMERA_ZOOM)
+    cam = camera(10,490,CAMERA_ZOOM)
 
     world = wf.newWorld(0, 800, false)
     world:setCallbacks(beginContact, endContact)
@@ -33,6 +33,8 @@ function love.load()
     --TODO: Find a way to put these at the top with the other imports...
     require 'src/player'
     require 'src/Menus/PauseScreen'
+    require 'src/Menus/alchemy'
+
 
     gs.switch(TitleScreen)
     love.mouse.setVisible(false)
@@ -41,6 +43,8 @@ end
 function love.update(dt)
     if gs.current() == PauseScreen then 
         PauseScreen:update(dt)
+    elseif gs.current() == alchemy then 
+        alchemy:update(dt)
     elseif gs.current() ~= TitleScreen and gs.current() ~= Credits then
         love.mouse.setVisible(false)
         game:update(dt)
@@ -55,9 +59,6 @@ function love.draw()
     else
         game:draw()
     end
-    if player.hasapple then 
-        love.graphics.print(player.inventory['apple'], textFont, 10, 10)
-    end    
 end
 
 function love.keyreleased(key)
@@ -74,6 +75,8 @@ function love.keypressed(key)
         PauseScreen:keypressed(key)
     elseif gs.current() == Credits then
         Credits:keypressed(key)
+    elseif gs.current() == alchemy then 
+        alchemy:keypressed(key)
     else 
         -- game:keypressed(key)
     end
