@@ -7,7 +7,7 @@ end
 function game:update(dt)
     player:update(dt)
     world:update(dt)
-    cam:lookAt(player:getPosition())
+    -- cam:lookAt(player:getPosition())
     CameraUpdate(dt)
 end
 
@@ -54,7 +54,7 @@ function CameraUpdate(dt)
         end
     elseif love.keyboard.isDown('s') and not player.laddered then
         if cy - py < GAME_HEIGHT/14 then 
-            cam:move(0,3200*dt)
+            cam:move(0,300*dt)
         else cam:lockPosition(px, py + GAME_HEIGHT/14, cam.smooth.damped(8))
         end
     else
