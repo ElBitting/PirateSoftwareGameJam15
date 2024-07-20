@@ -1,7 +1,7 @@
 game = {}
 
 function game:enter()
-    gs.switch(tutorial)
+    gs.push(tutorial)
 end
 
 function game:update(dt)
@@ -23,6 +23,8 @@ function game:draw()
     -- Initiate Pause Sequence
     if gs.current() == PauseScreen then
         PauseScreen:draw()
+    elseif gs.current() == alchemy then 
+        alchemy:draw()
     end
     if gs.current() == alchemy then
         alchemy:draw()
@@ -33,6 +35,9 @@ function game:keypressed(key)
     if key == 'escape' then
         gs.push(PauseScreen)
     end 
+    if key == '.' then 
+        gs.push(alchemy)
+    end
     if key == 'p' then
         player:setX(20)
         player:setY(20)
