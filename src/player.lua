@@ -4,9 +4,9 @@ player:setCollisionClass("Player")
 player:setFixedRotation(true)
 
 
-image = love.graphics.newImage('Art/Sprites/cat2.png')
-Playergrid = anim8.newGrid(14,24, image: getWidth(), image:getHeight())
-animation = anim8.newAnimation(Playergrid('1-8',1), 0.15)
+image = love.graphics.newImage('Art/Sprites/cat3SpriteSheet.png')
+Playergrid = anim8.newGrid(32,32, image: getWidth(), image:getHeight())
+animation = anim8.newAnimation(Playergrid('1-6',1), 0.15)
 
 player.speed = 130
 player.anim = animation
@@ -136,8 +136,8 @@ function player:draw()
     local py = player:getY()
 
     --scale character by 1.1
-    local sx = 1
-    local sy = 1
+    local sx = .8
+    local sy = .8
     --swap direction for facing left vs right
     if player.dir == -1 then
         sx = -sx
@@ -148,7 +148,7 @@ function player:draw()
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
     -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
 
-    player.anim:draw(image, px, py, nil, sx, sy,7, 14)
+    player.anim:draw(image, px, py, nil, sx, sy,16, 24)
 end
 
 function player:keypressed(key)

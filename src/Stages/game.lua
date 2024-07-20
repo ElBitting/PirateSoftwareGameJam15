@@ -15,7 +15,7 @@ end
 function game:draw()
     cam:attach()
         tutorial:draw()
-        world:draw()
+        -- world:draw()
         apple:draw()
         player:draw()
     cam:detach()

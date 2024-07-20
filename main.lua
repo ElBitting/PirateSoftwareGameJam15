@@ -17,6 +17,8 @@ require 'src/Menus/Credits'
 
 function love.load()
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
+    love.graphics.setDefaultFilter("nearest", "nearest")
+
 
     gameFont = love.graphics.newFont(GAME_FONT_SIZE)
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)
@@ -35,6 +37,7 @@ function love.load()
 
     gs.switch(TitleScreen)
     love.mouse.setVisible(false)
+
 end
 
 function love.update(dt)
