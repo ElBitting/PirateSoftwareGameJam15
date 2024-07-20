@@ -9,12 +9,10 @@ require 'src/helper'
 require 'src/global'
 
 require 'src/Stages/game'
-require 'src/apple'
 require 'src/Stages/tutorial'
 
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
-
 
 
 function love.load()
@@ -27,7 +25,6 @@ function love.load()
     cam = camera(10,490,CAMERA_ZOOM)
 
     world = wf.newWorld(0, 800, false)
-    world:setCallbacks(beginContact, endContact)
     add_col_classes(world)
 
     --TODO: Find a way to put these at the top with the other imports...
