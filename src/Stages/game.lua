@@ -9,7 +9,6 @@ function game:update(dt)
     world:update(dt)
     -- cam:lookAt(player:getPosition())
     CameraUpdate(dt)
-    alchemy:update()
 end
 
 function game:draw()
