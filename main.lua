@@ -22,7 +22,7 @@ function love.load()
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)
     SelectedButton = 1
 
-    cam = camera(0,0,CAMERA_ZOOM)
+    cam = camera(10,490,CAMERA_ZOOM)
 
     world = wf.newWorld(0, 800, false)
     add_col_classes(world)
@@ -53,9 +53,15 @@ function love.draw()
     else
         game:draw()
     end
-    if player.hasapple then 
+    if player.inventory['apple'] ~= nil then 
         love.graphics.print(player.inventory['apple'], textFont, 10, 10)
     end    
+end
+
+function love.keyreleased(key)
+    if gs.current() == tutorial then 
+        game:keyrealeased(key)
+    end
 end
 
 function love.keypressed(key)

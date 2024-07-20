@@ -1,12 +1,12 @@
 
-player = world:newBSGRectangleCollider(20, 505, 8,13, 3)
+player = world:newBSGRectangleCollider(20, 505, 12,13, 3)
 player:setCollisionClass("Player")
 player:setFixedRotation(true)
 
 
-image = love.graphics.newImage('Sprites/character/oldHero.png')
-Playergrid = anim8.newGrid(16,16, image: getWidth(), image:getHeight())
-animation = anim8.newAnimation(Playergrid('1-5',1), 0.1)
+image = love.graphics.newImage('Art/Sprites/cat2.png')
+Playergrid = anim8.newGrid(14,24, image: getWidth(), image:getHeight())
+animation = anim8.newAnimation(Playergrid('1-8',1), 0.15)
 
 player.speed = 130
 player.anim = animation
@@ -17,14 +17,14 @@ player.laddered = false
 player.x = 0
 player.y = 0
 player.inventory = {}
-player.hasapple = false
+-- player.hasapple = false
 local colliderWidth = 2
 local colliderHeight = 3
 local offsetCollionPlayerFeet = 5
 
 function player:update(dt)
     -- Reset Horizontal velocity
-    xNow,yNow = player:getLinearVelocity()
+    local xNow,yNow = player:getLinearVelocity()
     player:setLinearVelocity(player.x * player.speed, yNow)
     -- player:setLinearVelocity(0, yNow)
 
@@ -47,8 +47,8 @@ function player:update(dt)
 
     --Ladder and Jumping
     -- Check if grounded
-    Jump1 = Timer.after(0.1, function() player.grounded = true end)
-    Jump2 = Timer.after(0.1, function() player.laddered = true end)
+    local Jump1 = Timer.after(0.1, function() player.grounded = true end)
+    local Jump2 = Timer.after(0.1, function() player.laddered = true end)
 
     local colliders = world:queryRectangleArea(player:getX()-colliderWidth/2, player:getY()+offsetCollionPlayerFeet, colliderWidth, colliderHeight, {'Platform', 'ThickWalls'})
     if #colliders > 0 then
@@ -105,7 +105,6 @@ function player:update(dt)
         collided.collider:destroy()
         if player.inventory['apple'] == nil then player.inventory['apple'] = 1 
         else player.inventory['apple'] = player.inventory['apple'] + 1 end
-        player.hasapple = true
     end
 
     player:setPreSolve(function(col1, col2, contact)
@@ -137,8 +136,8 @@ function player:draw()
     local py = player:getY()
 
     --scale character by 1.1
-    sx = 1.1
-    sy = 1.1
+    local sx = 1
+    local sy = 1
     --swap direction for facing left vs right
     if player.dir == -1 then
         sx = -sx
@@ -149,8 +148,7 @@ function player:draw()
     -- love.graphics.rectangle('line',px-colliderWidth/2, py+offsetCollionPlayerFeet, colliderWidth, colliderHeight)
     -- love.graphics.rectangle('line', px+(4*player.dir), py-2.5,2*player.dir, 5)
 
-    player.anim:draw(image, px, py, nil, sx, sy,7, 10)
-
+    player.anim:draw(image, px, py, nil, sx, sy,7, 14)
 end
 
 function player:keypressed(key)
@@ -160,6 +158,15 @@ function player:keypressed(key)
     elseif key == 'space' and player.grounded then
         -- jump impulse
         player:setLinearVelocity(0, 0)
-        player:applyLinearImpulse(0,-50)
+        player:applyLinearImpulse(0,-85)
+    end
+end
+
+function player:keyrealeased(key)
+    if key == 'space' then
+        local X, Y = player:getLinearVelocity()
+        if Y < 0 then
+            player:setLinearVelocity(X,0)
+        end 
     end
 end
