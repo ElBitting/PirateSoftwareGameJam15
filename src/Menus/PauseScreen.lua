@@ -2,7 +2,7 @@ PauseScreen = {}
 local appleimg = love.graphics.newImage('Art/Sprites/Original_sin.png')
 
 table.insert(PauseScreen, newButton("Resume", function() 
-    gs.switch(game) 
+    gs.pop() 
 end))
 table.insert(PauseScreen, newButton("Map", function() end))
 table.insert(PauseScreen, newButton("Quests", function() end))

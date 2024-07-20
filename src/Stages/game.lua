@@ -9,6 +9,7 @@ function game:update(dt)
     world:update(dt)
     -- cam:lookAt(player:getPosition())
     CameraUpdate(dt)
+    alchemy:update()
 end
 
 function game:draw()
@@ -23,11 +24,14 @@ function game:draw()
     if gs.current() == PauseScreen then
         PauseScreen:draw()
     end
+    if gs.current() == alchemy then
+        alchemy:draw()
+    end
 end
 
 function game:keypressed(key)
     if key == 'escape' then
-        gs.switch(PauseScreen)
+        gs.push(PauseScreen)
     end 
     if key == 'p' then
         player:setX(20)
@@ -36,6 +40,10 @@ function game:keypressed(key)
     if key == 'r' then
         player:setX(20)
         player:setY(505)
+    end
+    if key == '.' then
+        print('he')
+        gs.push(alchemy)
     end
     player:keypressed(key)
 end
