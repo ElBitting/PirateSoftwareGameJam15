@@ -69,7 +69,12 @@ function love.draw()
     end
 end
 
+-- @TODO: Keyboard and gamepad controlls can be easily consolidated into singular functions...
+-- but may make things more complicated? maybe not tho
+
 function love.keyreleased(key)
+    -- @TODO: This will only work on tutorial level... 
+    -- can copy code from gamepadpressed function or find different method...
     if gs.current() == tutorial then 
         game:keyrealeased(key)
     end
@@ -86,6 +91,26 @@ function love.keypressed(key)
         alchemy:keypressed(key)
     else 
         game:keypressed(key)
+    end
+end
+
+-- GAMEPAD Controls
+function love.gamepadpressed(joystick, button)
+    if gs.current() == TitleScreen then 
+    elseif gs.current() == PauseScreen then 
+    elseif gs.current() == Credits then
+    elseif gs.current() == alchemy then 
+    else
+        player:gamepadpressed(button)
+    end
+end
+function love.gamepadreleased(joystick, button)
+    if gs.current() == TitleScreen then 
+    elseif gs.current() == PauseScreen then 
+    elseif gs.current() == Credits then
+    elseif gs.current() == alchemy then 
+    else
+        player:gamepadreleased(button)
     end
 end
 
