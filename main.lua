@@ -109,7 +109,7 @@ function love.gamepadreleased(joystick, button)
     elseif gs.current() == PauseScreen then 
     elseif gs.current() == Credits then
     elseif gs.current() == alchemy then 
-    else 
+    else
         player:gamepadreleased(button)
     end
 end
