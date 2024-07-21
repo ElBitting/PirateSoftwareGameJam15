@@ -34,11 +34,12 @@ function player:update(dt)
 
     --Basic Movement
     local wall = world:queryRectangleArea(player:getX()+4*player.dir, player:getY()+3, 2*player.dir, 2, {'ThickWalls'})
-    if love.keyboard.isDown('a') or joystick:isGamepadDown('dpleft') then
+    if love.keyboard.isDown('a') then
+        
         player.ismoving = true
         player.dir = -1
         if #wall == 0 then player.x = -1 end
-    elseif love.keyboard.isDown('d') or joystick:isGamepadDown('dpright') then
+    elseif love.keyboard.isDown('d')  then
         player.ismoving = true
         player.dir = 1
         if #wall == 0 then player.x = 1 end
@@ -65,9 +66,9 @@ function player:update(dt)
             player:setLinearVelocity(player.x * player.speed, 0)
             player:setGravityScale(0)
         end
-        if love.keyboard.isDown('w') or joystick:isGamepadDown('dpup') then
+        if love.keyboard.isDown('w') then
             player:setY(player:getY() - player.speed*dt)
-        elseif love.keyboard.isDown('s') or joystick:isGamepadDown('dpdown') then
+        elseif love.keyboard.isDown('s') then
             player:setY(player:getY() + player.speed*dt)
         end
         Jump2 = Timer.after(0.1, function() player.laddered = true end)
@@ -152,53 +153,22 @@ function player:draw()
     player.anim:draw(image, px, py, nil, sx, sy,16, 24)
 end
 
-function player:jump(x,y)
-    player:setLinearVelocity(0,0)
-    player:applyLinearImpulse(x, y)
-end
-
-function player:jump_release() 
-    local X, Y = player:getLinearVelocity()
-    if Y < 0 then
-        player:setLinearVelocity(X,0)
-    end 
-end
-
 function player:keypressed(key)
-    -- jump impulse
-    if (key == 'space') and player.laddered then
-        player:jump(0, -52)
-        -- player:setLinearVelocity(0, 0)
-        -- player:applyLinearImpulse(0,-52)
-    elseif (key == 'space') and player.grounded then
-        player:jump(0, -85)
-        -- player:setLinearVelocity(0, 0)
-        -- player:applyLinearImpulse(0,-85)
+    if key == 'space' and player.laddered then
+        player:setLinearVelocity(0, 0)
+        player:applyLinearImpulse(0,-52)
+    elseif key == 'space' and player.grounded then
+        -- jump impulse
+        player:setLinearVelocity(0, 0)
+        player:applyLinearImpulse(0,-85)
     end
 end
 
 function player:keyrealeased(key)
     if key == 'space' then
-        player:jump_release()
-        -- local X, Y = player:getLinearVelocity()
-        -- if Y < 0 then
-        --     player:setLinearVelocity(X,0)
-        -- end 
-    end
-end
-
-function player:gamepadpressed(button)
-    if button == 'a' then
-        if player.laddered then
-            player:jump(0, -52)
-        elseif player.grounded then
-            player:jump(0, -85)
-        end
-    end
-end
-
-function player:gamepadreleased(button)
-    if button == 'a' then
-        player:jump_release()
+        local X, Y = player:getLinearVelocity()
+        if Y < 0 then
+            player:setLinearVelocity(X,0)
+        end 
     end
 end
