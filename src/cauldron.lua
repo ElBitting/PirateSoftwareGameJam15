@@ -9,9 +9,10 @@ function cauldron.new(x, y)
     instance.img = love.graphics.newImage('Art/Sprites/potSpriteSheet.png')
     instance.width = 32
     instance.height = 32
-    instance.bod = world:newCircleCollider(instance.x, instance.y, instance.width/2.5)
+    instance.bod = world:newRectangleCollider(instance.x-instance.width/2, instance.y-instance.height/2, instance.width, instance.height)
     instance.bod:setType('static')
     print(instance.x, instance.y)
+    instance.bod:setCollisionClass("Cauldron")
     instance.img_grid = anim8.newGrid(32,32, instance.img:getWidth(), instance.img:getHeight())
     instance.anim = anim8.newAnimation(instance.img_grid('1-4', 1), 0.15)
     table.insert(active_cauldron, instance)

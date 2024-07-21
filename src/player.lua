@@ -14,6 +14,7 @@ player.anim = animation
 player.ismoving = false
 player.grounded = true
 player.laddered = false
+player.nearCauldron = false
 player.x = 0
 player.y = 0
 player.inventory = {}
@@ -51,7 +52,15 @@ function player:update(dt)
 
 
 
-    --Ladder and Jumping
+    --Cauldran Detection
+    world:setQueryDebugDrawing(true)
+    local cauldrons = world:queryRectangleArea(player:getX()-10, player:getY()-3, 20, 6, {'Cauldron'})
+    world:setQueryDebugDrawing(false)
+    if #cauldrons > 0 then 
+        player.nearCauldron = true
+    else
+        player.nearCauldron = false
+    end
 
     
     --Grounding
@@ -158,7 +167,7 @@ function player:draw()
         sx = -sx
     end
 
-    player.anim:draw(image, px, py, nil, sx, sy,16, 24)
+    -- player.anim:draw(image, px, py, nil, sx, sy,16, 24)
 end
 
 function player:keypressed(key)

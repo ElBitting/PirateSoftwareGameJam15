@@ -40,8 +40,7 @@ function game:keypressed(key)
         player:setX(20)
         player:setY(505)
     end
-    if key == '.' then
-        print('he')
+    if key == '.' and player.nearCauldron then
         gs.push(alchemy)
     end
     player:keypressed(key)
