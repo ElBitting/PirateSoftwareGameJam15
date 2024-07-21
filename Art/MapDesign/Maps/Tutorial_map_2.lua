@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 14,
-  nextobjectid = 57,
+  nextobjectid = 62,
   properties = {},
   tilesets = {
     {
@@ -515,6 +515,19 @@ return {
           y = 496,
           width = 14.6667,
           height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 60,
+          name = "Cauldron",
+          type = "Cauldron",
+          shape = "rectangle",
+          x = 64,
+          y = 48,
+          width = 32,
+          height = 32,
           rotation = 0,
           visible = true,
           properties = {}

@@ -11,6 +11,7 @@ require 'src/global'
 require 'src/Stages/game'
 require 'src/Stages/tutorial'
 require 'src/apple'
+require 'src/cauldron'
 
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
@@ -19,7 +20,8 @@ require 'src/Menus/Credits'
 function love.load()
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
     love.graphics.setDefaultFilter("nearest", "nearest")
-
+    local joysticks = love.joystick.getJoysticks()
+    joystick = joysticks[1] 
 
     gameFont = love.graphics.newFont(GAME_FONT_SIZE)
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)

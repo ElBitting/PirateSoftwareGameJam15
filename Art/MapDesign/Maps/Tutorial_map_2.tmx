@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="57">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="62">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -73,6 +73,7 @@
   <object id="56" name="Apple" type="Apple" x="449" y="496" width="14.6667" height="14.6667">
    <ellipse/>
   </object>
+  <object id="60" name="Cauldron" type="Cauldron" x="64" y="48" width="32" height="32"/>
  </objectgroup>
  <objectgroup id="4" name="Hazards">
   <object id="19" x="64" y="502.5" width="381.75" height="9.5"/>

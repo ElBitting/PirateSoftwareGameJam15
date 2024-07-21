@@ -32,6 +32,7 @@ end
 function tutorial:update(dt)
     calanim:update(dt)
     apple:update_all(dt)
+    cauldron:update_all(dt)
 end
 
 
@@ -50,16 +51,16 @@ function tutorial:draw()
         ::continue::
     end
     apple:draw_all()
-
-    
-    calanim:draw(calimg, 95, 177, nil, 1, 1)
-
+    cauldron:draw_all()
 end
 
 function add_entities()
     for i, instance in ipairs(gameMap.layers.Entities.objects) do
         if instance.name == "Apple" then
             apple.new(instance.x + instance.width/2, instance.y + instance.height/2)
+        elseif instance.name == "Cauldron" then
+            print('here')
+            cauldron.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
         end
     end
 end
