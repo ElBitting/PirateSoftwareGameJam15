@@ -64,9 +64,8 @@ function love.draw()
     else
         game:draw()
     end
-    if player.inventory['apple'] ~= nil then 
-        love.graphics.print(player.inventory['apple'], textFont, 10, 10)
-    end
+
+    love.graphics.print(player.health, textFont, 10, 10)
 end
 
 function love.keyreleased(key)

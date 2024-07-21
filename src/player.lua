@@ -17,6 +17,7 @@ player.laddered = false
 player.x = 0
 player.y = 0
 player.inventory = {}
+player.health = 6
 
 -- player.hasapple = false
 local colliderWidth = 6
@@ -92,9 +93,17 @@ function player:update(dt)
     --------------------- Collision Logic
     --Check if standing on spikes
     if player:enter('Hazards') then
+        player.health = player.health - 2
+        if player.health > 0 then 
+            player:setLinearVelocity(0, 0)
+            player:applyLinearImpulse(0,-player.jumpspeed)
+        end
+        -- player = world:newCircleCollider(20, 505, 7)
+    end
+    if player.health == 0 then 
         player:setX(20)
         player:setY(505)
-        -- player = world:newCircleCollider(20, 505, 7)
+        player.health = 6
     end
     if player:enter('TeleDoor') then
         player:setX(487)
