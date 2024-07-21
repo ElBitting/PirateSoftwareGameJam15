@@ -29,6 +29,7 @@ function tutorial:init()
     calanim = anim8.newAnimation(calgrid('1-4',1), 0.15)
 end
 
+
 function tutorial:update(dt)
     calanim:update(dt)
     apple:update_all(dt)
