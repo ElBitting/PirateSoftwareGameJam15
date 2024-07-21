@@ -9,13 +9,13 @@ function game:update(dt)
     world:update(dt)
     -- cam:lookAt(player:getPosition())
     CameraUpdate(dt)
+    apple:update_all()
 end
 
 function game:draw()
     cam:attach()
         tutorial:draw()
         -- world:draw()
-        apple:draw()
         player:draw()
     cam:detach()
 

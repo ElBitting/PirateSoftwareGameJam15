@@ -10,6 +10,7 @@ require 'src/global'
 
 require 'src/Stages/game'
 require 'src/Stages/tutorial'
+require 'src/apple'
 
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
@@ -31,12 +32,14 @@ function love.load()
 
     --TODO: Find a way to put these at the top with the other imports...
     require 'src/player'
-    require 'src/apple' 
     require 'src/Menus/PauseScreen'
     require 'src/Menus/alchemy'
 
     gs.switch(TitleScreen)
     love.mouse.setVisible(false)
+
+    -- apple.new(270, 200)
+    -- apple.new(220, 200)
 
 end
 
@@ -61,7 +64,7 @@ function love.draw()
     end
     if player.inventory['apple'] ~= nil then 
         love.graphics.print(player.inventory['apple'], textFont, 10, 10)
-    end    
+    end
 end
 
 function love.keyreleased(key)

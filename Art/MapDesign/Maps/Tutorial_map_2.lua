@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 13,
-  nextobjectid = 51,
+  nextlayerid = 14,
+  nextobjectid = 57,
   properties = {},
   tilesets = {
     {
@@ -383,6 +383,87 @@ return {
           y = 208,
           width = 96,
           height = 48,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 13,
+      name = "Entities",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 51,
+          name = "Apple",
+          type = "Apple",
+          shape = "ellipse",
+          x = 222.667,
+          y = 188.485,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 53,
+          name = "Apple",
+          type = "Apple",
+          shape = "ellipse",
+          x = 320.364,
+          y = 189.091,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 54,
+          name = "Apple",
+          type = "Apple",
+          shape = "ellipse",
+          x = 17.6666,
+          y = 141.667,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 55,
+          name = "Apple",
+          type = "Apple",
+          shape = "ellipse",
+          x = 137,
+          y = 361.667,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 56,
+          name = "Apple",
+          type = "Apple",
+          shape = "ellipse",
+          x = 449,
+          y = 496,
+          width = 14.6667,
+          height = 14.6667,
           rotation = 0,
           visible = true,
           properties = {}
