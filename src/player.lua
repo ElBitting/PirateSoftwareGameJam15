@@ -31,11 +31,9 @@ function player:update(dt)
     player.x = 0
 
 
-
     --Basic Movement
-    local wall = world:queryRectangleArea(player:getX()+4*player.dir, player:getY()+3, 2*player.dir, 2, {'ThickWalls'})
+    local wall = world:queryRectangleArea(player:getX()+5*player.dir, player:getY()-3, 2*player.dir, 6, {'ThickWalls'})
     if love.keyboard.isDown('a') then
-        
         player.ismoving = true
         player.dir = -1
         if #wall == 0 then player.x = -1 end
