@@ -41,7 +41,6 @@ function game:keypressed(key)
         player:setY(505)
     end
     if key == '.' then
-        print('he')
         gs.push(alchemy)
     end
     player:keypressed(key)

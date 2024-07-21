@@ -41,9 +41,6 @@ function love.load()
     gs.switch(TitleScreen)
     love.mouse.setVisible(false)
 
-    -- apple.new(270, 200)
-    -- apple.new(220, 200)
-
 end
 
 function love.update(dt)
@@ -93,6 +90,20 @@ end
 function love.gamepadpressed(joystick, button)
     if gs.current() == TitleScreen then 
         TitleScreen:keypressed(button)
+    elseif gs.current() == PauseScreen then 
+    elseif gs.current() == Credits then
+    elseif gs.current() == alchemy then 
+    else
+        -- player:gamepadpressed(button)
+    end
+end
+function love.gamepadreleased(joystick, button)
+    if gs.current() == TitleScreen then 
+    elseif gs.current() == PauseScreen then 
+    elseif gs.current() == Credits then
+    elseif gs.current() == alchemy then 
+    else
+        -- player:gamepadreleased(button)
     end
 end
 
