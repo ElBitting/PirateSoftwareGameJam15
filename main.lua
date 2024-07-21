@@ -21,7 +21,8 @@ function love.load()
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
     love.graphics.setDefaultFilter("nearest", "nearest")
     local joysticks = love.joystick.getJoysticks()
-    joystick = joysticks[1] 
+    joystick = joysticks[1]
+    print(joystick)
 
     gameFont = love.graphics.newFont(GAME_FONT_SIZE)
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)
@@ -86,6 +87,12 @@ function love.keypressed(key)
         alchemy:keypressed(key)
     else 
         game:keypressed(key)
+    end
+end
+
+function love.gamepadpressed(joystick, button)
+    if gs.current() == TitleScreen then 
+        TitleScreen:keypressed(button)
     end
 end
 

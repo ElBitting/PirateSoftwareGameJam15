@@ -8,10 +8,10 @@ function TitleScreen: draw()
 end
 
 function TitleScreen:keypressed(key)
-    if key == 'return' then
+    if key == 'return' or key == 'a' then
         gs.switch(game)
     end
-    if key == 'escape' then 
+    if key == 'escape' or key == 'b' then 
         safe_quit()
     end
 end
