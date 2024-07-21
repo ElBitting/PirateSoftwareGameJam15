@@ -70,6 +70,57 @@ return {
       wangsets = {},
       tilecount = 36,
       tiles = {}
+    },
+    {
+      name = "potSpriteSheet",
+      firstgid = 245,
+      class = "",
+      tilewidth = 32,
+      tileheight = 32,
+      spacing = 0,
+      margin = 0,
+      columns = 4,
+      image = "../../Sprites/potSpriteSheet.png",
+      imagewidth = 128,
+      imageheight = 32,
+      objectalignment = "unspecified",
+      tilerendersize = "tile",
+      fillmode = "stretch",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 32,
+        height = 32
+      },
+      properties = {},
+      wangsets = {},
+      tilecount = 4,
+      tiles = {
+        {
+          id = 0,
+          animation = {
+            {
+              tileid = 0,
+              duration = 250
+            },
+            {
+              tileid = 1,
+              duration = 250
+            },
+            {
+              tileid = 2,
+              duration = 250
+            },
+            {
+              tileid = 3,
+              duration = 250
+            }
+          }
+        }
+      }
     }
   },
   layers = {

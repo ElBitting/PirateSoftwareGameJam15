@@ -9,6 +9,17 @@
  <tileset firstgid="209" name="Tileset" tilewidth="16" tileheight="16" tilecount="36" columns="6">
   <image source="../../Sprites/Tileset.png" width="100" height="100"/>
  </tileset>
+ <tileset firstgid="245" name="potSpriteSheet" tilewidth="32" tileheight="32" tilecount="4" columns="4">
+  <image source="../../Sprites/potSpriteSheet.png" width="128" height="32"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="0" duration="250"/>
+    <frame tileid="1" duration="250"/>
+    <frame tileid="2" duration="250"/>
+    <frame tileid="3" duration="250"/>
+   </animation>
+  </tile>
+ </tileset>
  <layer id="1" name="BG" width="32" height="32">
   <data encoding="base64" compression="zlib">
    eJztwwEJAAAMBKHr3+4brcdQcNVUVVXV1w8gWEQu

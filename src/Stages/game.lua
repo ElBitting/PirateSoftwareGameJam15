@@ -9,7 +9,7 @@ function game:update(dt)
     world:update(dt)
     -- cam:lookAt(player:getPosition())
     CameraUpdate(dt)
-    apple:update_all()
+    tutorial:update(dt)
 end
 
 function game:draw()

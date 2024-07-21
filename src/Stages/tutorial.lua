@@ -23,7 +23,17 @@ function tutorial:init()
     add_col_class_obj(vines, 'Vines','Vines', false, true)
 
     add_entities()
+
+    calimg = love.graphics.newImage('Art/Sprites/potSpriteSheet.png')
+    calgrid = anim8.newGrid(32,32, calimg: getWidth(), calimg:getHeight())
+    calanim = anim8.newAnimation(calgrid('1-4',1), 0.15)
 end
+
+function tutorial:update(dt)
+    calanim:update(dt)
+    apple:update_all(dt)
+end
+
 
 function tutorial:draw()
     gameMap:drawLayer(gameMap.layers['BG'])
@@ -40,6 +50,10 @@ function tutorial:draw()
         ::continue::
     end
     apple:draw_all()
+
+    
+    calanim:draw(calimg, 95, 177, nil, 1, 1)
+
 end
 
 function add_entities()
