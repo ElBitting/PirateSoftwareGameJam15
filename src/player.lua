@@ -194,8 +194,8 @@ end
 function player:interactions(dt)
     --Hazards
     if player:enter('Hazards') then
-        player:setLinearVelocity(0, 0)
-        player:applyLinearImpulse(0,-12)
+        player:setLinearVelocity(0, yNow/100)
+        player:applyLinearImpulse(0,-10)
         player.health = player.health - 2
         SpikeDMG = Timer.every(1, function() 
             player:setLinearVelocity(0, 0)
