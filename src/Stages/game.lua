@@ -47,7 +47,7 @@ function game:keypressed(key, gamepad)
     -- player:keypressed(key)
 end
 
-function game:keyrealeased(key, gamepad)
+function game:keyreleased(key, gamepad)
     controls:jumpReleased(key, gamepad)
     -- player:keyrealeased(key)
 end

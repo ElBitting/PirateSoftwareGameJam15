@@ -68,47 +68,33 @@ end
 
 -- KEYBOARD and Controller keypresses
 
-function love.keyreleased(key)
-    if gs.current() == tutorial then 
-        game:keyrealeased(key)
-    end
-end
+function love.keypressed(key) handleKeyPress(key, false) end
+function love.keyreleased(key) handleKeyRelease(key, false) end
 
-function love.keypressed(key)
+function love.gamepadpressed(joystick, button) handleKeyPress(button, true) end
+function love.gamepadreleased(joystick, button) handleKeyRelease(button, true) end
+
+function handleKeyPress(key, gamepad)
     if gs.current() == TitleScreen then 
-        TitleScreen:keypressed(key, false)
+        TitleScreen:keypressed(key, gamepad)
     elseif gs.current() == PauseScreen then 
-        PauseScreen:keypressed(key,false)
+        PauseScreen:keypressed(key,gamepad)
     elseif gs.current() == Credits then
-        Credits:keypressed(key, false)
+        Credits:keypressed(key, gamepad)
     elseif gs.current() == alchemy then 
-        alchemy:keypressed(key, false)
+        alchemy:keypressed(key, gamepad)
     else 
-        game:keypressed(key, false)
+        game:keypressed(key, gamepad)
     end
 end
 
-function love.gamepadpressed(joystick, button)
-    if gs.current() == TitleScreen then 
-        TitleScreen:keypressed(button, true)
-    elseif gs.current() == PauseScreen then 
-        PauseScreen:keypressed(button, true)
-    elseif gs.current() == Credits then
-        Credits:keypressed(button, true)
-    elseif gs.current() == alchemy then 
-        alchemy:keypressed(button, true)
-    else 
-        game:keypressed(button, true)
-    end
-end
-
-function love.gamepadreleased(joystick, button)
+function handleKeyRelease(key, gamepad)
     if gs.current() == TitleScreen then 
     elseif gs.current() == PauseScreen then 
     elseif gs.current() == Credits then
     elseif gs.current() == alchemy then 
     else
-        game:keyrealeased(button, true)
+        game:keyreleased(key, gamepad)
     end
 end
 

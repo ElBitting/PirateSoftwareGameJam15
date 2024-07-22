@@ -41,6 +41,7 @@ function controls:checkSelectionKey()
     if joystick ~= nill then
         return love.keyboard.isDown('return') or love.mouse.isDown(1) or joystick:isGamepadDown('a')
     end
+    return love.keyboard.isDown('return') or love.mouse.isDown(1)
 end
 
 -- JUMP controls for kyb/controller
