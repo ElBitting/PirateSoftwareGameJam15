@@ -7,11 +7,11 @@ function TitleScreen: draw()
     love.graphics.print("Press escape to quit", textFont, 360, 300)
 end
 
-function TitleScreen:keypressed(key)
-    if key == 'return' or key == 'a' then
+function TitleScreen:keypressed(key, gamepad)
+    if key == 'return' or (gamepad and key == 'a') then
         gs.switch(game)
     end
-    if key == 'escape' or key == 'b' then 
+    if key == 'escape' or (gamepad and key == 'b') then 
         safe_quit()
     end
 end

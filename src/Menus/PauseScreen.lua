@@ -38,16 +38,16 @@ function PauseScreen:enter(previous)
 end
 
 
-function PauseScreen: keypressed(key)
-    if key == 's' then 
+function PauseScreen: keypressed(key, gamepad)
+    if key == 's' or (gamepad and key == 'dpdown') then 
         SelectedButton = SelectedButton + 1
         love.mouse.setVisible(false)
     end
-    if key == 'w' then 
+    if key == 'w' or (gamepad and key == 'dpup') then 
         SelectedButton = SelectedButton - 1
         love.mouse.setVisible(false)
     end
-    if key =='escape' then
+    if key =='escape' or (gamepad and key == 'b') then
         safe_quit()
     end
 end
@@ -77,7 +77,8 @@ function RightMenu()
             color = {0.7, 0.7, 0.9}
             SelectedButton = i
         end
-        selected = love.keyboard.isDown('return') or love.mouse.isDown(1)
+        
+        selected = controls:checkSelectionKey()
         if selected and hot then
             button.fn()
         end

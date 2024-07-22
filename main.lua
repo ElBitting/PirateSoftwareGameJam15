@@ -7,6 +7,7 @@ Timer = require "libraries/hump-master/timer"
 
 require 'src/helper'
 require 'src/global'
+require 'src/controls'
 
 require 'src/Stages/game'
 require 'src/Stages/tutorial'
@@ -22,8 +23,7 @@ function love.load()
     love.graphics.setDefaultFilter("nearest", "nearest")
     local joysticks = love.joystick.getJoysticks()
     joystick = joysticks[1]
-    print(joystick)
-
+    
     gameFont = love.graphics.newFont(GAME_FONT_SIZE)
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)
     SelectedButton = 1
@@ -66,6 +66,8 @@ function love.draw()
     love.graphics.print(player.health, textFont, 10, 10)
 end
 
+-- KEYBOARD and Controller keypresses
+
 function love.keyreleased(key)
     if gs.current() == tutorial then 
         game:keyrealeased(key)
@@ -74,35 +76,39 @@ end
 
 function love.keypressed(key)
     if gs.current() == TitleScreen then 
-        TitleScreen:keypressed(key)
+        TitleScreen:keypressed(key, false)
     elseif gs.current() == PauseScreen then 
-        PauseScreen:keypressed(key)
+        PauseScreen:keypressed(key,false)
     elseif gs.current() == Credits then
-        Credits:keypressed(key)
+        Credits:keypressed(key, false)
     elseif gs.current() == alchemy then 
-        alchemy:keypressed(key)
+        alchemy:keypressed(key, false)
     else 
-        game:keypressed(key)
+        game:keypressed(key, false)
     end
 end
 
 function love.gamepadpressed(joystick, button)
     if gs.current() == TitleScreen then 
-        TitleScreen:keypressed(button)
+        TitleScreen:keypressed(button, true)
     elseif gs.current() == PauseScreen then 
+        PauseScreen:keypressed(button, true)
     elseif gs.current() == Credits then
+        Credits:keypressed(button, true)
     elseif gs.current() == alchemy then 
-    else
-        -- player:gamepadpressed(button)
+        alchemy:keypressed(button, true)
+    else 
+        game:keypressed(button, true)
     end
 end
+
 function love.gamepadreleased(joystick, button)
     if gs.current() == TitleScreen then 
     elseif gs.current() == PauseScreen then 
     elseif gs.current() == Credits then
     elseif gs.current() == alchemy then 
     else
-        -- player:gamepadreleased(button)
+        game:keyrealeased(button, true)
     end
 end
 

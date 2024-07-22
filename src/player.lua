@@ -49,7 +49,7 @@ function player:update(dt)
             if (py + ph)/2 > (ty - th)/2 then contact:setEnabled(false) end
         elseif col1.collision_class == 'Player' and col2.collision_class == 'Vines' then
             contact:setEnabled(false)
-            if love.keyboard.isDown('x') then contact:setEnabled(true) end
+            if controls:checkActionKey() then contact:setEnabled(true) end
         elseif col1.collision_class == 'Player' and col2.collision_class == 'Ladders' then
             contact:setEnabled(false)
         elseif col1.collision_class == 'Player' and col2.collision_class == 'Cauldron' then
@@ -78,18 +78,6 @@ end
 
 
 
-function player:keypressed(key)
-    player:jumpKeyPressed(key)
-end
-
-
-
-function player:keyrealeased(key)
-    player:jumpKeyReleased(key)
-end
-
-
-
 function player:initializations(dt)
     player:setLinearVelocity(player.x * player.speed, yNow)
     if player.health == 0 then 
@@ -102,10 +90,10 @@ end
 
 
 function player:movement(dt)
-    if love.keyboard.isDown('a') and not love.keyboard.isDown('d') then 
+    if controls:checkLeftMovement() and not controls:checkRightMovement() then 
         player.ismoving = true
         player.x = -1
-    elseif love.keyboard.isDown('d') and not love.keyboard.isDown('a') then 
+    elseif controls:checkRightMovement() and not controls:checkLeftMovement() then 
         player.ismoving = true
         player.x = 1
     else
@@ -114,17 +102,17 @@ function player:movement(dt)
     end
 
     --climbing and descending ladder
-    if player.laddered and love.keyboard.isDown('w') then
+    if player.laddered and controls:checkUpMovement() then
         player:setY(player:getY() - player.speed*dt)
-    elseif player.laddered and love.keyboard.isDown('s') then
+    elseif player.laddered and controls:checkDownMovement() then
         player:setY(player:getY() + player.speed*dt)
     end
 end
 
 
 
-function player:jumpKeyPressed(key)
-    if key == 'space' and (player.grounded or player.laddered) then
+function player:jumpKeyPressed()
+    if (player.grounded or player.laddered) then
         player:setLinearVelocity(0, 0)
         player:applyLinearImpulse(0,-player.jumpspeed)
     end
@@ -132,13 +120,11 @@ end
 
 
 
-function player:jumpKeyReleased(key)
-    if key == 'space' then
-        local X, Y = player:getLinearVelocity()
-        if Y < 0 then
-            player:setLinearVelocity(X,0)
-        end 
-    end
+function player:jumpKeyReleased()
+    local X, Y = player:getLinearVelocity()
+    if Y < 0 then
+        player:setLinearVelocity(X,0)
+    end 
 end
 
 
@@ -148,7 +134,6 @@ function player:detectections(dt)
     if #wall > 0 then
         player.x = 0
     end
-
     -- Cauldrons
     local cauldrons = world:queryRectangleArea(player:getX()-10, player:getY()-3, 20, 6, {'Cauldron'})
     if #cauldrons > 0 then 
