@@ -9,6 +9,7 @@ function add_col_classes(world)
     world:addCollisionClass('ThickWalls')
     world:addCollisionClass('Vines')
     world:addCollisionClass('Apples')
+    world:addCollisionClass('Cauldron')
     
 end
 
