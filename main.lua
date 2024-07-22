@@ -16,6 +16,16 @@ require 'src/cauldron'
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
 
+shader_code = [[
+
+extern vec2 player;
+
+vec4 effect(vec4 color, Image image, vec2 uvs, vec2 screen_coords){
+
+    
+    return vec4(player.x, 0.0, 0.0, 1.0);
+}
+]]
 
 function love.load()
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
@@ -44,6 +54,8 @@ function love.load()
 end
 
 function love.update(dt)
+    shader = love.graphics.newShader(shader_code)
+    shader:send('player', {player:getPosition()})
     if gs.current() == PauseScreen then 
         PauseScreen:update(dt)
     elseif gs.current() == alchemy then 
@@ -62,7 +74,6 @@ function love.draw()
     else
         game:draw()
     end
-
     love.graphics.print(player.health, textFont, 10, 10)
 end
 
