@@ -150,7 +150,9 @@ function player:detectections(dt)
     end
 
     -- Cauldrons
-    local cauldrons = world:queryRectangleArea(player:getX()-10, player:getY()-3, 20, 6, {'Cauldron'})
+    world:setQueryDebugDrawing(true)
+    local cauldrons = world:queryRectangleArea(player:getX()-16, player:getY()-3, 32, 6, {'Cauldron'})
+    world:setQueryDebugDrawing(false)
     if #cauldrons > 0 then 
         player.nearCauldron = true
     else
