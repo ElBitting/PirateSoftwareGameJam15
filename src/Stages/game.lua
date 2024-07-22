@@ -57,12 +57,12 @@ end
 function CameraUpdate(dt)
     local px, py  = player:getPosition()
     local cx,cy = cam:position()
-    if love.keyboard.isDown('w') and not player.laddered  then
+    if controls:checkUpMovement() and not player.laddered  then
         if cy - py > -GAME_HEIGHT/14 then 
             cam:move(0,-300*dt)
         else cam:lockPosition(px,  py - GAME_HEIGHT/14, cam.smooth.damped(8))
         end
-    elseif love.keyboard.isDown('s') and not player.laddered then
+    elseif controls:checkDownMovement() and not player.laddered then
         if cy - py < GAME_HEIGHT/14 then 
             cam:move(0,300*dt)
         else cam:lockPosition(px, py + GAME_HEIGHT/14, cam.smooth.damped(8))
