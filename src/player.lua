@@ -19,6 +19,7 @@ player.x = 0
 player.y = 0
 player.inventory = {}
 player.health = 6
+player.inventory['apple'] = 0
 
 -- player.hasapple = false
 local colliderWidth = 6
@@ -206,7 +207,7 @@ function player:interactions(dt)
     --Apples
     if player:enter('Apples') then
         local collided = player:getEnterCollisionData('Apples')
-        collided.collider:destroy()
+        -- collided.collider:destroy()
         apple.is_picked_up(collided.collider)
         if player.inventory['apple'] == nil then player.inventory['apple'] = 1 
         else player.inventory['apple'] = player.inventory['apple'] + 1 end

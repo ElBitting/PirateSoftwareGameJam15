@@ -13,6 +13,6 @@ function Credits:keypressed(key, gamepad)
         safe_quit()
     end
     if key == 'return' then 
-        safe_restart()
+        gs.switch('TitleScreen')
     end
 end
