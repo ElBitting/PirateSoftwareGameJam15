@@ -11,8 +11,8 @@ function alchemy:draw()
     love.graphics.setColor(1,1,1)
 end
 
-function alchemy:keypressed(key)
-    if key == 'escape' then 
+function alchemy:keypressed(key, gamepad)
+    if key == 'escape' or (gamepad and key == 'b') then 
         gs.pop()
     end
 end

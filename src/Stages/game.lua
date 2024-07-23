@@ -31,8 +31,8 @@ function game:draw()
     end
 end
 
-function game:keypressed(key)
-    if key == 'escape' then
+function game:keypressed(key, gamepad)
+    if key == 'escape' or (gamepad and key == 'start') then
         gs.push(PauseScreen)
     end 
     if key == 'p' then
@@ -43,25 +43,29 @@ function game:keypressed(key)
         player:setX(20)
         player:setY(505)
     end
-    if key == '.' and player.nearCauldron then
+    if (key == '.' or (gamepad and key == 'y')) and player.nearCauldron then
         gs.push(alchemy)
     end
-    player:keypressed(key)
+    controls:jumpPressed(key, gamepad)
+    -- player:keypressed(key)
 end
 
-function game:keyrealeased(key)
-    player:keyrealeased(key)
+function game:keyreleased(key, gamepad)
+    controls:jumpReleased(key, gamepad)
+    -- player:keyrealeased(key)
 end
+
+
 
 function CameraUpdate(dt)
     local px, py  = player:getPosition()
     local cx,cy = cam:position()
-    if love.keyboard.isDown('w') and not player.laddered  then
+    if controls:checkUpMovement() and not player.laddered  then
         if cy - py > -GAME_HEIGHT/14 then 
             cam:move(0,-300*dt)
         else cam:lockPosition(px,  py - GAME_HEIGHT/14, cam.smooth.damped(8))
         end
-    elseif love.keyboard.isDown('s') and not player.laddered then
+    elseif controls:checkDownMovement() and not player.laddered then
         if cy - py < GAME_HEIGHT/14 then 
             cam:move(0,300*dt)
         else cam:lockPosition(px, py + GAME_HEIGHT/14, cam.smooth.damped(8))

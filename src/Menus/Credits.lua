@@ -8,8 +8,8 @@ function Credits: draw()
 end
 
 
-function Credits:keypressed(key)
-    if key == 'escape' then 
+function Credits:keypressed(key, gamepad)
+    if key == 'escape' or (gamepad and key == 'b') then 
         safe_quit()
     end
     if key == 'return' then 

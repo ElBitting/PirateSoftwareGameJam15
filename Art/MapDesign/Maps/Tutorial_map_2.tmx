@@ -6,10 +6,10 @@
  <tileset firstgid="1" name="16x16 dungeon tiles" tilewidth="16" tileheight="16" tilecount="208" columns="16">
   <image source="../Tileset/16x16 dungeon tiles.png" width="256" height="208"/>
  </tileset>
- <tileset firstgid="209" name="Tileset" tilewidth="16" tileheight="16" tilecount="36" columns="6">
-  <image source="../../Sprites/Tileset.png" width="100" height="100"/>
+ <tileset firstgid="209" name="Tileset" tilewidth="16" tileheight="16" tilecount="256" columns="16">
+  <image source="../../Sprites/Tileset.png" width="256" height="256"/>
  </tileset>
- <tileset firstgid="245" name="potSpriteSheet" tilewidth="32" tileheight="32" tilecount="4" columns="4">
+ <tileset firstgid="465" name="potSpriteSheet" tilewidth="32" tileheight="32" tilecount="4" columns="4">
   <image source="../../Sprites/potSpriteSheet.png" width="128" height="32"/>
   <tile id="0">
    <animation>
@@ -27,19 +27,19 @@
  </layer>
  <layer id="2" name="FG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlkEOgjAQRduVa9fGhXs2XE89gXoC9V7iAlgoUSDcwSFp42TSTkVtIcpPXkJaZl5LGlIhxgwxMqBrqoh78us1pEAG5MgfBfRfgCtQKH/05/7QMfl9r2MJrIA1439nDQuFy7kBtsDuBb+tn8tP67BzDxyAI/EnzD5Oaj5Rz3osRuPUn6B57MwYctRHkzpqaJ1w1LX7vVm4G/z6G3EUHes4vyR9SqBSNAg8Vhv8JanB71cWavE8f9x5xqHeLmfWFMnA+T8N53X9D0L4uxAifbp/NWfLc6hMCK53xnzvOwytj6/gu5COzzXHwn7/8u3W/W33r3Zu7pkZcT4AbsiFeQ==
+   eJztlkEOgjAQRVuJugbiyrhwz6bXU0+gnkC9nHgC4AIOoY2TkU5FbSHKT15CWmZeSxpSIcYMMTKgK9aonvxmDQVQAhXyZwH9EqQTIJKNP/tzf+i0+X2vYwNsgR3jf2cNa43LuQcOwPEFv62fy0/rsPMEnIEL8efMPq6imc/1sxlTaJz6czSPnSVDhfoYCkcNrROOunq/Uwsz+ew334gj6ljH+SXpE8NAolkg8Fja4o9JDX4/sZDKx/njzjMO9XY5s22RDJz/03Be1/8ghL8LIdKn+1dzszyHypzgemfM977D0Pr4Cr4LmfhcsxL2+5dvt+lvu3/VcyvPLInzDm6dRVA=
   </data>
  </layer>
  <layer id="10" name="fg2" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJzt1sEJACAIQFFHb8iCrGUq7CANYFD/gaSnf00EMNVNtCKS8py1Z7tD9dluu9/spk//+b5e6OvxAgAA/OTGX8g3B4IAK7A=
+   eJzt1k0KgCAQQOGZo/Rz0A5pF0i7RyMTNBujlYG8D0RF5W0VAdwRRm+7yJZs1HXyfVentcvdL76nT3/4fm70JxWZ9f3tYuerPvOXu7GZm7cBAADG9cdfKDYv7RctZw==
   </data>
  </layer>
- <objectgroup id="8" name="Ladders">
+ <objectgroup id="8" name="Ladders" visible="0">
   <object id="26" x="45.75" y="79.9688" width="2" height="128.063"/>
   <object id="28" x="96.025" y="80.0241" width="4.75" height="128.063"/>
  </objectgroup>
- <objectgroup id="3" name="Walls">
+ <objectgroup id="3" name="Walls" visible="0">
   <object id="8" x="64" y="480" width="16" height="16"/>
   <object id="10" x="80" y="464" width="16" height="16"/>
   <object id="11" x="96" y="432" width="16" height="9.5"/>
@@ -51,13 +51,13 @@
   <object id="17" x="48" y="496" width="16" height="16"/>
   <object id="18" x="0" y="512" width="512" height="16"/>
  </objectgroup>
- <objectgroup id="9" name="ThickWalls">
+ <objectgroup id="9" name="ThickWalls" visible="0">
   <object id="29" x="48" y="80" width="48" height="128"/>
   <object id="30" x="0" y="208" width="128" height="64"/>
   <object id="31" x="192" y="208" width="160" height="48"/>
   <object id="32" x="416" y="208" width="96" height="48"/>
  </objectgroup>
- <objectgroup id="13" name="Entities">
+ <objectgroup id="13" name="Entities" visible="0">
   <object id="51" name="Apple" type="Apple" x="222.667" y="188.485" width="14.6667" height="14.6667">
    <ellipse/>
   </object>
@@ -75,16 +75,16 @@
   </object>
   <object id="60" name="Cauldron" type="Cauldron" x="64" y="48" width="32" height="32"/>
  </objectgroup>
- <objectgroup id="4" name="Hazards">
+ <objectgroup id="4" name="Hazards" visible="0">
   <object id="19" x="64" y="502.5" width="381.75" height="9.5"/>
  </objectgroup>
- <objectgroup id="5" name="TeleDoor">
+ <objectgroup id="5" name="TeleDoor" visible="0">
   <object id="22" x="480" y="507.636" width="16" height="4.36364"/>
  </objectgroup>
- <objectgroup id="7" name="FinalDoor">
+ <objectgroup id="7" name="FinalDoor" visible="0">
   <object id="24" x="16" y="201.5" width="16" height="6.5"/>
  </objectgroup>
- <objectgroup id="12" name="Vines">
+ <objectgroup id="12" name="Vines" visible="0">
   <object id="33" name="Vine2" x="388.913" y="113" width="6" height="15"/>
   <object id="34" name="Vine2" x="388.935" y="128.993" width="6.08696" height="15.0444"/>
   <object id="35" name="Vine2" x="389.001" y="145" width="6" height="15.0222"/>
