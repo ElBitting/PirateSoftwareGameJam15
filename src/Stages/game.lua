@@ -18,6 +18,9 @@ function game:draw()
         world:draw()
         player:draw()
     cam:detach()
+    love.graphics.setShader(shader)
+    gameMap:drawLayer(gameMap.layers['Shader'])
+    love.graphics.setShader()
 
     -- Initiate Pause Sequence
     if gs.current() == PauseScreen then
