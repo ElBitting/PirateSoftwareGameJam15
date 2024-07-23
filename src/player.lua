@@ -135,7 +135,9 @@ function player:detectections(dt)
         player.x = 0
     end
     -- Cauldrons
-    local cauldrons = world:queryRectangleArea(player:getX()-10, player:getY()-3, 20, 6, {'Cauldron'})
+    world:setQueryDebugDrawing(true)
+    local cauldrons = world:queryRectangleArea(player:getX()-16, player:getY()-3, 32, 6, {'Cauldron'})
+    world:setQueryDebugDrawing(false)
     if #cauldrons > 0 then 
         player.nearCauldron = true
     else
@@ -177,8 +179,8 @@ end
 function player:interactions(dt)
     --Hazards
     if player:enter('Hazards') then
-        player:setLinearVelocity(0, 0)
-        player:applyLinearImpulse(0,-12)
+        player:setLinearVelocity(0, yNow/100)
+        player:applyLinearImpulse(0,-10)
         player.health = player.health - 2
         SpikeDMG = Timer.every(1, function() 
             player:setLinearVelocity(0, 0)

@@ -18,6 +18,7 @@ require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
 
 
+
 function love.load()
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
     love.graphics.setDefaultFilter("nearest", "nearest")
@@ -44,6 +45,22 @@ function love.load()
 end
 
 function love.update(dt)
+    shader_code = [[
+
+extern vec2 player;
+
+vec4 effect(vec4 color, Image image, vec2 uvs, vec2 screen_coords){
+
+    if (player.x < screen_coords.x){
+        return vec4(0.0, 0.0, 0.0, 0);
+    }
+    else{
+        return vec4(0,0,0,1);    
+    }
+}
+]]
+    shader = love.graphics.newShader(shader_code)
+    shader:send('player', {player:getPosition()})
     if gs.current() == PauseScreen then 
         PauseScreen:update(dt)
     elseif gs.current() == alchemy then 
@@ -62,7 +79,6 @@ function love.draw()
     else
         game:draw()
     end
-
     love.graphics.print(player.health, textFont, 10, 10)
 end
 

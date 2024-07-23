@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 17,
-  nextobjectid = 62,
+  nextlayerid = 15,
+  nextobjectid = 63,
   properties = {},
   tilesets = {
     {
@@ -861,7 +861,7 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 16,
+      id = 14,
       name = "Shader",
       class = "",
       visible = true,
@@ -871,7 +871,21 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 62,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 0,
+          width = 512,
+          height = 512,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     }
   }
 }
