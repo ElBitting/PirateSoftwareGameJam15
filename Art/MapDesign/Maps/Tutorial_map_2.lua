@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 15,
-  nextobjectid = 62,
+  nextobjectid = 63,
   properties = {},
   tilesets = {
     {
@@ -871,7 +871,21 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 62,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 0,
+          width = 512,
+          height = 512,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     }
   }
 }

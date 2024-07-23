@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="62">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="63">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -103,5 +103,7 @@
   <object id="49" name="Vine1" x="161.968" y="183.846" width="6.04348" height="14.875"/>
   <object id="50" name="Vine1" x="161.989" y="199.645" width="6.04348" height="15.0625"/>
  </objectgroup>
- <objectgroup id="14" name="Shader"/>
+ <objectgroup id="14" name="Shader">
+  <object id="62" x="0" y="0" width="512" height="512"/>
+ </objectgroup>
 </map>
