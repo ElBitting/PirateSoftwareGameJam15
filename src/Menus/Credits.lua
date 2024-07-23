@@ -13,6 +13,6 @@ function Credits:keypressed(key)
         safe_quit()
     end
     if key == 'return' then 
-        gs.switch(TitleScreen)
+        safe_restart()
     end
 end

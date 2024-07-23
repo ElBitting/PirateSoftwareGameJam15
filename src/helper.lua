@@ -50,3 +50,8 @@ function safe_quit()
     world:destroy()
     love.event.quit()
 end
+
+function safe_restart()
+    world:destroy()
+    love.event.quit('restart')
+end
