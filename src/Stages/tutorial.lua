@@ -11,7 +11,7 @@ function tutorial:enter()
     door = {}
     exit = {}
     ladders = {}
-    twals = {}  
+    twals = {}
     vines = {}
     joints = {}
     
@@ -31,8 +31,9 @@ function tutorial:enter()
 end
 
 function tutorial:leave()
-    -- remove_collider_obj(walls)
+    remove_collider_obj(walls)
     remove_collider_obj(hazards)
+    remove_collider_obj(ladders)
     remove_collider_obj(door)
     remove_collider_obj(exit)
     remove_collider_obj(twals)
