@@ -18,6 +18,13 @@ function cauldron.new(x, y)
     table.insert(active_cauldron, instance)
 end
 
+function cauldron.reset()
+    for i, instance in ipairs(active_cauldron) do 
+        instance.bod.body:destroy()
+    end
+    active_cauldron = {}
+end
+
 function cauldron:update(dt)
 end
 function cauldron:draw()

@@ -10,7 +10,7 @@ function add_col_classes(world)
     world:addCollisionClass('Vines')
     world:addCollisionClass('Apples')
     world:addCollisionClass('Cauldron')
-    
+
 end
 
 function newButton(text, fn)
@@ -44,6 +44,12 @@ function add_col_class_obj(list, collision_class, layer_name, static_flag, vine_
     end
 end
 
+function remove_collider_obj(list)
+    for i, obj in ipairs(list) do
+        obj.body:destroy()
+    end
+    list = {}
+end
 
 
 function safe_quit()

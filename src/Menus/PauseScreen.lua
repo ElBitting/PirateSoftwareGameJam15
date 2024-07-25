@@ -12,8 +12,9 @@ table.insert(PauseScreen, newButton("Equipment", function() end))
 table.insert(PauseScreen, newButton("Restart Game", function() safe_restart() end))
 table.insert(PauseScreen, newButton("Settings", function() end))
 table.insert(PauseScreen, newButton("Title Screen", function() 
+    gs.pop()
+    player.reset()
     gs.switch(TitleScreen)
-
 end))
 table.insert(PauseScreen, newButton("Quit", function() safe_quit() end))
 
@@ -99,9 +100,5 @@ function InventoryMenu()
     love.graphics.rectangle("line", 0, GAME_HEIGHT *2/3+2, GAME_WIDTH, GAME_HEIGHT/3)
     love.graphics.setColor(1,1,1)
     love.graphics.draw(appleimg, 100, 850, nil, 6, 6)
-    if player.hasapple then
-        love.graphics.print(player.inventory['apple'], textFont, 95, 920)
-    else
-        love.graphics.print(0, textFont, 95, 920)
-    end 
+    love.graphics.print(player.inventory['apple'], textFont, 95, 920)
 end
