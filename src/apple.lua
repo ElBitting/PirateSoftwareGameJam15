@@ -16,7 +16,13 @@ function apple.new(x,y)
     instance.isDestroyed = false
     table.insert(active_apples, instance)
 end
-
+function apple.reset()
+    for i, instance in ipairs(active_apples) do
+        instance.bod.body:destroy()
+    end
+    active_apples = {}
+end
+    
 function apple:update(dt)
     self:hover(dt)
 end
@@ -47,6 +53,7 @@ function apple.is_picked_up(collider)
     for i, instance in ipairs(active_apples) do
         if instance.bod == collider then
             instance.isDestroyed = true
+            instance.bod:setSensor(true)
         end
     end
 end

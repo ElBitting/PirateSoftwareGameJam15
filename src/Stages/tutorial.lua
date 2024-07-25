@@ -1,6 +1,8 @@
 tutorial = {}
 
-function tutorial:init()
+vines_destroyed = false
+
+function tutorial:enter()
 
     gameMap = sti('Art/MapDesign/Maps/Tutorial_map_2.lua')
 
@@ -9,11 +11,10 @@ function tutorial:init()
     door = {}
     exit = {}
     ladders = {}
-    twals = {}  
+    twals = {}
     vines = {}
+    joints = {}
     
-
-
     add_col_class_obj(walls, 'Platform', 'Walls',true, false)
     add_col_class_obj(hazards, 'Hazards', 'Hazards',true, false)
     add_col_class_obj(door, 'TeleDoor','TeleDoor', true, false)
@@ -29,6 +30,18 @@ function tutorial:init()
     calanim = anim8.newAnimation(calgrid('1-4',1), 0.15)
 end
 
+function tutorial:leave()
+    remove_collider_obj(walls)
+    remove_collider_obj(hazards)
+    remove_collider_obj(ladders)
+    remove_collider_obj(door)
+    remove_collider_obj(exit)
+    remove_collider_obj(twals)
+    remove_collider_obj(vines)
+    vines_destroyed = true
+    apple.reset()
+    cauldron.reset()
+end
 
 function tutorial:update(dt)
     calanim:update(dt)
@@ -42,14 +55,16 @@ function tutorial:draw()
     gameMap:drawLayer(gameMap.layers['FG'])
     gameMap:drawLayer(gameMap.layers['fg2'])
     
-    for i, vine in ipairs(vines) do
-        if i == 1 then goto continue end
-        local px = vine:getX()
-        local py = vine:getY()
-        local r = vine:getAngle()
-        love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, 1, 1,7, 10)
-        vine:setAngularDamping(500)
-        ::continue::
+    if not vines_destroyed then
+        for i, vine in ipairs(vines) do
+            if i == 1 then goto continue end
+            local px = vine:getX()
+            local py = vine:getY()
+            local r = vine:getAngle()
+            love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, 1, 1,7, 10)
+            vine:setAngularDamping(500)
+            ::continue::
+        end
     end
     apple:draw_all()
     cauldron:draw_all()

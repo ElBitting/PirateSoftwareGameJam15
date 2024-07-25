@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
- <tileset firstgid="1" name="Tileset_32x32" tilewidth="32" tileheight="32" tilecount="36" columns="6">
-  <image source="../../Sprites/Tileset_32x32.png" width="200" height="200"/>
-  <wangsets>
-   <wangset name="Unnamed Set" type="mixed" tile="-1">
-    <wangcolor name="" color="#ff0000" tile="-1" probability="1"/>
-    <wangtile tileid="4" wangid="0,0,0,1,0,0,0,0"/>
-    <wangtile tileid="5" wangid="0,0,0,0,0,1,0,0"/>
-    <wangtile tileid="10" wangid="0,1,0,0,0,0,0,0"/>
-    <wangtile tileid="11" wangid="0,0,0,0,0,0,0,1"/>
-    <wangtile tileid="12" wangid="0,0,0,1,0,0,0,0"/>
-    <wangtile tileid="13" wangid="0,0,0,1,1,1,0,0"/>
-    <wangtile tileid="14" wangid="0,0,0,0,0,1,0,0"/>
-    <wangtile tileid="18" wangid="0,1,1,1,0,0,0,0"/>
-    <wangtile tileid="19" wangid="1,1,1,1,1,1,1,1"/>
-    <wangtile tileid="20" wangid="0,0,0,0,0,1,1,1"/>
-    <wangtile tileid="24" wangid="0,1,0,0,0,0,0,0"/>
-    <wangtile tileid="25" wangid="1,1,0,0,0,0,0,1"/>
-    <wangtile tileid="26" wangid="0,0,0,0,0,0,0,1"/>
-   </wangset>
-  </wangsets>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="1">
+ <tileset firstgid="1" name="Tileset" tilewidth="16" tileheight="16" tilecount="256" columns="16">
+  <image source="../../Sprites/Tileset.png" width="256" height="256"/>
  </tileset>
- <layer id="1" name="Tile Layer 1" width="64" height="32">
+ <layer id="1" name="Background" width="64" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlssKhDAMReNCN+NjUV1o//8/p8UEQmhHnAHbDrdw8NEIOUlb7IioAwAAAAAAAAAAAHiALbAGFqZ0Pk8zB6aA5/vS+TyNo3MNCJ9ir8acYajAM8fKOR6B/cJ5Ml6Ovxc2de8aqsFVvyfO3/qm/J2ac2autM9dejrPRNkjKX/r+KJzLbXuT8Y7Xnd2E8TRrnPi2H/xl55qeuVoPfW6adlf99uzl/Q4zo2ZPus5+b41f93zkeshntLjmftsPfUYOK41f+u6mHepWogncbw8xzhfgdO3/vYc0GvbU3r/b+r5qMDnLtY1esr/j5zxMvRe0fWS+pR2+QU9dM9zQ58ZpXMH9fIGN3UW1A==
+   eJztwwEJAAAMBKH7/qWXY6Dgqqmqqqqqqqqqrx83gAgB
+  </data>
+ </layer>
+ <layer id="2" name="GroundLayer" width="64" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztmUEKhDAMRXuV0dG9OiO4dBgF738h00Whm1oqprTJf/BWXciDNBQ0BgAAwJvsmO2z1aTzIb/Mztlq0kG/7v4/uTFZQz8nbrbQr5PBlN+/PGCIUvv9t8nxgKG3Tqn9XPveunvfKbU/F9r3n/Z+7fOPftn9L7Ih28C59H7bN5LTxbnmfun7X3K/u9ux+y11/lfyZ+J9UvsdtkF6v531qxm/21/L/Y81oj98VmN/k0m/n/sfU4on279Kmw==
+  </data>
+ </layer>
+ <layer id="3" name="Foreground1" width="64" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztz7EJACAMRcEUuoHu6+hGtHUA8Q4C+eWLAAAAAADgpkaMkrf+svdXera309/2/op+/fr1r1+/fv28YgJ8MQz1
+  </data>
+ </layer>
+ <layer id="4" name="Foreground2" width="64" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzt0ssJgDAQRdEpQgvzU1BKN+4DboQo7xwYGMgmF6YKAADgPWtVW/rM/scs+vUn95Mt/f7169ef20+29PvXn93P/xx9zsH+9Hbb+uyDne+5AKkzEc8=
   </data>
  </layer>
 </map>
