@@ -224,3 +224,13 @@ function player:animations(dt)
 
     player.anim:update(dt)
 end
+
+function player.reset() 
+    player.inventory = {}
+    player.health = 6
+    player.inventory['apple'] = 0
+
+    player:setX(20)
+    player:setY(505
+)
+end

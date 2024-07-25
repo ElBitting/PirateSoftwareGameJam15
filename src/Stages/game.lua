@@ -43,9 +43,6 @@ function game:keypressed(key, gamepad)
         player:setX(20)
         player:setY(505)
     end
-    if key == '-' then
-        tutorial:destroy_vines()
-    end
     if (key == '.' or (gamepad and key == 'y')) and player.nearCauldron then
         gs.push(alchemy)
     end

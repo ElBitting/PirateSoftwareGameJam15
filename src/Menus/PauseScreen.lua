@@ -13,6 +13,7 @@ table.insert(PauseScreen, newButton("Restart Game", function() safe_restart() en
 table.insert(PauseScreen, newButton("Settings", function() end))
 table.insert(PauseScreen, newButton("Title Screen", function() 
     gs.pop()
+    player.reset()
     gs.switch(TitleScreen)
 end))
 table.insert(PauseScreen, newButton("Quit", function() safe_quit() end))

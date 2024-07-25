@@ -40,6 +40,7 @@ function tutorial:leave()
     remove_collider_obj(vines)
     vines_destroyed = true
     apple.reset()
+    cauldron.reset()
 end
 
 function tutorial:update(dt)
