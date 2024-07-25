@@ -12,7 +12,7 @@ function Credits:keypressed(key, gamepad)
     if key == 'escape' or (gamepad and key == 'b') then 
         safe_quit()
     end
-    if key == 'return' then 
+    if key == 'return' or (gamepad and key == 'a')  then 
         player.reset()
         gs.switch(TitleScreen)
     end
