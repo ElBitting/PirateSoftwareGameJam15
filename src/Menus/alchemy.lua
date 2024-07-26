@@ -1,12 +1,12 @@
 alchemy = {}
 
 function alchemy:load()
-    alchemychoice.new(200, 100, 1, 'apple', 'Art/Sprites/Original_sin.png', true)
-    alchemychoice.new(200, 100, 2, 'poke', 'Art/Sprites/Original_sin.png', false)
-    alchemychoice.new(200, 100, 3, 'Banana', 'Art/Sprites/Original_sin.png', false)
-    alchemychoice.new(200, 100, 4, 'Elderberry', 'Art/Sprites/Original_sin.png', false)
-    alchemychoice.new(200, 100, 5, 'frog', 'Art/Sprites/Original_sin.png', false)
-    alchemychoice.new(200, 100, 6, 'rat tail', 'Art/Sprites/Original_sin.png', false)
+    alchemychoice.new(200, 100, 1, 'Health Potion', 'Art/Sprites/Original_sin.png', true)
+    alchemychoice.new(200, 100, 2, 'Swiftness Potion', 'Art/Sprites/Original_sin.png', false)
+    alchemychoice.new(200, 100, 3, 'Potion of Sight', 'Art/Sprites/Original_sin.png', false)
+    alchemychoice.new(200, 100, 4, 'Potion of Jump', 'Art/Sprites/Original_sin.png', false)
+    alchemychoice.new(200, 100, 5, 'Potion of Heat Resistance', 'Art/Sprites/Original_sin.png', false)
+    alchemychoice.new(200, 100, 6, 'Potion of Cold Resistance', 'Art/Sprites/Original_sin.png', false)
 
     alchemyselected = 1
 end

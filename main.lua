@@ -71,7 +71,6 @@ function love.draw()
     else
         game:draw()
     end
-    love.graphics.print(alchemyselected, textFont, 10, 10)
 end
 
 -- KEYBOARD and Controller keypresses
