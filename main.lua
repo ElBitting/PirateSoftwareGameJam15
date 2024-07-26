@@ -22,8 +22,8 @@ require 'src/UI/healthbar'
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
 require 'src/Menus/PauseScreen'
+require 'src/Menus/alchemychoice'
 require 'src/Menus/alchemy'
-
 
 function love.load()
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
@@ -47,6 +47,8 @@ function love.load()
     gs.switch(TitleScreen)
     love.mouse.setVisible(false)
 
+    alchemy:load()
+
 end
 
 function love.update(dt)
@@ -69,7 +71,7 @@ function love.draw()
     else
         game:draw()
     end
-    love.graphics.print(player.health, textFont, 10, 10)
+    love.graphics.print(alchemyselected, textFont, 10, 10)
 end
 
 -- KEYBOARD and Controller keypresses
