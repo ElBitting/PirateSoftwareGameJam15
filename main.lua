@@ -22,7 +22,7 @@ require 'src/UI/healthbar'
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
 require 'src/Menus/PauseScreen'
-    require 'src/Menus/alchemy'
+require 'src/Menus/alchemy'
 
 
 function love.load()
