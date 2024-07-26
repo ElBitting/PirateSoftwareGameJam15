@@ -26,7 +26,9 @@ function cauldron.reset()
 end
 
 function cauldron:update(dt)
+    self.anim:update(dt)
 end
+
 function cauldron:draw()
     self.anim:draw(calimg, self.x, self.y, nil, 1, 1, self.width/2, self.height/2)
 end
@@ -36,6 +38,7 @@ function cauldron:update_all(dt)
         instance:update(dt)
     end
 end
+
 function cauldron:draw_all()
     for i, instance in ipairs(active_cauldron) do
         instance:draw()

@@ -21,6 +21,7 @@ function game:draw()
     love.graphics.setShader(shader)
     gameMap:drawLayer(gameMap.layers['Shader'])
     love.graphics.setShader()
+    healthbar:draw()
 
     -- Initiate Pause Sequence
     if gs.current() == PauseScreen then

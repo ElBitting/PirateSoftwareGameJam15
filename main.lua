@@ -14,6 +14,8 @@ require 'src/Stages/tutorial'
 require 'src/apple'
 require 'src/cauldron'
 
+require 'src/UI/healthbar'
+
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
 
