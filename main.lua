@@ -21,6 +21,8 @@ require 'src/UI/healthbar'
 
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
+require 'src/Menus/PauseScreen'
+    require 'src/Menus/alchemy'
 
 
 function love.load()
@@ -40,8 +42,7 @@ function love.load()
 
     --TODO: Find a way to put these at the top with the other imports...
     require 'src/player'
-    require 'src/Menus/PauseScreen'
-    require 'src/Menus/alchemy'
+    
 
     gs.switch(TitleScreen)
     love.mouse.setVisible(false)
