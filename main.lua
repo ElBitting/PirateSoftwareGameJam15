@@ -5,21 +5,22 @@ gs = require 'libraries/hump-master/gamestate'
 sti = require 'libraries/sti'
 Timer = require "libraries/hump-master/timer"
 
-require 'src/helper'
-require 'src/global'
-require 'src/controls'
+require 'src/Utilities/helper'
+require 'src/Utilities/global'
+require 'src/Utilities/controls'
+require 'src/Utilities/shaders'
+
 
 require 'src/Stages/game'
 require 'src/Stages/tutorial'
-require 'src/apple'
-require 'src/cauldron'
+
+require 'src/Objects/apple'
+require 'src/Objects/cauldron'
 
 require 'src/UI/healthbar'
 
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
-require 'src/Utilities/shaders'
-
 
 
 function love.load()
