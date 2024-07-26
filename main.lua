@@ -18,6 +18,7 @@ require 'src/UI/healthbar'
 
 require 'src/Menus/TitleScreen'
 require 'src/Menus/Credits'
+require 'src/Utilities/shaders'
 
 
 
@@ -47,22 +48,7 @@ function love.load()
 end
 
 function love.update(dt)
-    shader_code = [[
-
-extern vec2 player;
-
-vec4 effect(vec4 color, Image image, vec2 uvs, vec2 screen_coords){
-
-    if (player.x < screen_coords.x){
-        return vec4(0.0, 0.0, 0.0, 0);
-    }
-    else{
-        return vec4(0,0,0,1);    
-    }
-}
-]]
-    shader = love.graphics.newShader(shader_code)
-    shader:send('player', {player:getPosition()})
+    shaders:update(dt)
     if gs.current() == PauseScreen then 
         PauseScreen:update(dt)
     elseif gs.current() == alchemy then 
