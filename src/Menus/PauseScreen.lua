@@ -51,7 +51,7 @@ function PauseScreen: keypressed(key, gamepad)
         love.mouse.setVisible(false)
     end
     if key =='escape' or (gamepad and key == 'b') then
-        safe_quit()
+        gs.pop()
     end
 end
 
