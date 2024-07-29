@@ -20,6 +20,8 @@ player.y = 0
 player.inventory = {}
 player.health = 6
 player.inventory['apple'] = 0
+player.inventory['elderberry'] = 0
+player.inventory['cricket'] = 0
 player.onVine = false
 
 -- player.hasapple = false
@@ -60,6 +62,10 @@ function player:update(dt)
         elseif col1.collision_class == 'Player' and col2.collision_class == 'Hazards' then
             contact:setEnabled(false)
         elseif col1.collision_class == 'Player' and col2.collision_class == 'Apples' then
+            contact:setEnabled(false)
+        elseif col1.collision_class == 'Player' and col2.collision_class == 'Crickets' then
+            contact:setEnabled(false)
+        elseif col1.collision_class == 'Player' and col2.collision_class == 'Elderberries' then
             contact:setEnabled(false)
         end
     end)
@@ -213,9 +219,23 @@ function player:interactions(dt)
         local collided = player:getEnterCollisionData('Apples')
         -- collided.collider:destroy()
         apple.is_picked_up(collided.collider)
-        if player.inventory['apple'] == nil then player.inventory['apple'] = 1 
-        else player.inventory['apple'] = player.inventory['apple'] + 1 end
+        player.inventory['apple'] = player.inventory['apple'] + 1
     end
+
+    if player:enter('Crickets') then
+        local collided = player:getEnterCollisionData('Crickets')
+        -- collided.collider:destroy()
+        Crickets.is_picked_up(collided.collider)
+        player.inventory['cricket'] = player.inventory['cricket'] + 1
+    end
+
+    if player:enter('Elderberries') then
+        local collided = player:getEnterCollisionData('Elderberries')
+        -- collided.collider:destroy()
+        Elderberries.is_picked_up(collided.collider)
+        player.inventory['elderberry'] = player.inventory['elderberry'] + 1
+    end
+    
 
     if player:enter('Vines') then
         local collided = player:getEnterCollisionData('Vines')

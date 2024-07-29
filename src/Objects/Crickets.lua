@@ -29,7 +29,7 @@ function Crickets:update(dt)
 end
 
 function Crickets:draw()
-    if self.is_full then return end
+    if self.isDestroyed then return end
     love.graphics.draw(self.img, self.x, self.y, 0, 0.5, 0.5, self.width/2, self.height/2 -5)
 end
 
@@ -42,5 +42,14 @@ end
 function Crickets:draw_all()
     for i, instance in ipairs(active_crickets) do
         instance:draw()
+    end
+end
+
+function Crickets.is_picked_up(collider)
+    for i, instance in ipairs(active_crickets) do
+        if instance.bod == collider then
+            instance.isDestroyed = true
+            instance.bod:setSensor(true)
+        end
     end
 end

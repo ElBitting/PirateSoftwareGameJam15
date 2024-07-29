@@ -1,5 +1,7 @@
 PauseScreen = {}
 local appleimg = love.graphics.newImage('Art/Sprites/Original_sin.png')
+local elderberryimg = love.graphics.newImage('Art/Sprites/elderberry_shrub_full.png')
+local cricketimg = love.graphics.newImage('Art/Sprites/criket.png')
 
 table.insert(PauseScreen, newButton("Resume", function() 
     gs.pop() 
@@ -101,4 +103,10 @@ function InventoryMenu()
     love.graphics.setColor(1,1,1)
     love.graphics.draw(appleimg, 100, 850, nil, 6, 6)
     love.graphics.print(player.inventory['apple'], textFont, 95, 920)
+
+    love.graphics.draw(elderberryimg, 225, 850, nil, 6, 6)
+    love.graphics.print(player.inventory['elderberry'], textFont, 220, 920)
+
+    love.graphics.draw(cricketimg, 450, 890, nil, 6, 6)
+    love.graphics.print(player.inventory['cricket'], textFont, 445, 920)
 end

@@ -48,3 +48,12 @@ function Elderberries:draw_all()
         instance:draw()
     end
 end
+
+function Elderberries.is_picked_up(collider)
+    for i, instance in ipairs(active_elderberries) do
+        if instance.bod == collider then
+            instance.is_full = false
+            instance.bod:setSensor(true)
+        end
+    end
+end
