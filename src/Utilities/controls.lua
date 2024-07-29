@@ -31,9 +31,9 @@ end
 -- Used in Vine activity.
 function controls:checkActionKey()
     if joystick ~= nil then
-        return love.keyboard.isDown('x') or joystick:isGamepadDown('x')
+        return love.keyboard.isDown('rshift') or joystick:isGamepadDown('x')
     end
-    return love.keyboard.isDown('x')
+    return love.keyboard.isDown('rshift')
 end
 
 -- Used in pause menu selection
