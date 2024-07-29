@@ -2,7 +2,7 @@ alchemychoice = {}
 alchemychoice.__index = alchemychoice
 choice_list = {}
 
-function alchemychoice.new(x, y, count, title, imgsrc, selected)
+function alchemychoice.new(x, y, count, title, imgsrc, selected, fnc)
     local instance = setmetatable({}, alchemychoice)
     instance.height = 175
     instance.width = 730
@@ -19,6 +19,7 @@ function alchemychoice.new(x, y, count, title, imgsrc, selected)
     instance.imgsrc = imgsrc
     instance.img = love.graphics.newImage(imgsrc)
     instance.selected = selected
+    instance.fnc = fnc
 
     table.insert(choice_list, instance)
 end
@@ -42,6 +43,10 @@ function alchemychoice:update(dt)
         self.selected = true
     else
         self.selected = false
+    end
+
+    if controls:checkSelectionKey() then
+        self.fnc()
     end
 end
 

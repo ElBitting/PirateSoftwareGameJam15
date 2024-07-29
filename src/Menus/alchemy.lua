@@ -1,12 +1,12 @@
 alchemy = {}
 
 function alchemy:load()
-    alchemychoice.new(200, 100, 1, 'Health Potion', 'Art/Sprites/Original_sin.png', true)
-    alchemychoice.new(200, 100, 2, 'Swiftness Potion', 'Art/Sprites/Original_sin.png', false)
-    alchemychoice.new(200, 100, 3, 'Potion of Sight', 'Art/Sprites/Original_sin.png', false)
-    alchemychoice.new(200, 100, 4, 'Potion of Jump', 'Art/Sprites/Original_sin.png', false)
-    alchemychoice.new(200, 100, 5, 'Potion of Heat Resistance', 'Art/Sprites/Original_sin.png', false)
-    alchemychoice.new(200, 100, 6, 'Potion of Cold Resistance', 'Art/Sprites/Original_sin.png', false)
+    alchemychoice.new(200, 100, 1, 'Health Potion', 'Art/Sprites/Original_sin.png', true, function() safe_quit() end)
+    alchemychoice.new(200, 100, 2, 'Swiftness Potion', 'Art/Sprites/Original_sin.png', false, function() end)
+    alchemychoice.new(200, 100, 3, 'Potion of Sight', 'Art/Sprites/Original_sin.png', false, function() end)
+    alchemychoice.new(200, 100, 4, 'Potion of Jump', 'Art/Sprites/Original_sin.png', false, function() end)
+    alchemychoice.new(200, 100, 5, 'Potion of Heat Resistance', 'Art/Sprites/Original_sin.png', false, function() end)
+    alchemychoice.new(200, 100, 6, 'Potion of Cold Resistance', 'Art/Sprites/Original_sin.png', false, function() end)
 
     alchemyselected = 1
 end
