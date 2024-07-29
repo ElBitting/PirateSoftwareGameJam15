@@ -16,6 +16,7 @@ require 'src/Stages/tutorial'
 
 require 'src/Objects/apple'
 require 'src/Objects/cauldron'
+require 'src/Objects/vines'
 
 require 'src/UI/healthbar'
 

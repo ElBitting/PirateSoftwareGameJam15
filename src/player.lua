@@ -20,6 +20,7 @@ player.y = 0
 player.inventory = {}
 player.health = 6
 player.inventory['apple'] = 0
+player.onVine = false
 
 -- player.hasapple = false
 local colliderWidth = 6
@@ -39,6 +40,7 @@ function player:update(dt)
     player:interactions(dt)
     player:animations(dt)
     Timer.update(dt)
+
     
     player:setPreSolve(function(col1, col2, contact)
         if col1.collision_class == 'Player' and col2.collision_class == 'Platform' then
@@ -138,9 +140,9 @@ function player:detectections(dt)
         player.x = 0
     end
     -- Cauldrons
-    world:setQueryDebugDrawing(true)
+    -- world:setQueryDebugDrawing(true)
     local cauldrons = world:queryRectangleArea(player:getX()-16, player:getY()-3, 32, 6, {'Cauldron'})
-    world:setQueryDebugDrawing(false)
+    -- world:setQueryDebugDrawing(false)
     if #cauldrons > 0 then 
         player.nearCauldron = true
     else
@@ -213,6 +215,18 @@ function player:interactions(dt)
         apple.is_picked_up(collided.collider)
         if player.inventory['apple'] == nil then player.inventory['apple'] = 1 
         else player.inventory['apple'] = player.inventory['apple'] + 1 end
+    end
+
+    if player:enter('Vines') then
+        local collided = player:getEnterCollisionData('Vines')
+        if controls:checkActionKey() then 
+            latch(collided.collider)
+        else
+            delatch()
+        end
+    end
+    if player:exit('Vines') then 
+        delatch()
     end
 end
 
