@@ -69,6 +69,8 @@ function tutorial:draw()
     end
     apple:draw_all()
     cauldron:draw_all()
+    Elderberries:draw_all()
+    Crickets:draw_all()
 end
 
 function add_entities()
@@ -76,8 +78,11 @@ function add_entities()
         if instance.name == "Apple" then
             apple.new(instance.x + instance.width/2, instance.y + instance.height/2)
         elseif instance.name == "Cauldron" then
-            print('here')
             cauldron.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
+        elseif instance.name == "Cricket" then
+            Crickets.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
+        elseif instance.name == 'Elderberries' then
+            Elderberries.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
         end
     end
 end
