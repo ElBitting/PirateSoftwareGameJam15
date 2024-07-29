@@ -44,10 +44,6 @@ function alchemychoice:update(dt)
     else
         self.selected = false
     end
-
-    if controls:checkSelectionKey() then
-        self.fnc()
-    end
 end
 
 function alchemychoice:draw_all()
@@ -59,5 +55,15 @@ end
 function alchemychoice:update_all(dt)
     for i, instance in ipairs(choice_list) do
         instance:update(dt)
+    end
+end
+
+function alchemychoice:keypressed(key)
+    if key == 'return' then 
+        for i, instance in ipairs(choice_list) do
+            if instance.selected then 
+                instance.fnc()
+            end
+        end
     end
 end
