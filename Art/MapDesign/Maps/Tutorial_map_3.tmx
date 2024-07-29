@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="64" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
  <tileset firstgid="1" name="Tileset" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../../Sprites/Tileset.png" width="256" height="256"/>
  </tileset>
@@ -10,17 +10,17 @@
  </layer>
  <layer id="2" name="GroundLayer" width="64" height="32">
   <data encoding="base64" compression="zlib">
-   eJztmUEKhDAMRXuV0dG9OiO4dBgF738h00Whm1oqprTJf/BWXciDNBQ0BgAAwJvsmO2z1aTzIb/Mztlq0kG/7v4/uTFZQz8nbrbQr5PBlN+/PGCIUvv9t8nxgKG3Tqn9XPveunvfKbU/F9r3n/Z+7fOPftn9L7Ih28C59H7bN5LTxbnmfun7X3K/u9ux+y11/lfyZ+J9UvsdtkF6v531qxm/21/L/Y81oj98VmN/k0m/n/sfU4on279Kmw==
+   eJztmcEKwjAMhvMaPU5xdzcVPCq693+kNWAhyGopmJAl+eE7bD2Uj6bp6AAikUgkMmROzIxiNv05Z67M3MRs+uPd/wK+/V+ZNxNa/Y9C85Ta0uY/C82zJ//0gT7XxtPGu62U3qrZ//4HatHqf2CE9hat/lz9HlnIPFr9paK1/0nFu7/3+g9/2/54d/B95tFY90e/Cerf0979rfd/y+tf9nZrf1v1f2Se0Paz6l+CDtb9sdZ/1bh1/5Zj+NfH9ujPef9Boec/9z+mHlaQDUle
   </data>
  </layer>
- <layer id="3" name="Foreground1" width="64" height="32">
+ <layer id="4" name="Moss and Hazzards" width="64" height="32">
   <data encoding="base64" compression="zlib">
-   eJztz7EJACAMRcEUuoHu6+hGtHUA8Q4C+eWLAAAAAADgpkaMkrf+svdXera309/2/op+/fr1r1+/fv28YgJ8MQz1
+   eJztmDEKgDAMRTPoDfQCTh7To5sMQikdKkhb+9+DDxk69EETQs0AALRZza7Fc3hdk5w3Z0dkd/fN0/sevVD3B0185sXsk8V7Pnpflhb+I8/W3P/8KCkj+7cAf21/0Eb9/eM/t//zdxB1aZ+e3T/1K+2T6v6zgz/vH3/8o6b/8Vfz/zM37Rwj0g==
   </data>
  </layer>
- <layer id="4" name="Foreground2" width="64" height="32">
+ <layer id="5" name="Entities_Placeholders" width="64" height="32" visible="0">
   <data encoding="base64" compression="zlib">
-   eJzt0ssJgDAQRdEpQgvzU1BKN+4DboQo7xwYGMgmF6YKAADgPWtVW/rM/scs+vUn95Mt/f7169ef20+29PvXn93P/xx9zsH+9Hbb+uyDne+5AKkzEc8=
+   eJzt2MEJgEAMBMBrRAsQzl68/osxBRx4n1UfM7AQWAh5pzUgbavsXx+x4Ajt7ZUztBsAAAB4T+p3AABA3lUZk/mpW+n5jxvBHwS9
   </data>
  </layer>
 </map>

@@ -59,7 +59,7 @@ function alchemychoice:update_all(dt)
 end
 
 function alchemychoice:keypressed(key, gamepad)
-    if key == 'return' or (gamepad and joystick:isGamepadDown('a')) then 
+    if (gamepad and key == 'a') or key == 'return'  then 
         for i, instance in ipairs(choice_list) do
             if instance.selected then 
                 instance.fnc()

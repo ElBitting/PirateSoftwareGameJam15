@@ -29,31 +29,31 @@ function alchemy:draw()
 end
 
 function alchemy:keypressed(key, gamepad)
-    if key == 'escape' or (gamepad and key == 'b') then 
+    if (gamepad and key == 'b') or key == 'escape' then 
         gs.pop()
     end
-    if key == 'd' or (gamepad and joystick:isGamepadDown('dpright')) then
+    if (gamepad and joystick:isGamepadDown('dpright')) or key == 'd' then
         if alchemyselected > 3 then 
             alchemyselected = alchemyselected -3
         else 
             alchemyselected  = alchemyselected + 3
         end
     end
-    if key == 'a' or (gamepad and joystick:isGamepadDown('dpleft')) then
+    if (gamepad and joystick:isGamepadDown('dpleft')) or (not gamepad and key == 'a') then
         if alchemyselected < 3 then 
             alchemyselected = alchemyselected +3
         else 
             alchemyselected  = alchemyselected - 3
         end
     end
-    if key == 'w' or (gamepad and joystick:isGamepadDown('dpup')) then 
+    if (gamepad and joystick:isGamepadDown('dpup')) or key == 'w' then 
         alchemyselected = alchemyselected -1
         if alchemyselected == 0 then alchemyselected = 6 end
     end
-    if key == 's' or (gamepad and joystick:isGamepadDown('dpdown')) then 
+    if  (gamepad and joystick:isGamepadDown('dpdown')) or key == 's' then 
         alchemyselected = alchemyselected +1
         if alchemyselected == 7 then alchemyselected = 1 end
     end
 
-    alchemychoice:keypressed(key)
+    alchemychoice:keypressed(key, gamepad)
 end
