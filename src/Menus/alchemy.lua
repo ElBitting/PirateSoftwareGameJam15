@@ -32,25 +32,25 @@ function alchemy:keypressed(key, gamepad)
     if key == 'escape' or (gamepad and key == 'b') then 
         gs.pop()
     end
-    if key == 'd' then
+    if key == 'd' or (gamepad and joystick:isGamepadDown('dpright')) then
         if alchemyselected > 3 then 
             alchemyselected = alchemyselected -3
         else 
             alchemyselected  = alchemyselected + 3
         end
     end
-    if key == 'a' then
+    if key == 'a' or (gamepad and joystick:isGamepadDown('dpleft')) then
         if alchemyselected < 3 then 
             alchemyselected = alchemyselected +3
         else 
             alchemyselected  = alchemyselected - 3
         end
     end
-    if key == 'w' then 
+    if key == 'w' or (gamepad and joystick:isGamepadDown('dpup')) then 
         alchemyselected = alchemyselected -1
         if alchemyselected == 0 then alchemyselected = 6 end
     end
-    if key == 's' then 
+    if key == 's' or (gamepad and joystick:isGamepadDown('dpdown')) then 
         alchemyselected = alchemyselected +1
         if alchemyselected == 7 then alchemyselected = 1 end
     end
