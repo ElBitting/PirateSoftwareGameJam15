@@ -35,7 +35,7 @@ function alchemychoice:draw()
     love.graphics.setColor(1,1,1)
     
     love.graphics.print(self.title, self.x+self.width/2 - 15, self.y )
-    love.graphics.draw(self.img, self.x, self.y, 0, 6, 6, -5, -5)
+    love.graphics.draw(self.img, self.x, self.y, 0, 4, 4, -5, -5)
 end
 
 function alchemychoice:update(dt)
