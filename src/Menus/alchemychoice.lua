@@ -2,7 +2,7 @@ alchemychoice = {}
 alchemychoice.__index = alchemychoice
 choice_list = {}
 
-function alchemychoice.new(x, y, count, title, imgsrc, selected, fnc)
+function alchemychoice.new(x, y, count, title, imgsrc, reagent, selected, fnc)
     local instance = setmetatable({}, alchemychoice)
     instance.height = 175
     instance.width = 730
@@ -20,6 +20,8 @@ function alchemychoice.new(x, y, count, title, imgsrc, selected, fnc)
     instance.img = love.graphics.newImage(imgsrc)
     instance.selected = selected
     instance.fnc = fnc
+    instance.reagent = reagent
+    instance.reagentimg = love.graphics.newImage(reagent)
 
     table.insert(choice_list, instance)
 end
@@ -36,6 +38,9 @@ function alchemychoice:draw()
     
     love.graphics.print(self.title, self.x+self.width/2 - 15, self.y )
     love.graphics.draw(self.img, self.x, self.y, 0, 4, 4, -5, -5)
+    
+    love.graphics.print('=', textFont, self.x + 150, self.y + 80)
+    love.graphics.draw(self.reagentimg, self.x +180, self.y+60, 0, 4, 4, -5, -5)
 end
 
 function alchemychoice:update(dt)
