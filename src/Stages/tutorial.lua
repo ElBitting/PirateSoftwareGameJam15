@@ -6,29 +6,27 @@ function tutorial:enter()
 
     gameMap = sti('Art/MapDesign/Maps/Tutorial_map_2.lua')
 
-    walls = {}
-    hazards = {}
-    door = {}
-    exit = {}
-    ladders = {}
-    twals = {}
-    vines = {}
-    joints = {}
+    launch_level(gameMap)
+
+    -- walls = {}
+    -- hazards = {}
+    -- door = {}
+    -- exit = {}
+    -- ladders = {}
+    -- twals = {}
+    -- vines = {}
+    -- joints = {}
     
-    add_col_class_obj(walls, 'Platform', 'Walls',true, false)
-    add_col_class_obj(hazards, 'Hazards', 'Hazards',true, false)
-    add_col_class_obj(door, 'TeleDoor','TeleDoor', true, false)
-    add_col_class_obj(exit, 'FinalDoor','FinalDoor', true, false)
-    add_col_class_obj(ladders, 'Ladders','Ladders', true, false)
-    add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false)
-    add_col_class_obj(vines, 'Vines','Vines', false, true)
-    vines_destroyed = false
+    -- add_col_class_obj(walls, 'Platform', 'Walls',true, false)
+    -- add_col_class_obj(hazards, 'Hazards', 'Hazards',true, false)
+    -- add_col_class_obj(door, 'TeleDoor','TeleDoor', true, false)
+    -- add_col_class_obj(exit, 'FinalDoor','FinalDoor', true, false)
+    -- add_col_class_obj(ladders, 'Ladders','Ladders', true, false)
+    -- add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false)
+    -- add_col_class_obj(vines, 'Vines','Vines', false, true)
+    -- vines_destroyed = false
 
-    add_entities()
-
-    calimg = love.graphics.newImage('Art/Sprites/potSpriteSheet.png')
-    calgrid = anim8.newGrid(32,32, calimg: getWidth(), calimg:getHeight())
-    calanim = anim8.newAnimation(calgrid('1-4',1), 0.15)
+    -- add_entities()
 end
 
 function tutorial:leave()
@@ -45,7 +43,6 @@ function tutorial:leave()
 end
 
 function tutorial:update(dt)
-    calanim:update(dt)
     apple:update_all(dt)
     Poke:update_all(dt)
     cauldron:update_all(dt)

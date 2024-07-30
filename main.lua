@@ -9,7 +9,7 @@ require 'src/Utilities/helper'
 require 'src/Utilities/global'
 require 'src/Utilities/controls'
 require 'src/Utilities/shaders'
-
+require 'src/Utilities/levelLauncher'
 
 require 'src/Stages/game'
 require 'src/Stages/tutorial'
