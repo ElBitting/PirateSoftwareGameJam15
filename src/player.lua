@@ -70,6 +70,8 @@ function player:update(dt)
             contact:setEnabled(false)
         elseif col1.collision_class == 'Player' and col2.collision_class == 'Elderberries' then
             contact:setEnabled(false)
+        elseif col1.collision_class == 'Player' and col2.collision_class == 'Poke' then
+            contact:setEnabled(false)
         end
     end)
 end
@@ -237,6 +239,13 @@ function player:interactions(dt)
         -- collided.collider:destroy()
         Elderberries.is_picked_up(collided.collider)
         player.inventory['elderberry'] = player.inventory['elderberry'] + 1
+    end
+
+    if player:enter('Poke') then
+        local collided = player:getEnterCollisionData('Poke')
+        -- collided.collider:destroy()
+        Poke.is_picked_up(collided.collider)
+        player.inventory['poke'] = player.inventory['poke'] + 1
     end
     
 

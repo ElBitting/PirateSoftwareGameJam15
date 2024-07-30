@@ -20,7 +20,7 @@ function alchemy:load()
         if player.inventory['apple'] > 0 and player.inventory['poke'] > 0 then 
             player.inventory['apple'] = player.inventory['apple'] - 1
             player.inventory['poke'] = player.inventory['poke'] -1
-            player.inventory['health'] = player.inventory['health'] + 1
+            player.inventory['jump'] = player.inventory['jump'] + 1
         end
     end)
     alchemychoice.new(200, 100, 5, 'Potion of Heat Resistance', 'Art/Sprites/Original_sin.png', 'Art/Sprites/Original_sin.png', false, function() end)
