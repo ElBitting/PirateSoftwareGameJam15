@@ -15,7 +15,6 @@ function Elderberries.new(x, y)
     instance.bod = world:newCircleCollider(x, y, instance.width/2)
     instance.bod:setCollisionClass('Elderberries')
     instance.bod:setType('static')
-
     table.insert(active_elderberries, instance)
 end
 

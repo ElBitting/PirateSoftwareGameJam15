@@ -13,6 +13,7 @@ function cauldron.new(x, y)
     instance.bod:setType('static')
     print(instance.x, instance.y)
     instance.bod:setCollisionClass("Cauldron")
+    
     instance.img_grid = anim8.newGrid(32,32, instance.img:getWidth(), instance.img:getHeight())
     instance.anim = anim8.newAnimation(instance.img_grid('1-4', 1), 0.15)
     table.insert(active_cauldron, instance)
@@ -30,7 +31,7 @@ function cauldron:update(dt)
 end
 
 function cauldron:draw()
-    self.anim:draw(calimg, self.x, self.y, nil, 1, 1, self.width/2, self.height/2)
+    self.anim:draw(self.img, self.x, self.y, nil, 1, 1, self.width/2, self.height/2)
 end
 
 function cauldron:update_all(dt)
