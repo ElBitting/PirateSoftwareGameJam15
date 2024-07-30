@@ -31,7 +31,7 @@ end
 
 function Elderberries:draw()
     if self.is_full then
-        love.graphics.draw(self.img_full, self.x, self.y, 0, 1, 1, self.width/2, self.height/2)
+        love.graphics.draw(self.img_full, self.x, self.y-8, 0, 1, 1, self.width/2, self.height/2)
     else
         love.graphics.draw(self.img_empty, self.x, self.y, 0, 1, 1, self.width/2, self.height/2)
     end

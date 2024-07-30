@@ -18,6 +18,7 @@ require 'src/Objects/apple'
 require 'src/Objects/cauldron'
 require 'src/Objects/Elderberries'
 require 'src/Objects/Crickets'
+require 'src/Objects/Poke'
 require 'src/Objects/vines'
 
 require 'src/UI/healthbar'

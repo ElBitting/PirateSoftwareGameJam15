@@ -47,6 +47,7 @@ end
 function tutorial:update(dt)
     calanim:update(dt)
     apple:update_all(dt)
+    Poke:update_all(dt)
     cauldron:update_all(dt)
 end
 
@@ -71,6 +72,7 @@ function tutorial:draw()
     cauldron:draw_all()
     Elderberries:draw_all()
     Crickets:draw_all()
+    Poke:draw_all()
 end
 
 function add_entities()
@@ -83,6 +85,8 @@ function add_entities()
             Crickets.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
         elseif instance.name == 'Elderberries' then
             Elderberries.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
+        elseif instance.name == 'Poke' then
+            Poke.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
         end
     end
 end
