@@ -1,6 +1,7 @@
 alchemychoice = {}
 alchemychoice.__index = alchemychoice
 choice_list = {}
+local pokeimg = love.graphics.newImage('Art/Sprites/Poke.png')
 
 function alchemychoice.new(x, y, count, title, imgsrc, reagent, selected, fnc)
     local instance = setmetatable({}, alchemychoice)
@@ -41,6 +42,9 @@ function alchemychoice:draw()
     
     love.graphics.print('=', textFont, self.x + 150, self.y + 80)
     love.graphics.draw(self.reagentimg, self.x +180, self.y+60, 0, 4, 4, -5, -5)
+    love.graphics.print('+', textFont, self.x +310, self.y + 80)
+    love.graphics.draw(pokeimg, self.x + 340, self.y + 40, 0, 3, 3, -5, -5)
+    
 end
 
 function alchemychoice:update(dt)
