@@ -9,8 +9,8 @@ return {
   height = 32,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 17,
-  nextobjectid = 69,
+  nextlayerid = 18,
+  nextobjectid = 79,
   properties = {},
   tilesets = {
     {
@@ -162,7 +162,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztlkEOgjAQRVuJugbiyrhwz6bXU0+gnkC9nHgC4AIOoY2TkU5FbSHKT15CWmZeSxpSIcYMMTKgK9aonvxmDQVQAhXyZwH9EqQTIJKNP/tzf+i0+X2vYwNsgR3jf2cNa43LuQcOwPEFv62fy0/rsPMEnIEL8efMPq6imc/1sxlTaJz6czSPnSVDhfoYCkcNrROOunq/Uwsz+ew334gj6ljH+SXpE8NAolkg8Fja4o9JDX4/sZDKx/njzjMO9XY5s22RDJz/03Be1/8ghL8LIdKn+1dzszyHypzgemfM977D0Pr4Cr4LmfhcsxL2+5dvt+lvu3/VcyvPLInzDm6dRVA="
+      data = "eJztlrEOgjAQhluJ7kCcnNxZeD31CdQnUF9OnHQDFkaP0MbLSa+ithDxT76EtNx9LWlIhfhniJEeXaEi7cmv15ADBVAif+LRL0E6AQLZ+JOR+32nze96HStgDWwY/ztrWCpszi2wA/Yv+E39bH5ah50H4AiciD9j9nEWzXymnvVYisapP0Pz2FkwlKiPJrfU0Dphqav3OzUwk89+/Y04go51nF+SPiEMRIo5Ao/FLf6Q1OD3IwOxfJw/7jzjUG+XM9sWycD5Pw3ntf0PfPi74CN9un81F8Ozr9wQV8s7pvmx5VvfYWh9XAXfhXRcrjkV5vuXa7fub7p/1XOVYxbEeQe1C2Y5"
     },
     {
       type = "tilelayer",
@@ -596,6 +596,71 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 74,
+          name = "Shadow",
+          type = "Shadow",
+          shape = "ellipse",
+          x = 281.417,
+          y = 192.917,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 75,
+          name = "Poke",
+          type = "Poke",
+          shape = "ellipse",
+          x = 64.3333,
+          y = 464.333,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 76,
+          name = "Poke",
+          type = "Poke",
+          shape = "ellipse",
+          x = 96.3333,
+          y = 417.333,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 77,
+          name = "Poke",
+          type = "Poke",
+          shape = "ellipse",
+          x = 319.667,
+          y = 401.667,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 78,
+          name = "Poke",
+          type = "Poke",
+          shape = "ellipse",
+          x = 448.333,
+          y = 464,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -917,6 +982,48 @@ return {
           y = 199.645,
           width = 6.04348,
           height = 15.0625,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 17,
+      name = "EnemyWalls",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 69,
+          name = "EnemyWalls",
+          type = "EnemyWalls",
+          shape = "rectangle",
+          x = 191.75,
+          y = 176.75,
+          width = 9.5,
+          height = 31.25,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 70,
+          name = "EnemyWalls",
+          type = "EnemyWalls",
+          shape = "rectangle",
+          x = 342.25,
+          y = 176,
+          width = 9.75,
+          height = 32,
           rotation = 0,
           visible = true,
           properties = {}

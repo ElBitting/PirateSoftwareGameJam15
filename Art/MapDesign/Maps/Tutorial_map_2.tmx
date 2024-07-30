@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="18" nextobjectid="75">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="18" nextobjectid="79">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -27,7 +27,7 @@
  </layer>
  <layer id="2" name="FG" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlkEOgjAQRVuJugbiyrhwz6bXU0+gnkC9nHgC4AIOoY2TkU5FbSHKT15CWmZeSxpSIcYMMTKgK9aonvxmDQVQAhXyZwH9EqQTIJKNP/tzf+i0+X2vYwNsgR3jf2cNa43LuQcOwPEFv62fy0/rsPMEnIEL8efMPq6imc/1sxlTaJz6czSPnSVDhfoYCkcNrROOunq/Uwsz+ew334gj6ljH+SXpE8NAolkg8Fja4o9JDX4/sZDKx/njzjMO9XY5s22RDJz/03Be1/8ghL8LIdKn+1dzszyHypzgemfM977D0Pr4Cr4LmfhcsxL2+5dvt+lvu3/VcyvPLInzDm6dRVA=
+   eJztlrEOgjAQhluJ7kCcnNxZeD31CdQnUF9OnHQDFkaP0MbLSa+ithDxT76EtNx9LWlIhfhniJEeXaEi7cmv15ADBVAif+LRL0E6AQLZ+JOR+32nze96HStgDWwY/ztrWCpszi2wA/Yv+E39bH5ah50H4AiciD9j9nEWzXymnvVYisapP0Pz2FkwlKiPJrfU0Dphqav3OzUwk89+/Y04go51nF+SPiEMRIo5Ao/FLf6Q1OD3IwOxfJw/7jzjUG+XM9sWycD5Pw3ntf0PfPi74CN9un81F8Ozr9wQV8s7pvmx5VvfYWh9XAXfhXRcrjkV5vuXa7fub7p/1XOVYxbEeQe1C2Y5
   </data>
  </layer>
  <layer id="10" name="fg2" width="32" height="32">
@@ -80,6 +80,18 @@
   <object id="67" name="Elderberries" type="Elderberries" x="256" y="368" width="32" height="16"/>
   <object id="68" name="Cricket" type="Cricket" x="384.667" y="422.333" width="14.3333" height="9.33333"/>
   <object id="74" name="Shadow" type="Shadow" x="281.417" y="192.917" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="75" name="Poke" type="Poke" x="64.3333" y="464.333" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="76" name="Poke" type="Poke" x="96.3333" y="417.333" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="77" name="Poke" type="Poke" x="319.667" y="401.667" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="78" name="Poke" type="Poke" x="448.333" y="464" width="14.6667" height="14.6667">
    <ellipse/>
   </object>
  </objectgroup>
