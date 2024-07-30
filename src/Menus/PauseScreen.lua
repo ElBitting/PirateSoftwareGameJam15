@@ -2,6 +2,10 @@ PauseScreen = {}
 local appleimg = love.graphics.newImage('Art/Sprites/Original_sin.png')
 local elderberryimg = love.graphics.newImage('Art/Sprites/elderberry_shrub_full.png')
 local cricketimg = love.graphics.newImage('Art/Sprites/criket.png')
+local pokeimg = love.graphics.newImage('Art/Sprites/Poke.png')
+local healthimg = love.graphics.newImage('Art/Sprites/Vial.png')
+local speedimg = love.graphics.newImage('Art/Sprites/Vial_swift.png')
+local jumpimg = love.graphics.newImage('Art/Sprites/Vial_jump.png')
 
 table.insert(PauseScreen, newButton("Resume", function() 
     gs.pop() 
@@ -101,12 +105,24 @@ function InventoryMenu()
     love.graphics.rectangle("line", 0, GAME_HEIGHT *2/3-2, GAME_WIDTH, GAME_HEIGHT/3)
     love.graphics.rectangle("line", 0, GAME_HEIGHT *2/3+2, GAME_WIDTH, GAME_HEIGHT/3)
     love.graphics.setColor(1,1,1)
-    love.graphics.draw(appleimg, 100, 850, nil, 6, 6)
+    love.graphics.draw(appleimg, 50, 790, nil, 7, 7)
     love.graphics.print(player.inventory['apple'], textFont, 95, 920)
 
-    love.graphics.draw(elderberryimg, 225, 850, nil, 6, 6)
-    love.graphics.print(player.inventory['elderberry'], textFont, 220, 920)
+    love.graphics.draw(elderberryimg, 250, 790, nil, 7, 7)
+    love.graphics.print(player.inventory['elderberry'], textFont, 250, 920)
 
-    love.graphics.draw(cricketimg, 450, 890, nil, 6, 6)
-    love.graphics.print(player.inventory['cricket'], textFont, 445, 920)
+    love.graphics.draw(cricketimg, 500, 800, nil, 7, 7)
+    love.graphics.print(player.inventory['cricket'], textFont, 530, 920)
+
+    love.graphics.draw(pokeimg, 730, 830, nil, 4, 4)
+    love.graphics.print(player.inventory['poke'], textFont, 730, 920)
+    
+    love.graphics.draw(healthimg, 930, 830, nil, 4, 4)
+    love.graphics.print(player.inventory['health'], textFont, 925, 920)
+
+    love.graphics.draw(speedimg, 1130, 830, nil, 4, 4)
+    love.graphics.print(player.inventory['speed'], textFont,1125, 920)
+
+    love.graphics.draw(jumpimg, 1330, 830, nil, 4, 4)
+    love.graphics.print(player.inventory['jump'], textFont, 1325, 920)
 end
