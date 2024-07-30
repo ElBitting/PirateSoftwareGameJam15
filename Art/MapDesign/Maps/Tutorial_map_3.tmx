@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="98" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="98" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
+ <editorsettings>
+  <export target="Tutorial_map_3.lua" format="lua"/>
+ </editorsettings>
  <tileset firstgid="1" name="Tileset" tilewidth="16" tileheight="16" tilecount="256" columns="16">
   <image source="../../Sprites/Tileset.png" width="256" height="256"/>
  </tileset>
@@ -10,17 +13,17 @@
  </layer>
  <layer id="2" name="GroundLayer" width="66" height="98">
   <data encoding="base64" compression="zlib">
-   eJzt29tugkAUheF5jV7aU3oLxSZetql9Lh69TJYTR8JBYQ8O8q9kpadIt18xwkBL59xx4y2bfjlSORx8cFBwUHBQcFBwUHBQcFBwUHBQcFBwUHBQcFBwUHBQcFBwUHBQcFBwUHBQcFBwUHBQcFBwcG7nuL7pUzTdOxyCg98nnp2rU7bZ92rL2XeaeXLjeWKH5mNt3TJqYexQnOee1GJhh/D5lh32iR2mGtzToTJ2qGY6VDjggAMOOExySH2f5p8lgrZXH2c0nofzCwUHBQcFBwUHBQflHg5h/eTFaDsWDccUSzoE+0+D7ZRR5xxTrd0hzI+DbdfoMPf8Agccxjp3pluCg4KDgsPl/DjYO1gdR52u85q36xwiZwffpdYkq9PcOTosefyAw3l+HHCI58cBh3h+HHBoz78GB78W/Nbq+5XzvXY8Nm74nTk6tGfqWvu7dp+59vwHh/U4dD2XLTr8uun3cXQ9Nm7ODr5zr7PdOn+uDkutxazR4enU+Ouhn/d9L06K9clUDgeD9iV3B98Ua3Pt9bncHZa6ZzBnB84v1uvAdf/L7eCAQ7ydXB3G7oezukcvd4dwH1vf3xsHJbxfbN3hEfaH+B7Wodf/ozt8N/1x48/z0R3iGbbi4F8DQ/v+VhzGnisOdg4fIx1KCgffVGswff/r4Dt03WusKQyo+g+bblDE
+   eJztm8tOwzAQRf0PrFhSHmKbkiKxBFG+K59O3KnFNMqLeuw4zbnSEa8mTA4OxGNzcM4dAAAAAAAAACAJRzjx7kjt8OCDBwkeJHiQ4EHiPbwtXUQBqRwefPAgwYMEDxI8SPDg3EPL3uHBjwU/7/Ye7magM+f1Y8fHxvJ8wYMfEzvnmpS0Y68xLP00lncR6Hq0h/ZtY81eURl7qP7qvooqs4fw/pY9HBJ7iOlFLuWhNvZQR3qo8YAHPOABD1d5SL1W9GMpQc7XHCPQ9QQPW+/T4kGCBwkeJHiQLOXBuicTmyU8hP7Jo9F5LAjPFDk96F5g7Hn2iphnqrV7CPXjwZY1eoidX+ABD1PkXM/CgwQPEjxc1r8lD33ziBQerJ6jzuu85vTNIUr24MnVk6ydzZ6LFB5yPj/g4a9+POBB148HPOj68bB+D1Y95pKfo7oefC/4ucPLzPqeeo7VhO9ZooduTX29v7n3ztz5Dx7W46HvWrbiQf8e/HbX7+PoO1ZTsgdP7Drbf+sv1UOuntQaPdyf0R+PfX3oczop+pOpPHwYMJTSPXhS9Oa6/bnSPeTaM1iyh9zzLDzYeWDd//I8eMCDPk+pHqb2w1nt0SvdQ9jHNvTzxoMk/L3YuodbGA96D+vY/X/rHj5bvtz0dd66B13DVjz4e2Bs7G/Fw9S14sHOw+sEY0nhwZOqBzP0vw6esXWvKVI4AOEXidAZjQ==
   </data>
  </layer>
  <layer id="4" name="Moss and Hazzards" width="66" height="98">
   <data encoding="base64" compression="zlib">
-   eJzt2kFOg0AAQFEWeoN6B4/p0aX5Gklr4kIcBvtewrLt5MMMZMqyAAAAAAAAADC752V5e1qPo8dxtJe1wUUHHT7oEB2iQ3SIDtEhOkSH6BAdokN0iA7RITpEh+Ns9wLXc3A9Fw9pew3q8DUXdXA96KDDJx2iQ3SIDvd0iA7RITpEh+gQHaJDdIgO0SGzdxj1funsHUb9r6FDZu8wig6ZtcO6Nl7XyGFm7TB6XI/c4Qz7k7fjet3p2DpDhxH26nD2dzd0uKdDLr/47Nk73M6LPb7njHTIo3TY7l1895y+1/hn7/DTfVGHv/udGekQ8yI6RIdYH6JDdOA/eQf3xFxc
+   eJzt2kFOg0AAQFEWeoN6B4/p0UvzNZLW6EKEQd5LWLadfJiBTJkmAAAAAAAAAEb3PE1vT/Ox9zj29jI3uOigwzsdokN0iA7RITpEh+gQHaJDdIgO0SE6RIfosJ/lXuB8Dm7n4pSW16AOn3NRB9eDDjp80CE6RIfo8EiH6BAdokN0iA7RITpEh+gQHTJ6h63eLx29w1b/a+iQ0TtsRYeM2mFeG29r5GZG7bD1uM7c4Qj7k/fjel3pWDpChy2s1eHo727o8EiHXH7x2aN3uJ8Xa3zPEemQs3RY7l189Zy+1vhH7/DTfVGHv/udEekQ8yI6RIdYH6JD1u7w3f7OyB34H65Bulzf
   </data>
  </layer>
  <layer id="5" name="Entities_Placeholders" width="66" height="98">
   <data encoding="base64" compression="zlib">
-   eJzt2jsKgkEMhdG/0B1oqQvwtRcf+1+LgWspaCMJeA4EBqYJXznMsgAAAAAAAABAn13NvnuJAc41l+4l4AdWNevuJQbY1Gy7lxhAh9AhdAgdQofQIXQIHUKH0CF0AAAAAABggmn/Ybr+4E14t7/XPF7nrj94EzpMoEPoEDqEDqFD6BA69DvWnLqXAIA/c+heAACAMa41tzfnT3ff3MNkT4A+CZY=
+   eJzt2jsKwkAUhlEL3YGWugBfe/Gx/7U48DcWghbRe9Vz4EJIIBm+cjKzGQAAAAAAAADUWY/ZVC+igcOYY/Ui4A3mYxbVi2hgOWZVvYgGdAgdQofQIXQIHUKH0CF0CB1Ch/+ynfh9lzHXB/d3Y/YTfwsAAAAA+G3dzsNUncHrsG9/v/dbdQavQ4cOdAgdQofQIXQIHUKHev6RA8DnTX0WDgCA73Uac35w/ezZK8+hsxtz2gq+
   </data>
  </layer>
 </map>
