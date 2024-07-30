@@ -47,6 +47,16 @@ function game:keypressed(key, gamepad)
     end
     controls:jumpPressed(key, gamepad)
     -- player:keypressed(key)
+
+    if key == '1' and player.inventory['health'] > 0 then 
+        player:healthPotion()
+    end
+    if key == '2' and player.inventory['speed'] > 0 then 
+        player:speedPotion()
+    end
+    if key == '3' and player.inventory['jump'] > 0 then 
+        player:jumpPotion()
+    end
 end
 
 function game:keyreleased(key, gamepad)

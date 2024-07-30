@@ -26,6 +26,8 @@ player.inventory['poke'] = 0
 player.inventory['health'] = 0
 player.inventory['speed'] = 0
 player.inventory['jump'] = 0
+player.jumpActive = false
+player.speedActive = false
 
 -- player.hasapple = false
 local colliderWidth = 6
@@ -44,6 +46,7 @@ function player:update(dt)
     player:ladders(dt)
     player:interactions(dt)
     player:animations(dt)
+    player:potions(dt)
     Timer.update(dt)
 
     
@@ -143,6 +146,26 @@ function player:jumpKeyReleased()
     end 
 end
 
+function player:healthPotion()
+    if player.health == 6 then return
+    elseif player.health == 5 then 
+        player.health = 6
+        player.inventory['health'] = player.inventory['health'] - 1
+    else
+        player.health = player.health + 2
+        player.inventory['health'] = player.inventory['health'] - 1
+    end
+end
+
+function player:speedPotion()
+    player.inventory['speed'] = player.inventory['speed'] - 1
+    player.speedActive = true
+end
+
+function player:jumpPotion()
+    player.inventory['jump'] = player.inventory['jump'] - 1
+    player.jumpActive = true
+end
 
 function player:detectections(dt)
     -- Walls
@@ -173,6 +196,17 @@ function player:detectections(dt)
         player.laddered = true
     else
         player.laddered = false
+    end
+end
+
+function player:potions(dt)
+    if player.jumpActive then 
+        player.jumpspeed = 120
+        jumpTimer = Timer.after(10, function() player.jumpspeed = 85 player.jumpActive = false end)
+    end
+    if player.speedActive then 
+        player.speed = 250
+        speedTimer = Timer.after(10, function() player.speed = 130 player.speedActive = false end)
     end
 end
 
