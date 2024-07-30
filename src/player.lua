@@ -22,7 +22,10 @@ player.health = 6
 player.inventory['apple'] = 0
 player.inventory['elderberry'] = 0
 player.inventory['cricket'] = 0
-player.onVine = false
+player.inventory['poke'] = 0
+player.inventory['health'] = 0
+player.inventory['speed'] = 0
+player.inventory['jump'] = 0
 
 -- player.hasapple = false
 local colliderWidth = 6
@@ -265,6 +268,12 @@ function player.reset()
     player.inventory = {}
     player.health = 6
     player.inventory['apple'] = 0
+    player.inventory['elderberry'] = 0
+    player.inventory['cricket'] = 0
+    player.inventory['poke'] = 0
+    player.inventory['health'] = 0
+    player.inventory['speed'] = 0
+    player.inventory['jump'] = 0
 
     player:setX(20)
     player:setY(505
