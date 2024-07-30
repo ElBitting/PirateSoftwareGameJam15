@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="17" nextobjectid="69">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="18" nextobjectid="75">
  <editorsettings>
   <export target="Tutorial_map_2.lua" format="lua"/>
  </editorsettings>
@@ -79,6 +79,9 @@
   <object id="66" name="Elderberries" type="Elderberries" x="416" y="192" width="32" height="16"/>
   <object id="67" name="Elderberries" type="Elderberries" x="256" y="368" width="32" height="16"/>
   <object id="68" name="Cricket" type="Cricket" x="384.667" y="422.333" width="14.3333" height="9.33333"/>
+  <object id="74" name="Shadow" type="Shadow" x="281.417" y="192.917" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="Hazards">
   <object id="19" x="64" y="502.5" width="381.75" height="9.5"/>
@@ -107,5 +110,9 @@
   <object id="48" name="Vine1" x="162.012" y="167.792" width="5.99807" height="14.9778"/>
   <object id="49" name="Vine1" x="161.968" y="183.846" width="6.04348" height="14.875"/>
   <object id="50" name="Vine1" x="161.989" y="199.645" width="6.04348" height="15.0625"/>
+ </objectgroup>
+ <objectgroup id="17" name="EnemyWalls">
+  <object id="69" name="EnemyWalls" type="EnemyWalls" x="191.75" y="176.75" width="9.5" height="31.25"/>
+  <object id="70" name="EnemyWalls" type="EnemyWalls" x="342.25" y="176" width="9.75" height="32"/>
  </objectgroup>
 </map>
