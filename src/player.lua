@@ -45,8 +45,7 @@ function player:update(dt)
     player:initializations(dt)
     if player.canMove then 
         player:movement(dt)
-    else
-        movementTimer  = Timer.after(.1, function() player.canMove = true end)
+        Timer.cancel(movementTimer)
     end
     player:detectections(dt)
     player:ladders(dt)
@@ -106,6 +105,7 @@ end
 
 
 function player:initializations(dt)
+    movementTimer  = Timer.after(.1, function() player.canMove = true Timer.clear(movementTimer) end)
     player:setLinearVelocity(player.x * player.speed, yNow)
     if player.health == 0 then
         if tutorial_bool then 
@@ -216,12 +216,16 @@ end
 
 function player:potions(dt)
     if player.jumpActive then 
+        jumpTimer = Timer.after(10, function() player.jumpspeed = 85 player.jumpActive = false Timer.clear(jumpTimer) end)
         player.jumpspeed = 120
-        jumpTimer = Timer.after(10, function() player.jumpspeed = 85 player.jumpActive = false end)
+        love.window.setTitle('Hello')
+    else
+        love.window.setTitle('hi')
     end
     if player.speedActive then 
         player.speed = 250
-        speedTimer = Timer.after(10, function() player.speed = 130 player.speedActive = false end)
+        speedTimer = Timer.after(10, function() player.speed = 130 player.speedActive = false Timer.clear(speedTimer) end)
+    else
     end
 end
 
