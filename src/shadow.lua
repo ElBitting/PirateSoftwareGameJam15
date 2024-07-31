@@ -15,20 +15,19 @@ function Shadow.new(x, y)
     instance.xdir = 1
     instance.bod = world:newCircleCollider(x, y, instance.width/2)
     instance.bod:setCollisionClass('Shadow')
-    instance.bod:setType('static')
 
     table.insert(active_Shadow, instance)
 end
 
 function Shadow.reset()
     for i, instance in ipairs(active_Shadow) do
-        instance.bod.boxdy:destroy()
+        instance.bod.body:destroy()
     end
     active_Shadow = {}
 end
 
 function Shadow:update(dt)
-    self.bod.body:setLinearVelocity(Shadow.speed * self.xdir, 0) 
+    self.bod.body:setLinearVelocity(Shadow.speed * self.xdir,5) 
 
     local wall = world:queryRectangleArea(self.bod:getX()+5*self.xdir, self.bod:getY()-3, 2*self.xdir, 6, {'EnemyWalls'})
     if #wall > 0 then
