@@ -51,13 +51,13 @@ function game:keypressed(key, gamepad)
     controls:jumpPressed(key, gamepad)
     -- player:keypressed(key)
 
-    if key == '1' and player.inventory['health'] > 0 then 
+    if key == '1' and player.inventory['health'] > 0  then 
         player:healthPotion()
     end
-    if key == '2' and player.inventory['speed'] > 0 then 
+    if key == '2' and player.inventory['speed'] > 0 and not player.speedActive then 
         player:speedPotion()
     end
-    if key == '3' and player.inventory['jump'] > 0 then 
+    if key == '3' and player.inventory['jump'] > 0  and not player.jumpActive then 
         player:jumpPotion()
     end
 end
