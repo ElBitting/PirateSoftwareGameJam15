@@ -18,7 +18,7 @@ function game:draw()
     cam:attach()
         if tutorial_bool then tutorial:draw()
         else mainLevel:draw() end
-        world:draw(0.1)
+        -- world:draw(0.1)
         player:draw()
     cam:detach()
     shaders:draw()
