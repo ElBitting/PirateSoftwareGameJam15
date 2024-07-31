@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="98" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="112">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="98" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="133">
  <editorsettings>
   <export target="Tutorial_map_3.lua" format="lua"/>
  </editorsettings>
@@ -18,7 +18,7 @@
  </layer>
  <layer id="4" name="Moss and Hazzards" width="66" height="98">
   <data encoding="base64" compression="zlib">
-   eJzt2lFOg0AUhlEedAe4B5fp0sX8MZLS2IeOlztyTsJjYfJloNMpywIAAAAAAABAd6/L8vGyHWeP42xvW4NVh/IO29z7moPtVHdYc812dAgdQofQIXQIHcI6KnQIHUKH0CF0CB1Ch9DhPPu9wK7rywr7OajDz72og/mggw7fdAgdQofQ4UiH0CGu3MHzIXQ40iF0CB1Ch9AhdIjuHareL+3eoep/DR2ie4cqOkTXDtXvP3ftUD2uK3eY4Xf37bjeBx17M3SoMKrD7O9u6HCkQ6xPfHb2Drf3xYjzzEiHuEqH/d7FvXX6qPF37/Doe1GHv7tORzqE+yJ0CB3C8yF0iNEdftvf6dyB/+ETc6FgWQ==
+   eJzt2kGOgkAURVEGugPcQy/TpYt5EwKd7gFl8UvOSRgqlZsC8es0AQAAAAAAAFDdfZqet+U4ex1neywNZh26d1j23nsPltO7w5xzlqND6BA6hA6hQ+gQnqNCh9AhdAgdQofQIXQIHc6zngUeeb4cfaa43oNHOoy+l7fr18F+aNFhdDqEDqFD6BA67OkQOsSVO7g/hA57OoQOoUPoEDqEDlG9Q69ZcPUOvWZ/OkT1Dr3oEFU79P7/c9UOvdd15Q4jfO/eruun0bE2Qoce/L4ZOuzpEPOB147eYXtdtHifEekQV+mwnl389pzeav3VO/z3uajD585TkQ7huggdQodwfwgdonWHv+Y7lTvwHV75c2Td
   </data>
  </layer>
  <layer id="5" name="Entities_Placeholders" width="66" height="98">
@@ -40,6 +40,7 @@
   <object id="35" x="1021.33" y="448" width="3" height="304"/>
   <object id="103" x="428.5" y="976" width="3.5" height="32.125"/>
   <object id="111" x="416.25" y="496" width="3.25" height="128"/>
+  <object id="130" x="716.75" y="768.25" width="3" height="63.5"/>
  </objectgroup>
  <objectgroup id="8" name="ThickWalls">
   <object id="2" x="80" y="1488" width="32" height="48"/>
@@ -119,19 +120,24 @@
   <object id="82" name="Vine2" x="605.902" y="1213.15" width="6.04348" height="15.0625"/>
   <object id="83" name="Vine2" x="605.932" y="1229.03" width="6.04348" height="15.0625"/>
   <object id="84" name="Vine2" x="606.119" y="1245.4" width="6.04348" height="15.0625"/>
-  <object id="85" name="Vine3" x="602.282" y="550.612" width="2.6" height="1.17778"/>
-  <object id="86" name="Vine3" x="602.419" y="552.461" width="2.6" height="19.4278"/>
-  <object id="87" name="Vine3" x="602.357" y="572.367" width="2.6" height="19.4278"/>
-  <object id="88" name="Vine3" x="602.326" y="592.179" width="2.6" height="19.4278"/>
-  <object id="89" name="Vine3" x="602.263" y="612.179" width="2.6" height="19.4278"/>
-  <object id="90" name="Vine3" x="602.263" y="632.117" width="2.6" height="19.4278"/>
-  <object id="91" name="Vine3" x="602.326" y="652.617" width="2.6" height="19.4278"/>
-  <object id="92" name="Vine3" x="602.388" y="673.054" width="2.6" height="19.4278"/>
-  <object id="93" name="Vine3" x="602.513" y="693.367" width="2.6" height="19.4278"/>
-  <object id="94" name="Vine3" x="602.513" y="714.492" width="2.6" height="19.4278"/>
-  <object id="108" name="Vine3" x="602.466" y="734.472" width="2.6" height="19.4278"/>
-  <object id="109" name="Vine3" x="602.591" y="754.785" width="2.6" height="19.4278"/>
-  <object id="110" name="Vine3" x="602.591" y="775.91" width="2.6" height="19.4278"/>
+  <object id="112" name="Vine1" x="596.446" y="550.099" width="6" height="15"/>
+  <object id="113" name="Vine1" x="596.468" y="566.092" width="6.08696" height="15.0444"/>
+  <object id="114" name="Vine1" x="596.534" y="582.099" width="6" height="15.0222"/>
+  <object id="115" name="Vine1" x="596.534" y="598.121" width="5.99807" height="14.9778"/>
+  <object id="116" name="Vine1" x="596.49" y="614.175" width="6.04348" height="14.875"/>
+  <object id="117" name="Vine1" x="598.283" y="546.849" width="2.625" height="2"/>
+  <object id="118" name="Vine1" x="596.511" y="629.974" width="6.04348" height="15.0625"/>
+  <object id="119" name="Vine1" x="596.512" y="646.235" width="5.99807" height="14.9778"/>
+  <object id="120" name="Vine1" x="596.468" y="662.289" width="6.04348" height="14.875"/>
+  <object id="121" name="Vine1" x="596.489" y="678.088" width="6.04348" height="15.0625"/>
+  <object id="122" name="Vine1" x="596.411" y="693.743" width="6.08696" height="15.0444"/>
+  <object id="123" name="Vine1" x="596.477" y="709.75" width="6" height="15.0222"/>
+  <object id="124" name="Vine1" x="596.477" y="725.772" width="5.99807" height="14.9778"/>
+  <object id="125" name="Vine1" x="596.433" y="741.826" width="6.04348" height="14.875"/>
+  <object id="126" name="Vine1" x="596.454" y="757.625" width="6.04348" height="15.0625"/>
+  <object id="127" name="Vine1" x="596.455" y="773.886" width="5.99807" height="14.9778"/>
+  <object id="128" name="Vine1" x="596.411" y="789.94" width="6.04348" height="14.875"/>
+  <object id="129" name="Vine1" x="596.432" y="805.739" width="6.04348" height="15.0625"/>
  </objectgroup>
  <objectgroup id="15" name="EnemyWalls">
   <object id="97" name="EnemyWalls" type="EnemyWalls" x="1007.88" y="735.5" width="9.75" height="32"/>
