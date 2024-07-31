@@ -83,6 +83,6 @@ function CameraUpdate(dt)
         else cam:lockPosition(px, py + GAME_HEIGHT/14, cam.smooth.damped(8))
         end
     else
-        cam:lockPosition(px,py, cam.smooth.damped(8))
+        cam:lockPosition(px,py)
     end
 end
