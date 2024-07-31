@@ -29,6 +29,8 @@ require 'src/Menus/PauseScreen'
 require 'src/Menus/alchemychoice'
 require 'src/Menus/alchemy'
 
+require 'src/shadow'
+
 function love.load()
     love.window.setMode(GAME_WIDTH, GAME_HEIGHT)
     love.graphics.setDefaultFilter("nearest", "nearest")

@@ -6,7 +6,7 @@ function launch_level(gameMap)
     ladders = {}
     twals = {}
     vines = {}
-    joints = {}
+    enemeyWalls = {}
     
     add_col_class_obj(walls, 'Platform', 'Walls',true, false)
     add_col_class_obj(hazards, 'Hazards', 'Hazards',true, false)
@@ -15,6 +15,7 @@ function launch_level(gameMap)
     add_col_class_obj(ladders, 'Ladders','Ladders', true, false)
     add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false)
     add_col_class_obj(vines, 'Vines','Vines', false, true)
+    add_col_class_obj(enemeyWalls, 'EnemyWall','EnemyWall', true, false)
     vines_destroyed = false
 
     add_entities()
@@ -26,6 +27,7 @@ function update_level(dt)
     cauldron:update_all(dt)
     Elderberries:update_all(dt)
     Crickets:update_all(dt)
+    Shadow:update_all(dt)
 end
 
 function draw_level(gameMap, stages)
@@ -49,6 +51,7 @@ function draw_level(gameMap, stages)
     Elderberries:draw_all()
     Crickets:draw_all()
     Poke:draw_all()
+    Shadow:draw_all()
 end
 
 function end_level() 
@@ -80,6 +83,8 @@ function add_entities()
             Elderberries.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
         elseif instance.name == 'Poke' then
             Poke.new(instance.x + instance.width / 2, instance.y + instance.height / 2)
+        elseif instance.name == 'Shadow' then
+            Shadow.new(instance.x + instance.width/2, instance.y + instance.height/2)
         end
     end
 end
