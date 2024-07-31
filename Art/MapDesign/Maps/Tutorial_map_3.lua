@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 16,
-  nextobjectid = 103,
+  nextobjectid = 104,
   properties = {},
   tilesets = {
     {
@@ -102,7 +102,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt2kFOg0AAQFEWeoN6B4/p0UvzNZLW6EKEQd5LWLadfJiBTJkmAAAAAAAAAEb3PE1vT/Ox9zj29jI3uOigwzsdokN0iA7RITpEh+gQHaJDdIgO0SE6RIfosJ/lXuB8Dm7n4pSW16AOn3NRB9eDDjp80CE6RIfo8EiH6BAdokN0iA7RITpEh+gQHTJ6h63eLx29w1b/a+iQ0TtsRYeM2mFeG29r5GZG7bD1uM7c4Qj7k/fjel3pWDpChy2s1eHo727o8EiHXH7x2aN3uJ8Xa3zPEemQs3RY7l189Zy+1vhH7/DTfVGHv/udEekQ8yI6RIdYH6JD1u7w3f7OyB34H65Bulzf"
+      data = "eJzt2lFygjAYhVEe6g7oHlymSxfn1ikDnfpgGv6Uc2Z4VDMfJGpgmgAAAAAAAACo7jJNt4/lOHocR/tcGsw66PBFh9AhdAgdQofQIXQIHUKH0CF0CB1Ch9AhdAgdjrPeC1zOweNcnNL6GtThey7q4HrQQYcnHUKH0CF02NMhdIgzd7A+hA57OoQOoUPoEDqEDlG9Q6/nS6t36HVfQ4eo3qEXHaJqh2VtfKyR3VTt0HtcZ+4wwv/u7biujY61ETr00KrD6M9u6LCnQ8xvvHb0Dtt50eJ9RqRDnKXDeu/ip9/prcZfvcOr70Ud/u5zKtIhzIvQIXQI60PoEK07/La/U7kD/8MdoVxfMQ=="
     },
     {
       type = "tilelayer",
@@ -277,6 +277,19 @@ return {
           y = 448,
           width = 3,
           height = 304,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 103,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 428.5,
+          y = 976,
+          width = 3.5,
+          height = 32.125,
           rotation = 0,
           visible = true,
           properties = {}
