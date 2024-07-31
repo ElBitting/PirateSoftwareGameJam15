@@ -107,9 +107,14 @@ end
 
 function player:initializations(dt)
     player:setLinearVelocity(player.x * player.speed, yNow)
-    if player.health == 0 then 
-        player:setX(20)
-        player:setY(505)
+    if player.health == 0 then
+        if tutorial_bool then 
+            player:setX(20)
+            player:setY(505)
+        else
+            player:setX(30)
+            player:setY(1520)
+        end
         player.health = 6
     end
 end
