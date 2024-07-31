@@ -15,6 +15,7 @@ function add_col_classes(world)
     world:addCollisionClass('Poke')
     world:addCollisionClass('Shadow')
     world:addCollisionClass('EnemyWall')
+    world:addCollisionClass('creditsDoor')
 
 end
 

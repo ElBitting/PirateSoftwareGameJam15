@@ -7,6 +7,7 @@ function launch_level(gameMap)
     twals = {}
     vines = {}
     enemeyWalls = {}
+    clearDoor = {}
     
     add_col_class_obj(walls, 'Platform', 'Walls',true, false)
     add_col_class_obj(hazards, 'Hazards', 'Hazards',true, false)
@@ -16,6 +17,7 @@ function launch_level(gameMap)
     add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false)
     add_col_class_obj(vines, 'Vines','Vines', false, true)
     add_col_class_obj(enemeyWalls, 'EnemyWall','EnemyWalls', true, false)
+    add_col_class_obj(clearDoor, 'creditsDoor', 'creditsDoor', true, false)
     vines_destroyed = false
 
     add_entities()
