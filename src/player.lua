@@ -244,6 +244,12 @@ function player:interactions(dt)
         Timer.cancel(SpikeDMG)
     end
 
+    if player:enter('Shadow') then 
+        player:setLinearVelocity(0,0)
+        player:applyLinearImpulse(100*player.x, 0)
+        player.health = player.health - 2
+    end
+
     --Doors
     if player:enter('TeleDoor') then
         player:setX(487)
