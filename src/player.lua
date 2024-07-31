@@ -45,7 +45,7 @@ function player:update(dt)
     player:initializations(dt)
     if player.canMove then 
         player:movement(dt)
-        Timer.clear(movementTimer)
+        Timer.cancel(movementTimer)
     end
     player:detectections(dt)
     player:ladders(dt)
@@ -258,7 +258,7 @@ function player:interactions(dt)
         end)
     end
     if player:exit('Hazards') then
-        Timer.clear(SpikeDMG)
+        Timer.cancel(SpikeDMG)
     end
 
     if player:enter('Shadow') then 
