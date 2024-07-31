@@ -59,6 +59,8 @@ function alchemy:draw()
         love.graphics.setColor(1,1,1)
         love.graphics.print('You do not have the inventory', errorFont, 500, 350)
     end
+
+    InventoryMenu()
 end
 
 function alchemy:keypressed(key, gamepad)
@@ -92,3 +94,4 @@ function alchemy:keypressed(key, gamepad)
 
     alchemychoice:keypressed(key, gamepad)
 end
+
