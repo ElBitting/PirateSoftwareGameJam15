@@ -248,8 +248,13 @@ function player:interactions(dt)
         player:setY(200)
     end
     if player:enter('FinalDoor') then
-        player:setX(20)
-        player:setY(505)
+        player:setX(30)
+        player:setY(1520)
+        gs.switch(game)
+    end
+    if player:enter('creditsDoor') then
+        player:setX(0)
+        player:setY(0)
         gs.switch(Credits)
     end
 

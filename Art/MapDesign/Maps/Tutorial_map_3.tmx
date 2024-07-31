@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="98" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="98" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="96">
  <editorsettings>
   <export target="Tutorial_map_3.lua" format="lua"/>
  </editorsettings>
@@ -13,7 +13,7 @@
  </layer>
  <layer id="2" name="GroundLayer" width="66" height="98">
   <data encoding="base64" compression="zlib">
-   eJztm8tOwzAQRf0PrFhSHmKbkiKxBFG+K59O3KnFNMqLeuw4zbnSEa8mTA4OxGNzcM4dAAAAAAAAACAJRzjx7kjt8OCDBwkeJHiQ4EHiPbwtXUQBqRwefPAgwYMEDxI8SPDg3EPL3uHBjwU/7/Ye7magM+f1Y8fHxvJ8wYMfEzvnmpS0Y68xLP00lncR6Hq0h/ZtY81eURl7qP7qvooqs4fw/pY9HBJ7iOlFLuWhNvZQR3qo8YAHPOABD1d5SL1W9GMpQc7XHCPQ9QQPW+/T4kGCBwkeJHiQLOXBuicTmyU8hP7Jo9F5LAjPFDk96F5g7Hn2iphnqrV7CPXjwZY1eoidX+ABD1PkXM/CgwQPEjxc1r8lD33ziBQerJ6jzuu85vTNIUr24MnVk6ydzZ6LFB5yPj/g4a9+POBB148HPOj68bB+D1Y95pKfo7oefC/4ucPLzPqeeo7VhO9ZooduTX29v7n3ztz5Dx7W46HvWrbiQf8e/HbX7+PoO1ZTsgdP7Drbf+sv1UOuntQaPdyf0R+PfX3oczop+pOpPHwYMJTSPXhS9Oa6/bnSPeTaM1iyh9zzLDzYeWDd//I8eMCDPk+pHqb2w1nt0SvdQ9jHNvTzxoMk/L3YuodbGA96D+vY/X/rHj5bvtz0dd66B13DVjz4e2Bs7G/Fw9S14sHOw+sEY0nhwZOqBzP0vw6esXWvKVI4AOEXidAZjQ==
+   eJztnEtOwzAQhn0HViwpD7FNSJFYgigL4ATACYBD5Oi1O7U6tZynx46T/L/0iUeJM/1wIJlY2SqltgAAAAAAAAAAAIjCDhx4VEil4MEEHijwQIEHCjxQjIeHqYvIIIWCBxN4oMADBR4o8EAZ4uFd86H5jFfOJLnSlKq/hy/Nt+YnWkXTxMwFc91tPFz04Ffzp/nv+fMukpEcz3owc2KjVO3jVr/WRtN2Lnru1YKlH+byJgBeD/egP9bSlIxC2ENxqnsURWIP9vM1e9hG9hDSi5zKQyXsoQr0UMEDPMADPMDDKA+x7xW9SUqg8epdALwe62HtfVp4oMADBR4o8ECZyoN0TyY0U3iw/ZNroXEksOcUKT3wXmDoOCUj5Jxq7h5s/fAgyxw9hF5fwAM8dJHy/iY8UOCBAg/n9a/Jg+86IoYHqfOo431ecXzXEDl7MKTqSVZq2JqLlB5Snj/Aw6l+eIAHXj88wAOvHx7m70Gqx5zzeZTrwfSC3fWBdz3ru/Fsy7H7zNGDW5Ov99f32Ol7/QMP8/Hgey9r8cD/Dr6q8es4fNtycvZgCL3PNrT+XD2k6knN0cPlEf512+tN3+OJ0Z+M5eFJgKbk7sEQozfn9udy95BqzWDOHlJfZ8GDnAfc9z8fBx7ggY+Tq4eu9XBSa/Ry92DXsTX9vuGBYv9frN3DEuYDX8Padvwv3cOz5kV1v8+le+A1LNWD+4wLcwy0zf2lenCfcdH1XpfqgT/jwu4ntof7DtoSw4PBebZFNJr2OZQYDgCxB89yHBQ=
   </data>
  </layer>
  <layer id="4" name="Moss and Hazzards" width="66" height="98">
@@ -26,4 +26,94 @@
    eJzt2jsKwkAUhlEL3YGWugBfe/Gx/7U48DcWghbRe9Vz4EJIIBm+cjKzGQAAAAAAAADUWY/ZVC+igcOYY/Ui4A3mYxbVi2hgOWZVvYgGdAgdQofQIXQIHUKH0CF0CB1Ch/+ynfh9lzHXB/d3Y/YTfwsAAAAA+G3dzsNUncHrsG9/v/dbdQavQ4cOdAgdQofQIXQIHUKHev6RA8DnTX0WDgCA73Uac35w/ezZK8+hsxtz2gq+
   </data>
  </layer>
+ <objectgroup id="7" name="Ladders">
+  <object id="24" x="301.75" y="1376.38" width="2.25" height="159.443"/>
+  <object id="25" x="352" y="1376" width="2.90909" height="159.818"/>
+  <object id="26" x="429.455" y="1440.36" width="2.54545" height="47.2727"/>
+  <object id="27" x="428.909" y="1328.36" width="2.90909" height="79.4545"/>
+  <object id="28" x="429.273" y="1232.55" width="2.54545" height="63.2727"/>
+  <object id="30" x="31.75" y="1200.13" width="3.375" height="63.625"/>
+  <object id="31" x="61.125" y="1120" width="2.75" height="48.125"/>
+  <object id="32" x="429" y="768.5" width="2.75" height="159.5"/>
+  <object id="33" x="480" y="768" width="4.25" height="544.75"/>
+  <object id="34" x="717" y="1264.25" width="3" height="256.5"/>
+  <object id="35" x="1021.33" y="448" width="3" height="304"/>
+ </objectgroup>
+ <objectgroup id="8" name="ThickWalls">
+  <object id="2" x="80" y="1488" width="32" height="48"/>
+  <object id="3" x="0" y="1296" width="16" height="240"/>
+  <object id="4" x="0" y="1536" width="1055.67" height="32"/>
+  <object id="5" x="160" y="1440" width="64" height="32"/>
+  <object id="6" x="192" y="1472" width="32" height="64"/>
+  <object id="7" x="304" y="1376" width="48" height="160"/>
+  <object id="8" x="0" y="1264" width="400" height="32"/>
+  <object id="9" x="0" y="1200" width="32" height="64"/>
+  <object id="10" x="0" y="992" width="16" height="208"/>
+  <object id="11" x="0" y="960" width="368" height="32"/>
+  <object id="12" x="0" y="672" width="16" height="288"/>
+  <object id="13" x="0" y="496" width="416" height="176"/>
+  <object id="14" x="0" y="256" width="16" height="240"/>
+  <object id="15" x="0" y="208" width="1056" height="48"/>
+  <object id="16" x="1040" y="256" width="16" height="192"/>
+  <object id="17" x="1024" y="448" width="32" height="320"/>
+  <object id="18" x="720" y="768" width="336" height="768"/>
+  <object id="19" x="720" y="496" width="272" height="176"/>
+  <object id="20" x="432" y="768" width="48" height="768"/>
+  <object id="21" x="304" y="1120" width="128" height="80"/>
+  <object id="23" x="64" y="1120" width="96" height="80"/>
+ </objectgroup>
+ <objectgroup id="9" name="Entities">
+  <object id="36" name="Elderberries" type="Elderberries" x="112.25" y="1519.88" width="32" height="16"/>
+  <object id="37" name="Elderberries" type="Elderberries" x="159.75" y="1519.88" width="32" height="16"/>
+  <object id="38" name="Elderberries" type="Elderberries" x="224.125" y="1519.88" width="32" height="16"/>
+  <object id="39" name="Elderberries" type="Elderberries" x="269.625" y="1519.88" width="32" height="16"/>
+  <object id="40" name="Elderberries" type="Elderberries" x="352" y="1520.13" width="32" height="16"/>
+  <object id="41" name="Elderberries" type="Elderberries" x="399.75" y="1520" width="32" height="16"/>
+  <object id="42" name="Elderberries" type="Elderberries" x="65.3333" y="1103.33" width="32" height="16"/>
+  <object id="43" name="Elderberries" type="Elderberries" x="784" y="751.667" width="32" height="16"/>
+  <object id="44" name="Apple" type="Apple" x="321.167" y="1361.17" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="45" name="Apple" type="Apple" x="464.667" y="753.167" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="46" name="Cricket" type="Cricket" x="41.3333" y="1254.33" width="14.3333" height="9.33333"/>
+  <object id="47" name="Cricket" type="Cricket" x="888.833" y="758.333" width="14.3333" height="9.33333"/>
+  <object id="48" name="Cauldron" type="Cauldron" x="113.333" y="1088" width="32" height="32"/>
+  <object id="49" name="Cauldron" type="Cauldron" x="832" y="464" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup id="11" name="Walls">
+  <object id="70" x="96" y="1232" width="32" height="6.72727"/>
+  <object id="71" x="160" y="1232" width="16" height="6.54545"/>
+  <object id="72" x="224" y="1232" width="32" height="6.72727"/>
+  <object id="73" x="304" y="1232" width="32" height="6.18182"/>
+ </objectgroup>
+ <objectgroup id="12" name="Hazards">
+  <object id="74" x="80.5" y="1253.25" width="287.25" height="11"/>
+  <object id="75" x="480.25" y="1527.5" width="239.5" height="8.75"/>
+ </objectgroup>
+ <objectgroup id="13" name="Vines">
+  <object id="76" name="Vine2" x="605.837" y="1133.28" width="6" height="15"/>
+  <object id="77" name="Vine2" x="605.859" y="1149.27" width="6.08696" height="15.0444"/>
+  <object id="78" name="Vine2" x="605.925" y="1165.28" width="6" height="15.0222"/>
+  <object id="79" name="Vine2" x="605.925" y="1181.3" width="5.99807" height="14.9778"/>
+  <object id="80" name="Vine2" x="605.881" y="1197.35" width="6.04348" height="14.875"/>
+  <object id="81" name="Vine2" x="607.674" y="1130.03" width="2.625" height="2"/>
+  <object id="82" name="Vine2" x="605.902" y="1213.15" width="6.04348" height="15.0625"/>
+  <object id="83" name="Vine2" x="605.932" y="1229.03" width="6.04348" height="15.0625"/>
+  <object id="84" name="Vine2" x="606.119" y="1245.4" width="6.04348" height="15.0625"/>
+  <object id="85" name="Vine1" x="602.313" y="539.081" width="2.6" height="1.17778"/>
+  <object id="86" name="Vine1" x="602.013" y="543.367" width="2.6" height="19.4278"/>
+  <object id="87" name="Vine1" x="601.888" y="566.117" width="2.6" height="19.4278"/>
+  <object id="88" name="Vine1" x="602.138" y="589.367" width="2.6" height="19.4278"/>
+  <object id="89" name="Vine1" x="602.263" y="609.992" width="2.6" height="19.4278"/>
+  <object id="90" name="Vine1" x="602.263" y="632.117" width="2.6" height="19.4278"/>
+  <object id="91" name="Vine1" x="602.138" y="654.117" width="2.6" height="19.4278"/>
+  <object id="92" name="Vine1" x="602.263" y="676.492" width="2.6" height="19.4278"/>
+  <object id="93" name="Vine1" x="602.388" y="697.367" width="2.6" height="19.4278"/>
+  <object id="94" name="Vine1" x="602.513" y="719.492" width="2.6" height="19.4278"/>
+ </objectgroup>
+ <objectgroup id="14" name="creditsDoor">
+  <object id="95" x="176" y="490.091" width="16.0909" height="5.81818"/>
+ </objectgroup>
 </map>

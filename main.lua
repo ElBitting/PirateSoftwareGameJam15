@@ -13,6 +13,7 @@ require 'src/Utilities/levelLauncher'
 
 require 'src/Stages/game'
 require 'src/Stages/tutorial'
+require 'src/Stages/mainLevel'
 
 require 'src/Objects/apple'
 require 'src/Objects/cauldron'

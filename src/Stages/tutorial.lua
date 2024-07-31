@@ -6,6 +6,7 @@ function tutorial:enter()
 end
 
 function tutorial:leave()
+    tutorial_bool = false
     end_level()
 end
 

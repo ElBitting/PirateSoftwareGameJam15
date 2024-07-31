@@ -1,7 +1,8 @@
 game = {}
-
+tutorial_bool = true
 function game:enter()
-    gs.switch(tutorial)
+    if tutorial_bool then gs.switch(tutorial)
+    else gs.switch(mainLevel) end
 end
 
 function game:update(dt)
@@ -9,12 +10,14 @@ function game:update(dt)
     world:update(dt)
     -- cam:lookAt(player:getPosition())
     CameraUpdate(dt)
-    tutorial:update(dt)
+    if tutorial_bool then tutorial:update(dt)
+    else mainLevel:update(dt) end
 end
 
 function game:draw()
     cam:attach()
-        tutorial:draw()
+        if tutorial_bool then tutorial:draw()
+        else mainLevel:draw() end
         world:draw(0.1)
         player:draw()
     cam:detach()

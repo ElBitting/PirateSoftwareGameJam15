@@ -54,7 +54,7 @@ function draw_level(gameMap, stages)
     Shadow:draw_all()
 end
 
-function end_level() 
+function end_level()
     remove_collider_obj(walls)
     remove_collider_obj(hazards)
     remove_collider_obj(ladders)
