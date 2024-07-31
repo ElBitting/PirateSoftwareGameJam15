@@ -62,6 +62,7 @@ function end_level()
     remove_collider_obj(exit)
     remove_collider_obj(twals)
     remove_collider_obj(vines)
+    remove_collider_obj(enemeyWalls)
     vines_destroyed = true
     
     apple.reset()
@@ -69,6 +70,7 @@ function end_level()
     Elderberries.reset()
     Crickets.reset()
     Poke.reset()
+    Shadow.reset()
 end
 
 function add_entities()
