@@ -1,6 +1,6 @@
 Shadow = {}
 Shadow.__index  = Shadow
-Shadow.speed = 80
+Shadow.speed = 30
 active_Shadow = {}
 
 
@@ -13,6 +13,7 @@ function Shadow.new(x, y)
     instance.height = instance.img:getHeight()
     instance.isDestroyed = false
     instance.xdir = 1
+    instance.prevx = 0
     instance.bod = world:newCircleCollider(x, y, instance.width/(3*6.823))
     instance.bod:setCollisionClass('Shadow')
 
@@ -30,6 +31,10 @@ end
 
 function Shadow:update(dt)
     self.bod.body:setLinearVelocity(Shadow.speed * self.xdir,5)
+    self:interactions()
+    if self.xdir == 0 then 
+        startMove = Timer.after(1, function() self.xdir = self.prevx end)
+    end
 
 
 
@@ -72,5 +77,14 @@ end
 function Shadow:draw_all()
     for i, instance in ipairs(active_Shadow) do
         instance:draw()
+    end
+end
+
+function Shadow:interactions()
+    if self.bod:enter('Player') then 
+        if self.xdir ~= 0 then
+            self.prevx = self.xdir
+        end
+        self.xdir = 0
     end
 end

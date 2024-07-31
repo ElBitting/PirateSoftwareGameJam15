@@ -17,6 +17,8 @@ player.laddered = false
 player.nearCauldron = false
 player.x = 0
 player.y = 0
+player.canMove = true
+player.dir = 1
 player.inventory = {}
 player.health = 6
 player.inventory['apple'] = 0
@@ -41,7 +43,11 @@ function player:update(dt)
     -- Reset Horizontal velocity
     xNow,yNow = player:getLinearVelocity()
     player:initializations(dt)
-    player:movement(dt)
+    if player.canMove then 
+        player:movement(dt)
+    else
+        movementTimer  = Timer.after(.1, function() player.canMove = true end)
+    end
     player:detectections(dt)
     player:ladders(dt)
     player:interactions(dt)
@@ -114,9 +120,11 @@ function player:movement(dt)
     if controls:checkLeftMovement() and not controls:checkRightMovement() then 
         player.ismoving = true
         player.x = -1
+        player.dir = -1
     elseif controls:checkRightMovement() and not controls:checkLeftMovement() then 
         player.ismoving = true
         player.x = 1
+        player.dir = 1
     else
         player.ismoving = false
         player.x = 0
@@ -246,8 +254,10 @@ function player:interactions(dt)
 
     if player:enter('Shadow') then 
         player:setLinearVelocity(0,0)
-        player:applyLinearImpulse(100*player.x, 0)
+        player:applyLinearImpulse(-700*player.dir, -10)
         player.health = player.health - 2
+        player.x = 0
+        player.canMove = false
     end
 
     --Doors
