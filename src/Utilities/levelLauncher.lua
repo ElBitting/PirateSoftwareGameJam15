@@ -15,7 +15,7 @@ function launch_level(gameMap)
     add_col_class_obj(exit, 'FinalDoor','FinalDoor', true, false)
     add_col_class_obj(ladders, 'Ladders','Ladders', true, false)
     add_col_class_obj(twals, 'ThickWalls','ThickWalls', true, false)
-    add_col_class_obj(vines, 'Vines','Vines', false, true)
+    -- add_col_class_obj(vines, 'Vines','Vines', false, true)
     add_col_class_obj(enemeyWalls, 'EnemyWall','EnemyWalls', true, false)
     add_col_class_obj(clearDoor, 'creditsDoor', 'creditsDoor', true, false)
     vines_destroyed = false
@@ -36,17 +36,17 @@ function draw_level(gameMap, stages)
     for _, stage in ipairs(stages) do
         gameMap:drawLayer(gameMap.layers[stage])
     end
-    if not vines_destroyed then
-        for i, vine in ipairs(vines) do
-            if i == 1 then goto continue end
-            local px = vine:getX()
-            local py = vine:getY()
-            local r = vine:getAngle()
-            love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, 1, 1,7, 10)
-            vine:setAngularDamping(500)
-            ::continue::
-        end
-    end
+    -- if not vines_destroyed then
+    --     for i, vine in ipairs(vines) do
+    --         if i == 1 then goto continue end
+    --         local px = vine:getX()
+    --         local py = vine:getY()
+    --         local r = vine:getAngle()
+    --         love.graphics.draw(love.graphics.newImage('Art/Sprites/vine.png'), px, py, r, 1, 1,7, 10)
+    --         vine:setAngularDamping(500)
+    --         ::continue::
+    --     end
+    -- end
 
     apple:draw_all()
     cauldron:draw_all()
