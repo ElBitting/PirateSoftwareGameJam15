@@ -21,6 +21,7 @@ table.insert(PauseScreen, newButton("Title Screen", function()
     gs.pop()
     player.reset()
     gs.switch(TitleScreen)
+    tutorial_bool = true
 end))
 table.insert(PauseScreen, newButton("Quit", function() safe_quit() end))
 
