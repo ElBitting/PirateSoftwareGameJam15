@@ -75,6 +75,8 @@ function player:update(dt)
             contact:setEnabled(false)
         elseif col1.collision_class == 'Player' and col2.collision_class == 'Poke' then
             contact:setEnabled(false)
+        elseif col1.collision_class == 'Player' and col2.collision_class == 'EnemyWall' then
+            contact:setEnabled(false)
         end
     end)
 end
