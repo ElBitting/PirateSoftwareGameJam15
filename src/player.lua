@@ -4,7 +4,7 @@ player:setCollisionClass("Player")
 player:setFixedRotation(true)
 
 
-image = love.graphics.newImage('Art/Sprites/cat3SpriteSheet.png')
+image = love.graphics.newImage('Art/Sprites/Cat3SpriteSheet.png')
 Playergrid = anim8.newGrid(32,32, image: getWidth(), image:getHeight())
 animation = anim8.newAnimation(Playergrid('1-6',1), 0.15)
 
