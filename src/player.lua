@@ -217,13 +217,13 @@ end
 function player:potions(dt)
     if player.jumpActive then 
         jumpTimer = Timer.after(10, function() player.jumpspeed = 85 player.jumpActive = false Timer.clear(jumpTimer) end)
-        player.jumpspeed = 120
+        player.jumpspeed = 130
         love.window.setTitle('Hello')
     else
         love.window.setTitle('hi')
     end
     if player.speedActive then 
-        player.speed = 250
+        player.speed = 275
         speedTimer = Timer.after(10, function() player.speed = 130 player.speedActive = false Timer.clear(speedTimer) end)
     else
     end
