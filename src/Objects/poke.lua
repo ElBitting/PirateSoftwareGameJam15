@@ -12,7 +12,7 @@ function Poke.new(x, y)
     instance.height = instance.img:getHeight()
     instance.randomTimeOffset = math.random(0, 100)
     instance.isDestroyed = false
-    instance.bod = world:newCircleCollider(x, y, instance.width/2)
+    instance.bod = world:newCircleCollider(x, y, instance.width/3.1415)
     instance.bod:setCollisionClass('Poke')
     instance.bod:setType('static')
 

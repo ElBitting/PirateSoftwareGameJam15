@@ -10,7 +10,7 @@ function apple.new(x,y)
     instance.width = instance.img:getWidth()
     instance.height = instance.img:getHeight()
     instance.randomTimeOffset = math.random(0, 100) -- used to make apples hover at different times
-    instance.bod = world:newCircleCollider(x, y, instance.width/2)
+    instance.bod = world:newCircleCollider(x, y, instance.width/3.1415)
     instance.bod:setCollisionClass("Apples")
     instance.bod:setType('static')
     instance.isDestroyed = false

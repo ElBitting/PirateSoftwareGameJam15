@@ -12,7 +12,7 @@ function Elderberries.new(x, y)
     instance.width = instance.img_empty:getWidth()
     instance.height = instance.img_empty:getHeight()
     instance.is_full = true
-    instance.bod = world:newCircleCollider(x, y, instance.width/2)
+    instance.bod = world:newRectangleCollider(x-instance.width/2, y-instance.height/2, instance.width, instance.height)
     instance.bod:setCollisionClass('Elderberries')
     instance.bod:setType('static')
     table.insert(active_elderberries, instance)

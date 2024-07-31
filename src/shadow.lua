@@ -13,7 +13,7 @@ function Shadow.new(x, y)
     instance.height = instance.img:getHeight()
     instance.isDestroyed = false
     instance.xdir = 1
-    instance.bod = world:newCircleCollider(x, y, instance.width/2)
+    instance.bod = world:newCircleCollider(x, y, instance.width/6.823)
     instance.bod:setCollisionClass('Shadow')
 
     table.insert(active_Shadow, instance)
@@ -27,9 +27,12 @@ function Shadow.reset()
 end
 
 function Shadow:update(dt)
-    self.bod.body:setLinearVelocity(Shadow.speed * self.xdir,5) 
+    self.bod.body:setLinearVelocity(Shadow.speed * self.xdir,5)
 
-    local wall = world:queryRectangleArea(self.bod:getX()+5*self.xdir, self.bod:getY()-3, 2*self.xdir, 6, {'EnemyWalls'})
+
+
+    local wall = world:queryRectangleArea(self.bod:getX()+5*self.xdir, self.bod:getY()-3, 2*self.xdir, 6, {'EnemyWall'})
+    
     if #wall > 0 then
         self.xdir = -self.xdir
     end
@@ -53,7 +56,7 @@ end
 
 function Shadow:draw()
     if self.isDestroyed then return end
-    love.graphics.draw(self.img, self.x, self.y, 0, 0.5, 0.5, self.width/2, self.height/2 -5)
+    love.graphics.draw(self.img, self.bod.body:getX(), self.bod.body:getY(), 0, 0.5, 0.5, self.width/2, self.height/2 -5)
 end
 
 function Shadow:update_all(dt) 

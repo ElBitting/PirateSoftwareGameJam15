@@ -11,7 +11,7 @@ function Crickets.new(x, y)
     instance.width = instance.img:getWidth()
     instance.height = instance.img:getHeight()
     instance.isDestroyed = false
-    instance.bod = world:newCircleCollider(x, y, instance.width/2)
+    instance.bod = world:newCircleCollider(x, y, instance.width/6.823)
     instance.bod:setCollisionClass('Crickets')
     instance.bod:setType('static')
 
