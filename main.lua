@@ -37,6 +37,7 @@ function love.load()
     
     gameFont = love.graphics.newFont(GAME_FONT_SIZE)
     textFont = love.graphics.newFont(TEXT_FONT_SIZE)
+    errorFont = love.graphics.newFont(ERROR_FONT_SIZE)
     SelectedButton = 1
 
     cam = camera(10,490,CAMERA_ZOOM)

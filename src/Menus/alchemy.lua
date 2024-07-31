@@ -1,4 +1,5 @@
 alchemy = {}
+alchemy.error = false
 
 function alchemy:load()
     alchemychoice.new(200, 100, 1, 'Health Potion', 'Art/Sprites/Vial.png', 'Art/Sprites/elderberry_shrub_full.png', true, function() 
@@ -6,6 +7,8 @@ function alchemy:load()
             player.inventory['elderberry'] = player.inventory['elderberry'] - 1
             player.inventory['poke'] = player.inventory['poke'] -1
             player.inventory['health'] = player.inventory['health'] + 1
+        else
+            alchemy.error = true
         end
     end)
     alchemychoice.new(200, 100, 2, 'Swiftness Potion', 'Art/Sprites/Vial_swift.png', 'Art/Sprites/criket.png', false, function()
@@ -13,6 +16,8 @@ function alchemy:load()
             player.inventory['cricket'] = player.inventory['cricket'] - 1
             player.inventory['poke'] = player.inventory['poke'] -1
             player.inventory['speed'] = player.inventory['speed'] + 1
+        else
+            alchemy.error = true
         end
     end)
     alchemychoice.new(200, 100, 3, 'Potion of Sight', 'Art/Sprites/Original_sin.png', 'Art/Sprites/Original_sin.png', false, function() end)
@@ -21,6 +26,8 @@ function alchemy:load()
             player.inventory['apple'] = player.inventory['apple'] - 1
             player.inventory['poke'] = player.inventory['poke'] -1
             player.inventory['jump'] = player.inventory['jump'] + 1
+        else
+            alchemy.error = true
         end
     end)
     alchemychoice.new(200, 100, 5, 'Potion of Heat Resistance', 'Art/Sprites/Original_sin.png', 'Art/Sprites/Original_sin.png', false, function() end)
@@ -32,6 +39,10 @@ end
 function alchemy:update(dt)
     local px, py = player:getPosition()
     cam:lockPosition(px,py-60, cam.smooth.damped(14))
+    if alchemy.error then 
+        errorTimer = Timer.after(10, function() alchemy.error = false end)
+        Timer.update(dt)
+    end
     alchemychoice:update_all(dt)
 end
 
@@ -41,10 +52,19 @@ function alchemy:draw()
     love.graphics.setColor(1,1,1)
 
     alchemychoice:draw_all()
+
+    if alchemy.error then 
+        love.graphics.setColor(.1, .1, .1, .9)
+        love.graphics.rectangle('fill', 400, 200, 1120, 400)
+        love.graphics.setColor(1,1,1)
+        love.graphics.print('You do not have the inventory', errorFont, 500, 350)
+    end
 end
 
 function alchemy:keypressed(key, gamepad)
-    if (gamepad and key == 'b') or key == 'escape' then 
+    if ((gamepad and key == 'b') or key == 'escape') and alchemy.error then 
+        alchemy.error = false
+    elseif (gamepad and key == 'b') or key == 'escape' then
         gs.pop()
     end
     if (gamepad and joystick:isGamepadDown('dpright')) or key == 'd' then
