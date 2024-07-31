@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="98" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="96">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="66" height="98" tilewidth="16" tileheight="16" infinite="0" nextlayerid="16" nextobjectid="103">
  <editorsettings>
   <export target="Tutorial_map_3.lua" format="lua"/>
  </editorsettings>
@@ -81,6 +81,21 @@
   <object id="47" name="Cricket" type="Cricket" x="888.833" y="758.333" width="14.3333" height="9.33333"/>
   <object id="48" name="Cauldron" type="Cauldron" x="113.333" y="1088" width="32" height="32"/>
   <object id="49" name="Cauldron" type="Cauldron" x="832" y="464" width="32" height="32"/>
+  <object id="96" name="Shadow" type="Shadow" x="933.167" y="753.417" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="99" name="Poke" type="Poke" x="176.667" y="1489.17" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="100" name="Poke" type="Poke" x="368.917" y="1248.42" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="101" name="Poke" type="Poke" x="432.167" y="752.167" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
+  <object id="102" name="Poke" type="Poke" x="1024.17" y="432.167" width="14.6667" height="14.6667">
+   <ellipse/>
+  </object>
  </objectgroup>
  <objectgroup id="11" name="Walls">
   <object id="70" x="96" y="1232" width="32" height="6.72727"/>
@@ -112,6 +127,10 @@
   <object id="92" name="Vine1" x="602.263" y="676.492" width="2.6" height="19.4278"/>
   <object id="93" name="Vine1" x="602.388" y="697.367" width="2.6" height="19.4278"/>
   <object id="94" name="Vine1" x="602.513" y="719.492" width="2.6" height="19.4278"/>
+ </objectgroup>
+ <objectgroup id="15" name="EnemyWalls">
+  <object id="97" name="EnemyWalls" type="EnemyWalls" x="1007.88" y="735.5" width="9.75" height="32"/>
+  <object id="98" name="EnemyWalls" type="EnemyWalls" x="720.375" y="735.5" width="9.75" height="32"/>
  </objectgroup>
  <objectgroup id="14" name="creditsDoor">
   <object id="95" x="176" y="490.091" width="16.0909" height="5.81818"/>

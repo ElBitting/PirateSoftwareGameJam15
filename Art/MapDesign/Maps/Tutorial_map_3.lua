@@ -9,8 +9,8 @@ return {
   height = 98,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 15,
-  nextobjectid = 96,
+  nextlayerid = 16,
+  nextobjectid = 103,
   properties = {},
   tilesets = {
     {
@@ -767,6 +767,71 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 96,
+          name = "Shadow",
+          type = "Shadow",
+          shape = "ellipse",
+          x = 933.167,
+          y = 753.417,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 99,
+          name = "Poke",
+          type = "Poke",
+          shape = "ellipse",
+          x = 176.667,
+          y = 1489.17,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 100,
+          name = "Poke",
+          type = "Poke",
+          shape = "ellipse",
+          x = 368.917,
+          y = 1248.42,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 101,
+          name = "Poke",
+          type = "Poke",
+          shape = "ellipse",
+          x = 432.167,
+          y = 752.167,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 102,
+          name = "Poke",
+          type = "Poke",
+          shape = "ellipse",
+          x = 1024.17,
+          y = 432.167,
+          width = 14.6667,
+          height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1137,6 +1202,48 @@ return {
           y = 719.492,
           width = 2.6,
           height = 19.4278,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 15,
+      name = "EnemyWalls",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 97,
+          name = "EnemyWalls",
+          type = "EnemyWalls",
+          shape = "rectangle",
+          x = 1007.88,
+          y = 735.5,
+          width = 9.75,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 98,
+          name = "EnemyWalls",
+          type = "EnemyWalls",
+          shape = "rectangle",
+          x = 720.375,
+          y = 735.5,
+          width = 9.75,
+          height = 32,
           rotation = 0,
           visible = true,
           properties = {}
